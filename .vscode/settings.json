@@ -1,0 +1,8 @@
+{
+  "keyboard.dispatch": "keyCode",
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+  "debug.node.autoAttach": "on",
+  "eslint.alwaysShowStatus": true
+  //   "eslint.workingDirectories": ["./client"]
+}
