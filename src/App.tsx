@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Home } from "./Home";
 import { createGlobalStyle } from "styled-components";
+import { Test } from "./Test";
 
 const Explode = keyframes`
 from {
@@ -41,6 +42,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/test" component={Test} />
         </Switch>
       </BrowserRouter>
     </AppContainer>
