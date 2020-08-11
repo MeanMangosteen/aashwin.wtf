@@ -5,6 +5,7 @@ import { centerContent } from "./utils/styles";
 import GearSVG from "./images/gear-blue.svg";
 import ToolboxSVG from "./images/toolbox.svg";
 import { AspectRatio } from "./AspectRatio";
+import sizeMe, { SizeMe } from "react-sizeme";
 
 export const Home = () => {
   return (
@@ -45,7 +46,7 @@ const rotateRight = keyframes`
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
   }
 
 `;
@@ -56,7 +57,7 @@ const StyledGear = styled.img`
   margin-bottom: 1.5rem;
   filter: drop-shadow(2px 0px 12px #00fff3);
   will-change: transform;
-  /* animation: ${rotateRight} infinite 4s linear; */
+  animation: ${rotateRight} infinite 4s linear;
 `;
 
 const WebsiteBadgeContainer = styled.div`
@@ -65,7 +66,7 @@ const WebsiteBadgeContainer = styled.div`
 `;
 
 const AashwinText = styled.div`
-  font-size: 6rem;
+  font-size: 4rem;
   font-family: "Chelsea Market";
   -webkit-text-stroke: 1px black;
   color: white;
@@ -73,7 +74,7 @@ const AashwinText = styled.div`
 `;
 
 const WTFText = styled.div`
-  font-size: 6rem;
+  font-size: 4rem;
   font-family: "Luckiest Guy";
   /* letter-spacing: -1rem; */
   -webkit-text-stroke: 2px #ffa1a1;
@@ -98,13 +99,20 @@ const ActualHome = () => {
   return (
     <ActualHomeContainer>
       <WebsiteBadge />
-      <Orbit1Container>
-        <Orbit1>
-          <OrbitIconContianer>
-            <StyledToolbox src={ToolboxSVG} />
-          </OrbitIconContianer>
-        </Orbit1>
-      </Orbit1Container>
+      <SizeMe monitorHeight>
+        {({ size }) => {
+          console.log("size", size);
+          return (
+            <Orbit1Container>
+              <Orbit1 size={size}>
+                <OrbitIconContianer>
+                  <StyledToolbox src={ToolboxSVG} />
+                </OrbitIconContianer>
+              </Orbit1>
+            </Orbit1Container>
+          );
+        }}
+      </SizeMe>
     </ActualHomeContainer>
   );
 };
@@ -121,28 +129,31 @@ from {
 
 `;
 
-const Orbit1IconContianer = styled.div`
+const Orbit1IconContianer = styled.div<{ size: any }>`
   display: flex;
 `;
 
 const Orbit1Container = styled.div`
+  ${centerContent}
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* width: 100%;
-  height: 100%; */
+  width: 200%;
+  height: 200%;
 `;
 
-const Orbit1 = styled.div`
+const Orbit1 = styled.div<{ size: any }>`
+  --size: ${({ size }) =>
+    size.width > size.height ? size.height : size.width}px;
   transform: scale(1.2, 1) rotate(360deg);
   animation: ${orbitToolbox} infinite 12s linear;
 
   /* transform: translate(-50%, -50%); */
-  width: 150%;
-  height: 150%;
-  width: 400px;
-  height: 400px;
+  width: var(--size);
+  height: var(--size);
+  /* width: 350px;
+  height: 350px; */
 
   border: 2px #4a437f dashed;
   border-radius: 100%;
@@ -172,8 +183,8 @@ const OrbitIconContianer = styled.div`
   top: 0;
   left: 50%;
 
-  width: 20%;
-  height: 16%;
+width: 10%;
+    height: 10%;
 
       justify-content: center;
     transform: translate(-50%, -50%);
