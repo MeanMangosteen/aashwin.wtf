@@ -8,20 +8,28 @@ type OrbitProps = {
   orbitSize: number; // scale of orbit wrt parent
   orbitSpeed: number; // Nominal, and unitless
   iconSrc: string;
+  title: string;
 };
 
-export const Orbit = ({ orbitSize, iconSrc, orbitSpeed }: OrbitProps) => {
+export const Orbit = ({
+  orbitSize,
+  iconSrc,
+  orbitSpeed,
+  title,
+}: OrbitProps) => {
   return (
     <SizeMe monitorHeight>
       {({ size }) => (
         <OrbitContainer orbitSize={orbitSize}>
           <OrbitPath size={size} orbitSpeed={orbitSpeed}>
             <OrbitIconContianer>
-              <StyledToolbox
-                src={iconSrc}
-                size={size}
-                orbitSpeed={orbitSpeed}
-              />
+              <OrbitIconWrapper size={size} orbitSpeed={orbitSpeed}>
+                <OrbitIconSuperWrapper>
+                  <StyledIcon src={iconSrc} />
+                </OrbitIconSuperWrapper>
+                {/* <StyledIcon src={iconSrc} size={size} orbitSpeed={orbitSpeed} /> */}
+                <IconText>{title}</IconText>
+              </OrbitIconWrapper>
             </OrbitIconContianer>
           </OrbitPath>
         </OrbitContainer>
@@ -56,11 +64,17 @@ const animateOrbitPath = (height: number, width: number) => {
   return keyframes`
 from {
 
-    transform: scale(${width / height}, ${height / width}) rotate(0deg);
+    transform: scale(${width / height}, ${Math.max(
+    1,
+    height / width
+  )}) rotate(0deg);
 }
   
   to {
-    transform: scale(${width / height}, ${height / width}) rotate(360deg) ;
+    transform: scale(${width / height}, ${Math.max(
+    1,
+    height / width
+  )}) rotate(360deg) ;
   }
 `;
 };
@@ -123,11 +137,17 @@ const animateOrbitIcon = (height: number, width: number) => {
   return keyframes`
 from {
 
-    transform: rotate(0deg) scale(${height / width},${width / height} ) ;
+    transform: rotate(0deg) scale(${height / width},${Math.min(
+    1,
+    width / height
+  )} ) ;
 }
   
   to {
-    transform: rotate(-360deg) scale(${height / width}, ${width / height}) ;
+    transform: rotate(-360deg) scale(${height / width}, ${Math.min(
+    1,
+    width / height
+  )}) ;
   }
   `;
 };
@@ -138,22 +158,33 @@ const OrbitIconContianer = styled.div`
   top: 0;
   left: 50%;
 
-  /* width: 10%;
-  height: 10%; */
-  width: 3rem;
-  height: 3rem;
-
   justify-content: center;
   transform: translate(-50%, -50%);
 `;
 
-const StyledToolbox = styled.img<{ size: any; orbitSpeed: number }>`
+// const OrbitIconWrapper = styled.div<{ size: any; orbitSpeed: number }>``;
+const OrbitIconWrapper = styled.div<{ size: any; orbitSpeed: number }>`
+  ${centerContent}
+  flex-direction: column;
   --time: ${({ orbitSpeed }) => `${12 * (1 / orbitSpeed)}`};
-
-  object-fit: contain;
   transform: scale(0.8, 1);
   animation: ${({ size, orbitSpeed }) =>
     css`${animateOrbitIcon(size.height, size.width)} infinite ${
       12 * (1 / orbitSpeed)
     }s linear`};
+`;
+const OrbitIconSuperWrapper = styled.div`
+  display: flex;
+`;
+
+// const StyledIcon = styled.img<{ size: any; orbitSpeed: number }>`
+const StyledIcon = styled.img`
+  object-fit: contain;
+  flex: 1;
+  width: 6vw;
+  height: 6vh;
+`;
+
+const IconText = styled.div`
+  font-size: 1.2vw;
 `;

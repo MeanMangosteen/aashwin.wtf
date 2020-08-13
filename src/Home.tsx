@@ -64,7 +64,7 @@ const StyledGear = styled.img`
 const WebsiteBadgeContainer = styled.div`
   ${centerContent}
   flex-direction: column;
-  font-size: 3rem;
+  font-size: 3vw;
 `;
 
 const AashwinText = styled.div`
@@ -109,19 +109,22 @@ const ActualHome = () => {
               orbitSize={2}
               iconSrc={ToolboxSVG}
               orbitSpeed={1.5}
+              title="Projects"
             />
             <Orbit
               parentDim={size}
               orbitSize={3}
               iconSrc={ToolboxSVG}
               orbitSpeed={1.1}
+              title="Photography"
             />
 
             <Orbit
               parentDim={size}
               orbitSize={4}
               iconSrc={ToolboxSVG}
-              orbitSpeed={2.5}
+              orbitSpeed={1}
+              title="Blog"
             />
 
             <Orbit
@@ -129,6 +132,7 @@ const ActualHome = () => {
               orbitSize={5}
               iconSrc={ToolboxSVG}
               orbitSpeed={0.9}
+              title="CV"
             />
           </>
         )}
