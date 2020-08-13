@@ -106,10 +106,19 @@ const ActualHome = () => {
           <>
             <Orbit
               parentDim={size}
-              orbitSize={2}
+              orbitSize={5}
               iconSrc={ToolboxSVG}
-              orbitSpeed={1.5}
-              title="Projects"
+              orbitSpeed={0.9}
+              title="CV"
+              path="/cv"
+            />
+            <Orbit
+              parentDim={size}
+              orbitSize={4}
+              iconSrc={ToolboxSVG}
+              orbitSpeed={1}
+              title="Blog"
+              path="/blog"
             />
             <Orbit
               parentDim={size}
@@ -117,22 +126,15 @@ const ActualHome = () => {
               iconSrc={ToolboxSVG}
               orbitSpeed={1.1}
               title="Photography"
+              path="/photography"
             />
-
             <Orbit
               parentDim={size}
-              orbitSize={4}
+              orbitSize={2}
               iconSrc={ToolboxSVG}
-              orbitSpeed={1}
-              title="Blog"
-            />
-
-            <Orbit
-              parentDim={size}
-              orbitSize={5}
-              iconSrc={ToolboxSVG}
-              orbitSpeed={0.9}
-              title="CV"
+              orbitSpeed={1.5}
+              title="Projects"
+              path="/projects"
             />
           </>
         )}

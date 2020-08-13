@@ -2,6 +2,7 @@ import React from "react";
 import { SizeMe } from "react-sizeme";
 import styled, { keyframes, css } from "styled-components";
 import { centerContent } from "./utils/styles";
+import { BaseLink } from "./utils/helpers";
 
 type OrbitProps = {
   parentDim?: { height: number | null; width: number | null };
@@ -9,6 +10,7 @@ type OrbitProps = {
   orbitSpeed: number; // Nominal, and unitless
   iconSrc: string;
   title: string;
+  path: string;
 };
 
 export const Orbit = ({
@@ -16,6 +18,7 @@ export const Orbit = ({
   iconSrc,
   orbitSpeed,
   title,
+  path,
 }: OrbitProps) => {
   return (
     <SizeMe monitorHeight>
@@ -23,7 +26,7 @@ export const Orbit = ({
         <OrbitContainer orbitSize={orbitSize}>
           <OrbitPath size={size} orbitSpeed={orbitSpeed}>
             <OrbitIconContianer>
-              <OrbitIconWrapper size={size} orbitSpeed={orbitSpeed}>
+              <OrbitIconWrapper size={size} orbitSpeed={orbitSpeed} to={path}>
                 <OrbitIconSuperWrapper>
                   <StyledIcon src={iconSrc} />
                 </OrbitIconSuperWrapper>
@@ -163,7 +166,7 @@ const OrbitIconContianer = styled.div`
 `;
 
 // const OrbitIconWrapper = styled.div<{ size: any; orbitSpeed: number }>``;
-const OrbitIconWrapper = styled.div<{ size: any; orbitSpeed: number }>`
+const OrbitIconWrapper = styled(BaseLink)<{ size: any; orbitSpeed: number }>`
   ${centerContent}
   flex-direction: column;
   --time: ${({ orbitSpeed }) => `${12 * (1 / orbitSpeed)}`};
@@ -172,19 +175,29 @@ const OrbitIconWrapper = styled.div<{ size: any; orbitSpeed: number }>`
     css`${animateOrbitIcon(size.height, size.width)} infinite ${
       12 * (1 / orbitSpeed)
     }s linear`};
+
+  color: black;
 `;
 const OrbitIconSuperWrapper = styled.div`
   display: flex;
 `;
 
-// const StyledIcon = styled.img<{ size: any; orbitSpeed: number }>`
 const StyledIcon = styled.img`
   object-fit: contain;
   flex: 1;
   width: 6vw;
   height: 6vh;
+
+  ${OrbitIconWrapper}:hover & {
+    transform: scale(1.2);
+  }
+  transition: transform 200ms ease-in-out;
 `;
 
 const IconText = styled.div`
   font-size: 1.2vw;
+  ${OrbitIconWrapper}:hover & {
+    transform: scale(1.2);
+  }
+  transition: transform 200ms ease-in-out;
 `;
