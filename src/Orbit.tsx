@@ -1,22 +1,27 @@
 import React from "react";
-import ToolboxSVG from "./images/toolbox.svg";
 import { SizeMe } from "react-sizeme";
 import styled, { keyframes, css } from "styled-components";
 import { centerContent } from "./utils/styles";
 
 type OrbitProps = {
-  parentDim: { height: number | null; width: number | null };
+  parentDim?: { height: number | null; width: number | null };
   orbitSize: number; // scale of orbit wrt parent
+  orbitSpeed: number; // Nominal, and unitless
+  iconSrc: string;
 };
 
-export const Orbit = ({ parentDim, orbitSize }: OrbitProps) => {
+export const Orbit = ({ orbitSize, iconSrc, orbitSpeed }: OrbitProps) => {
   return (
     <SizeMe monitorHeight>
       {({ size }) => (
         <OrbitContainer orbitSize={orbitSize}>
-          <OrbitPath size={size}>
+          <OrbitPath size={size} orbitSpeed={orbitSpeed}>
             <OrbitIconContianer>
-              <StyledToolbox src={ToolboxSVG} />
+              <StyledToolbox
+                src={iconSrc}
+                size={size}
+                orbitSpeed={orbitSpeed}
+              />
             </OrbitIconContianer>
           </OrbitPath>
         </OrbitContainer>
@@ -27,7 +32,6 @@ export const Orbit = ({ parentDim, orbitSize }: OrbitProps) => {
 
 const FatOrbitPathFrames = keyframes`
 from {
-
     transform: scale(1.2, 1) rotate(0deg);
 }
   
@@ -37,7 +41,7 @@ from {
 
 `;
 
-const LongOrbitPathFrames = keyframes`
+const TallOrbitPathFrames = keyframes`
 from {
 
     transform: scale(1, 1.2) rotate(0deg);
@@ -47,6 +51,19 @@ from {
     transform: scale(1, 1.2) rotate(360deg) ;
   }
 `;
+
+const animateOrbitPath = (height: number, width: number) => {
+  return keyframes`
+from {
+
+    transform: scale(${width / height}, ${height / width}) rotate(0deg);
+}
+  
+  to {
+    transform: scale(${width / height}, ${height / width}) rotate(360deg) ;
+  }
+`;
+};
 
 const OrbitContainer = styled.div<{ orbitSize: number }>`
   ${centerContent}
@@ -61,7 +78,7 @@ const OrbitContainer = styled.div<{ orbitSize: number }>`
   max-width: 100vw;
 `;
 
-const OrbitPath = styled.div<{ size: any }>`
+const OrbitPath = styled.div<{ size: any; orbitSpeed: number }>`
   /* Make the orbit a circle */
   width: var(--size);
   height: var(--size);
@@ -74,20 +91,25 @@ const OrbitPath = styled.div<{ size: any }>`
   --size: ${({ size }) =>
     size.width > size.height ? size.height : size.width}px;
   transform: scale(1.2, 1) rotate(360deg);
-  animation: ${({ size }) =>
+  /* animation: ${({ size, orbitSpeed }) =>
     size.width > size.height
       ? css`
-          ${FatOrbitPathFrames} infinite 12s linear
+          ${FatOrbitPathFrames} infinite ${12 * (1 / orbitSpeed)}s linear
+
         `
       : css`
-          ${LongOrbitPathFrames} infinite 12s linear
-        `};
+          ${TallOrbitPathFrames} infinite ${12 * (1 / orbitSpeed)}s linear
+        `}; */
+  animation: ${({ size, orbitSpeed }) =>
+    css`${animateOrbitPath(size.height, size.width)} infinite ${
+      12 * (1 / orbitSpeed)
+    }s linear`};
 
   border: 2px #4a437f dashed;
   border-radius: 100%;
 `;
 
-const rotateLeft = keyframes`
+const RotateIcon = keyframes`
   from {
     transform:  rotate(0deg) scale(0.8, 1);
   }
@@ -96,6 +118,19 @@ const rotateLeft = keyframes`
   }
 
 `;
+
+const animateOrbitIcon = (height: number, width: number) => {
+  return keyframes`
+from {
+
+    transform: rotate(0deg) scale(${height / width},${width / height} ) ;
+}
+  
+  to {
+    transform: rotate(-360deg) scale(${height / width}, ${width / height}) ;
+  }
+  `;
+};
 
 const OrbitIconContianer = styled.div`
   display: flex;
@@ -112,8 +147,13 @@ const OrbitIconContianer = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-const StyledToolbox = styled.img`
+const StyledToolbox = styled.img<{ size: any; orbitSpeed: number }>`
+  --time: ${({ orbitSpeed }) => `${12 * (1 / orbitSpeed)}`};
+
   object-fit: contain;
   transform: scale(0.8, 1);
-  animation: ${rotateLeft} infinite 12s linear;
+  animation: ${({ size, orbitSpeed }) =>
+    css`${animateOrbitIcon(size.height, size.width)} infinite ${
+      12 * (1 / orbitSpeed)
+    }s linear`};
 `;

@@ -6,6 +6,7 @@ import GearSVG from "./images/gear-blue.svg";
 import { AspectRatio } from "./AspectRatio";
 import sizeMe, { SizeMe } from "react-sizeme";
 import { Orbit } from "./Orbit";
+import ToolboxSVG from "./images/toolbox.svg";
 
 export const Home = () => {
   return (
@@ -103,10 +104,32 @@ const ActualHome = () => {
       <SizeMe monitorHeight>
         {({ size }) => (
           <>
-            <Orbit parentDim={size} orbitSize={2} />
-            <Orbit parentDim={size} orbitSize={3} />
-            <Orbit parentDim={size} orbitSize={4} />
-            <Orbit parentDim={size} orbitSize={5} />
+            <Orbit
+              parentDim={size}
+              orbitSize={2}
+              iconSrc={ToolboxSVG}
+              orbitSpeed={1.5}
+            />
+            <Orbit
+              parentDim={size}
+              orbitSize={3}
+              iconSrc={ToolboxSVG}
+              orbitSpeed={1.1}
+            />
+
+            <Orbit
+              parentDim={size}
+              orbitSize={4}
+              iconSrc={ToolboxSVG}
+              orbitSpeed={2.5}
+            />
+
+            <Orbit
+              parentDim={size}
+              orbitSize={5}
+              iconSrc={ToolboxSVG}
+              orbitSpeed={0.9}
+            />
           </>
         )}
       </SizeMe>

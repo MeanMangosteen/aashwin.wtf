@@ -49,6 +49,8 @@ function App() {
   );
 }
 
-const AppContainer = styled.div``;
+const AppContainer = styled.div`
+  overflow: hidden;
+`;
 
 export default App;
