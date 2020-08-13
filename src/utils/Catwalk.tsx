@@ -34,7 +34,7 @@ export const Catwalk = ({
     }, children[childCount].props?.duration || 3000);
 
     return () => clearTimeout(timer);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [childCount]);
 
   return (
