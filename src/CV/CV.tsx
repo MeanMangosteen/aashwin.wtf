@@ -10,14 +10,7 @@ export const CV = () => {
         <TitleText>Education</TitleText>
       </EducationBanner>
       <UNSWBanner>
-        <Carousel running={false}>
-          <CarouselItem>
-            <TitleText>Education</TitleText>
-          </CarouselItem>
-          <CarouselItem>
-            <TitleText>UNSW</TitleText>
-          </CarouselItem>
-        </Carousel>
+        <UNSWContent />
       </UNSWBanner>
       <ExperienceBanner>
         <TitleText>Experience</TitleText>
@@ -28,6 +21,73 @@ export const CV = () => {
     </CVContainer>
   );
 };
+
+const UNSWContent = () => {
+  return (
+    <Carousel running={false}>
+      <CarouselItem>
+        <FavoriteSubjectsContainer>
+          <FavSubjectsTitle>Favorite Subjects</FavSubjectsTitle>
+          <FavSubjectsContent>
+            <SubjectContainer>
+              <SubjectTitle>Operating Systems</SubjectTitle>
+              <SubjectContent>
+                Covered concepts and mechanisms of modern operating systems. A
+                deep dive into the Linux kernel: imple-mented concurrency
+                primitives, memory management, system calls, and file system
+                modules.
+              </SubjectContent>
+            </SubjectContainer>
+            <SubjectContainer>
+              <SubjectTitle>Operating Systems</SubjectTitle>
+              <SubjectContent>
+                Covered concepts and mechanisms of modern operating systems. A
+                deep dive into the Linux kernel: imple-mented concurrency
+                primitives, memory management, system calls, and file system
+                modules.
+              </SubjectContent>
+            </SubjectContainer>
+            <SubjectContainer>
+              <SubjectTitle>Operating Systems</SubjectTitle>
+              <SubjectContent>
+                Covered concepts and mechanisms of modern operating systems. A
+                deep dive into the Linux kernel: imple-mented concurrency
+                primitives, memory management, system calls, and file system
+                modules.
+              </SubjectContent>
+            </SubjectContainer>
+          </FavSubjectsContent>
+        </FavoriteSubjectsContainer>
+      </CarouselItem>
+      <CarouselItem>
+        <TitleText>UNSW</TitleText>
+      </CarouselItem>
+    </Carousel>
+  );
+};
+
+const FavoriteSubjectsContainer = styled.div`
+  font-family: "Ubuntu";
+  ${centerContent}
+  flex-direction: column;
+`;
+const FavSubjectsTitle = styled.div`
+  font-size: 4rem;
+  -webkit-text-stroke: 1px black;
+  color: black;
+  margin-bottom: 3rem;
+  /* font-weight: bold; */
+`;
+const FavSubjectsContent = styled.div`
+  ${centerContent}
+  margin: 1rem 3rem;
+`;
+const SubjectContainer = styled.div`
+  ${centerContent}
+  flex-direction: column;
+`;
+const SubjectTitle = styled.div``;
+const SubjectContent = styled.div``;
 
 const sickFadeBackground = (
   color: string,
@@ -51,19 +111,19 @@ const sickFadeBackground = (
 
     &::before {
       transform: translateX(-100%);
-      background: linear-gradient(
+      /* background: linear-gradient(
         to left,
         ${color} 0%,
         ${color} 80%,
-        transparent 100%
+        transparent 100% */
       );
     }
     &::after {
-      background: linear-gradient(
+      /* background: linear-gradient(
         to right,
         ${color} 0%,
         ${color} 80%,
-        transparent 100%
+        transparent 100% */
       );
     }
   `;
@@ -80,7 +140,7 @@ const Banner = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80vw;
+  width: 100vw;
   height: 100vh;
   z-index: 1;
 
