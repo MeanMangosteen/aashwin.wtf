@@ -1,8 +1,8 @@
 import React from "react";
 import { SizeMe } from "react-sizeme";
 import styled, { keyframes, css } from "styled-components";
-import { centerContent } from "./utils/styles";
-import { BaseLink } from "./utils/helpers";
+import { centerContent } from "../utils/styles";
+import { BaseLink } from "../utils/helpers";
 
 type OrbitProps = {
   parentDim?: { height: number | null; width: number | null };
@@ -133,7 +133,6 @@ const RotateIcon = keyframes`
   to {
     transform:rotate(-360deg)  scale(0.8, 1);
   }
-
 `;
 
 const animateOrbitIcon = (height: number, width: number) => {

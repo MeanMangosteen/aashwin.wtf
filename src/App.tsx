@@ -1,9 +1,10 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { Home } from "./Home";
+import { Home } from "./Home/Home";
 import { createGlobalStyle } from "styled-components";
 import { Test } from "./Test";
+import { CV } from "./CV/CV";
 
 const Explode = keyframes`
 from {
@@ -42,6 +43,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/cv" component={CV} />
           <Route exact path="/test" component={Test} />
         </Switch>
       </BrowserRouter>
