@@ -70,9 +70,9 @@ export const MatrixContent = () => {
                 Now go kiddo, make an experience.
               </li>
               <li>
-                And here in lies one of my favorite* challenges. I have my
-                imagination running wild, and then I have the box model. And
-                somehow I have to convince them to be best friends.
+                And here in lies one of my favourite<sup>*</sup> challenges. I
+                have my imagination running wild, and then I have the box model.
+                And somehow I have to convince them to be best friends.
               </li>
               <li>
                 The diversity of the challenges the different layers of the
@@ -87,11 +87,22 @@ export const MatrixContent = () => {
               </li>
             </ul>
           </ReflectionsContent>
+          <TsandCsText>
+            <sup>* Terms and Conditions apply</sup>
+          </TsandCsText>
         </ReflectionsContainer>
       </CarouselItem>
     </StyledCarousel>
   );
 };
+
+const TsandCsText = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  transform: translate(-100%, 100%);
+`;
 
 const StyledCarousel = styled(Carousel)`
   color: white;
@@ -131,7 +142,6 @@ const TitleSlide = styled.div`
   background: #02243e;
   height: 100%;
   width: 100%;
-
 `;
 
 const AchievementsContainer = styled.div`

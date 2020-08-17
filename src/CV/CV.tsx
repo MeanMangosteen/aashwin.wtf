@@ -11,6 +11,7 @@ import { RedbackContent } from "./RedbackContent";
 import { PerxContent } from "./PerxContent";
 import { GeointeractiveContent } from "./GeointeractiveContent";
 import { MatrixContent } from "./MatrixContent";
+import { SkillzThatKillz } from "./SkillzThatKillz";
 
 export const CV = () => {
   return (
@@ -39,6 +40,9 @@ export const CV = () => {
       <SkillsBanner>
         <TitleText>Skills</TitleText>
       </SkillsBanner>
+      <SkillzThatKillzBanner>
+        <SkillzThatKillz />
+      </SkillzThatKillzBanner>
     </CVContainer>
   );
 };
@@ -149,3 +153,5 @@ const PerxBanner = styled(CarouselBanner)``;
 const GeointeractiveBanner = styled(CarouselBanner)``;
 
 const MatrixBanner = styled(CarouselBanner)``;
+
+const SkillzThatKillzBanner = styled(Banner)``;
