@@ -1,10 +1,7 @@
 import React from "react";
 import { Carousel, CarouselItem } from "../utils/Carousel";
 import styled from "styled-components";
-import {
-  centerContent,
-  centerAbsolutely,
-} from "../utils/styles";
+import { centerContent, centerAbsolutely } from "../utils/styles";
 
 export const RedbackContent = () => {
   return (
@@ -109,6 +106,7 @@ export const RedbackContent = () => {
 const StyledCarousel = styled(Carousel)`
   color: white;
   font-family: "Ubuntu";
+  background: black;
 `;
 
 const ReflectionsContainer = styled.div`

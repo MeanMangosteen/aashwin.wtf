@@ -9,6 +9,8 @@ import { Carousel, CarouselItem } from "../utils/Carousel";
 import { UNSWContent } from "./UNSWContent";
 import { RedbackContent } from "./RedbackContent";
 import { PerxContent } from "./PerxContent";
+import { GeointeractiveContent } from "./GeointeractiveContent";
+import { MatrixContent } from "./MatrixContent";
 
 export const CV = () => {
   return (
@@ -28,6 +30,12 @@ export const CV = () => {
       <PerxBanner>
         <PerxContent />
       </PerxBanner>
+      <GeointeractiveBanner>
+        <GeointeractiveContent />
+      </GeointeractiveBanner>
+      <MatrixBanner>
+        <MatrixContent />
+      </MatrixBanner>
       <SkillsBanner>
         <TitleText>Skills</TitleText>
       </SkillsBanner>
@@ -136,5 +144,8 @@ const UNSWBanner = styled(CarouselBanner)`
 
 const RedbackBanner = styled(CarouselBanner)``;
 
-const PerxBanner = styled(CarouselBanner)`
-`;
+const PerxBanner = styled(CarouselBanner)``;
+
+const GeointeractiveBanner = styled(CarouselBanner)``;
+
+const MatrixBanner = styled(CarouselBanner)``;
