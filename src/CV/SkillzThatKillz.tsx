@@ -24,8 +24,8 @@ export const SkillzThatKillz = () => {
           <SkillBar title="React/Javascript" percentage={50} />
           <SkillBar title="React/Javascript" percentage={50} />
           <SkillBar title="React/Javascript" percentage={50} />
-          {/* <StyledProgressBar total={100} progress={60} className="skill-bar" /> */}
         </FullStackSkillz>
+        <OtherSkills></OtherSkills>
       </SkillBars>
     </SkillsThatKillzContainer>
   );
@@ -55,8 +55,8 @@ const PreambleText = styled.div`
   margin: 1rem;
 `;
 const SkillBars = styled.div`
-  max-width: 1400px;
-  margin: 0 auto;
+  /* max-width: 1400px; */
+  /* margin: 0 auto; */
   display: flex;
   justify-content: start;
   align-items: center;
@@ -66,21 +66,10 @@ const SkillBars = styled.div`
 
 const StyledProgressBar = styled(ProgressBar)`
   position: absolute;
+  height: 50%;
+  width: 100%;
   /* height: 100px;
   width: 400px; */
-`;
-
-const FullStackSkillz = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-
-  ${StyledProgressBar} {
-    width: 100%;
-    flex-basis: 0;
-    flex-grow: 20%;
-  }
 `;
 
 // ======================================
@@ -118,3 +107,18 @@ const SkillBarContainer = styled.div`
 `;
 
 const SkillBarTitle = styled.div``;
+
+const FullStackSkillz = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-grow: 1;
+
+  ${SkillBarContainer} {
+    width: 100%;
+    /* flex-basis: 0;
+    flex-grow: 20%; */
+    height: 100px;
+  }
+`;
