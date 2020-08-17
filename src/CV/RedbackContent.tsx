@@ -1,10 +1,8 @@
 import React from "react";
 import { Carousel, CarouselItem } from "../utils/Carousel";
-import { TitleText } from "./CV";
 import styled from "styled-components";
 import {
   centerContent,
-  CSSDividerBottom,
   centerAbsolutely,
 } from "../utils/styles";
 
@@ -123,31 +121,17 @@ const ReflectionsContainer = styled.div`
     margin: 1rem;
   }
 `;
+
 const Title = styled.div`
   font-size: 4rem;
   -webkit-text-stroke: 1px black;
   margin-bottom: 3rem;
   /* font-weight: bold; */
 `;
+
 const ReflectionsContent = styled.div`
   margin: 1rem 3rem;
-  font-size: 1.3rem;
-`;
-const SubjectContainer = styled.div`
-  ${centerContent}
-  flex-direction: column;
-  margin: 1rem;
-`;
-
-const SubjectTitle = styled.div`
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  padding-bottom: 0.5rem;
-  position: relative;
-  ${CSSDividerBottom({ width: "80%", iHaveSetRelativePosition: true })}
-`;
-export const SubjectContent = styled.div`
-  padding: 1rem;
+  font-size: 1.2rem;
 `;
 
 const TitleSlide = styled.div`

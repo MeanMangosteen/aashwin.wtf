@@ -8,6 +8,7 @@ import {
 import { Carousel, CarouselItem } from "../utils/Carousel";
 import { UNSWContent } from "./UNSWContent";
 import { RedbackContent } from "./RedbackContent";
+import { PerxContent } from "./PerxContent";
 
 export const CV = () => {
   return (
@@ -24,6 +25,9 @@ export const CV = () => {
       <RedbackBanner>
         <RedbackContent />
       </RedbackBanner>
+      <PerxBanner>
+        <PerxContent />
+      </PerxBanner>
       <SkillsBanner>
         <TitleText>Skills</TitleText>
       </SkillsBanner>
@@ -130,6 +134,7 @@ const UNSWBanner = styled(CarouselBanner)`
   ${sickFadeBackground("#fde502", true)}
 `;
 
-const RedbackBanner = styled(CarouselBanner)`
-  background: black;
+const RedbackBanner = styled(CarouselBanner)``;
+
+const PerxBanner = styled(CarouselBanner)`
 `;
