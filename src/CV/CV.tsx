@@ -23,7 +23,7 @@ export const CV = () => {
         <UNSWContent />
       </UNSWBanner>
       <ExperienceBanner>
-        <TitleText>Experience</TitleText>
+        <ExperienceTitle>Experience</ExperienceTitle>
       </ExperienceBanner>
       <RedbackBanner>
         <RedbackContent />
@@ -38,7 +38,7 @@ export const CV = () => {
         <MatrixContent />
       </MatrixBanner>
       <SkillsBanner>
-        <TitleText>Skills</TitleText>
+        <SkillsTitle>Skills</SkillsTitle>
       </SkillsBanner>
       <SkillzThatKillzBanner>
         <SkillzThatKillz />
@@ -118,20 +118,22 @@ const CarouselBanner = styled(Banner)`
 
 const EducationBanner = styled(Banner)`
   position: relative;
+  background: #e8d6d6;
 
-  ${sickFadeBackground("#e8d6d6", true)}
+  /* ${sickFadeBackground("#e8d6d6", true)} */
 `;
 
 const ExperienceBanner = styled(Banner)`
   position: relative;
-
-  ${sickFadeBackground("#bba3ff", true)}
+  background: #bba3ff;
+  /* ${sickFadeBackground("#bba3ff", true)} */
 `;
 
 const SkillsBanner = styled(Banner)`
   position: relative;
+  background:hsla(-482, 100%, 84%, 1);
 
-  ${sickFadeBackground("#adffad", true)}
+  /* ${sickFadeBackground("#adffad", true)} */
 `;
 
 export const TitleText = styled.div`
@@ -140,10 +142,22 @@ export const TitleText = styled.div`
   -webkit-text-stroke: 3px hsl(0, 44%, 52%);
   color: #ff7777;
   font-weight: bold;
+  filter: drop-shadow(2px 4px 6px black);
+`;
+
+const ExperienceTitle = styled(TitleText)`
+  -webkit-text-stroke: 3px hsl(269, 100%, 42%);
+  color: hsl(269, 100%, 50%);
+`;
+
+const SkillsTitle = styled(TitleText)`
+  -webkit-text-stroke: 3px hsl(241, 50%, 36%);
+  color: hsla(241, 54%, 52%, 1);
 `;
 
 const UNSWBanner = styled(CarouselBanner)`
-  ${sickFadeBackground("#fde502", true)}
+  background: #fde502;
+  /* ${sickFadeBackground("#fde502", true)} */
 `;
 
 const RedbackBanner = styled(CarouselBanner)``;

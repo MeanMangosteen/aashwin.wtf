@@ -142,7 +142,7 @@ const ProgressBarMask = styled.div`
   position: absolute;
   height: 100%;
   width: 100%;
-  box-shadow: -400px 0px 3px 100vw #3e3e3e, 400px 0px 3px 100vw #3e3e3e;
+  box-shadow: -400px 0px 3px 100vw #434d65, 400px 0px 3px 100vw #434d65;
   z-index: -1;
   border-radius: 5px;
 `;

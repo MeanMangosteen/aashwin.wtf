@@ -44,7 +44,9 @@ const SkillsThatKillzContainer = styled.div`
   flex-direction: column;
   align-items: stretch;
   flex-wrap: no-wrap;
-  background: #3e3e3e;
+  /* background: #3e3e3e; */
+  background: #434d65;
+
   height: 100%;
   width: 100%;
   font-family: "Ubuntu";
