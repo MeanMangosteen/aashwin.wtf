@@ -101,7 +101,7 @@ const CarouselItem = styled(
   flex: 0 0 100% !important;
   img,
   video {
-    object-fit: cover !important;
+    object-fit: cover;
   }
 `;
 

@@ -12,6 +12,7 @@ import { PerxContent } from "./PerxContent";
 import { GeointeractiveContent } from "./GeointeractiveContent";
 import { MatrixContent } from "./MatrixContent";
 import { SkillzThatKillz } from "./SkillzThatKillz";
+import { ImHumanContent } from "./ImHumanContent";
 
 export const CV = () => {
   return (
@@ -43,6 +44,12 @@ export const CV = () => {
       <SkillzThatKillzBanner>
         <SkillzThatKillz />
       </SkillzThatKillzBanner>
+      <ImHumanBanner>
+        <ImHumanTitle>I'm not a pdf</ImHumanTitle>
+      </ImHumanBanner>
+      <RealHumanBanner>
+        <ImHumanContent />
+      </RealHumanBanner>
     </CVContainer>
   );
 };
@@ -136,6 +143,11 @@ const SkillsBanner = styled(Banner)`
   /* ${sickFadeBackground("#adffad", true)} */
 `;
 
+const ImHumanBanner = styled(Banner)`
+  position: relative;
+  background: #fff9ef;
+`;
+
 export const TitleText = styled.div`
   font-family: "Ubuntu";
   font-size: 6rem;
@@ -155,6 +167,11 @@ const SkillsTitle = styled(TitleText)`
   color: hsla(241, 54%, 52%, 1);
 `;
 
+const ImHumanTitle = styled(TitleText)`
+  -webkit-text-stroke: 3px hsl(37, 64%, 55%);
+  color: hsl(37, 100%, 79%);
+`;
+
 const UNSWBanner = styled(CarouselBanner)`
   background: #fde502;
   /* ${sickFadeBackground("#fde502", true)} */
@@ -169,3 +186,5 @@ const GeointeractiveBanner = styled(CarouselBanner)``;
 const MatrixBanner = styled(CarouselBanner)``;
 
 const SkillzThatKillzBanner = styled(Banner)``;
+
+const RealHumanBanner = styled(CarouselBanner)``;

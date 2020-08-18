@@ -55,14 +55,18 @@ export const FavoriteSubjectsContainer = styled.div`
 `;
 export const FavSubjectsTitle = styled.div`
   font-size: 4rem;
-  -webkit-text-stroke: 1px black;
-  color: black;
   margin-bottom: 3rem;
+  color: #fff9ef;
+  filter: drop-shadow(2px 4px 6px black);
   /* font-weight: bold; */
 `;
 export const FavSubjectsContent = styled.div`
   ${centerContent}
   margin: 1rem 3rem;
+  > div {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
 `;
 export const SubjectContainer = styled.div`
   ${centerContent}
@@ -79,5 +83,8 @@ export const SubjectTitle = styled.div`
 `;
 export const SubjectContent = styled.div`
   padding: 1rem;
+  font-size: 1.3rem;
+  li {
+    margin: 1rem 0;
+  }
 `;
-
