@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Carousel, CarouselItem } from "../utils/Carousel";
 import styled from "styled-components";
 import { centerContent, centerAbsolutely } from "../utils/styles";
@@ -10,6 +10,8 @@ import {
   SubjectTitle,
   SubjectContent,
 } from "./UNSWContent";
+import { SwitchTransition, Transition } from "react-transition-group";
+import { ShowTextWithStyle, StylishItem } from "../utils/ShowTextWithStyle";
 
 export const ImHumanContent = () => {
   return (
@@ -97,14 +99,10 @@ const PhotoTime = () => {
   return (
     <PhotoTimeContainer>
       <PhotoTimeTitle>Photo Time!</PhotoTimeTitle>
-      <EpisodeContainer>
-        <PictureContainer></PictureContainer>
-        <TextContainer></TextContainer>
-      </EpisodeContainer>
-      {/* <PhotoSlideContainer>
+      <PhotoSlideContainer>
         <Photo src="https://bikereview.com.au/wp-content/uploads/2018/03/2018-MV-Agusta-Brutale-800-RR-4020.jpg" />
         <PhotoCaption> Hey</PhotoCaption>
-      </PhotoSlideContainer> */}
+      </PhotoSlideContainer>
     </PhotoTimeContainer>
   );
 };
@@ -114,38 +112,63 @@ const Photo = styled.img`
   height: 100%;
   width: 100%;
 `;
-const PhotoCaption = styled.div``;
-const PhotoSlideContainer = styled.div`
+const PhotoCaption = styled.div`
   ${centerContent}
-  padding: 2rem;
-  box-sizing: border-box;
-  ${Photo} {
-    flex-basis: 0;
-    flex-grow: 80;
-  }
-
-  ${PhotoCaption} {
-    flex-basis: 0;
-    flex-grow: 20;
-  }
+  justify-content: start;
 `;
-const PhotoTimeTitle = styled(FavSubjectsTitle)``;
+const PhotoSlideContainer = styled.div`
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: auto;
+  flex-grow: 1;
+  margin: 4rem;
+`;
+const PhotoTimeTitle = styled(FavSubjectsTitle)`
+  text-align: center;
+`;
 const PhotoTimeContainer = styled.div`
-  ${centerContent}
+  display: flex;
   flex-direction: column;
-  color: white;
-
-  ${PhotoTimeTitle} {
-    /* flex-basis: 10%; */
-    flex-grow: 10;
-  }
-
-  ${PhotoSlideContainer} {
-    flex-grow: 90;
-  }
+  justify-content: start;
+  align-items: stretch;
+  height: 100%;
+  width: 100%;
 `;
 
 // =======================================================
+
+// const Images = {
+//   Empty:
+//     "data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==",
+//   Bike:
+//     "https://bikereview.com.au/wp-content/uploads/2018/03/2018-MV-Agusta-Brutale-800-RR-4020.jpg",
+// } as const;
+
+// <PhotoTimeContainer>
+//   <PhotoTimeTitle>Photo Time!</PhotoTimeTitle>
+//   <EpisodeContainer>
+//     <PictureContainer>
+//       <SwitchTransition>
+//         <Transition key={currImage} timeout={1000}>
+//           {(state) => <Image src={currImage} state={state} />}
+//         </Transition>
+//       </SwitchTransition>
+//     </PictureContainer>
+//     <TextContainer>
+//       <ShowTextWithStyle key="ep1">
+//         <StylishItem
+//           onShow={() => {
+//             setCurrImage(Images.Bike);
+//           }}
+//         >
+//           <Text>Do you have sleepless nights?</Text>
+//         </StylishItem>
+//         <StylishItem>
+//           <Text>Don't have the perfect body?</Text>
+//         </StylishItem>
+//       </ShowTextWithStyle>
+//     </TextContainer>
+//   </EpisodeContainer>
 
 /* opacity: ${(props: { state: any }) =>
     props.state === "entered" ? 1 : 0}; */
