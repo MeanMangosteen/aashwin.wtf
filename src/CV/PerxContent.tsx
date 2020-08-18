@@ -111,6 +111,7 @@ const AchievementsContainer = styled.div`
 
 const AchievementsContent = styled.div`
   font-size: 1.8rem;
+  text-align: center;
   ul {
     ${centerContent}
     align-items: start;

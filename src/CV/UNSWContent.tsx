@@ -62,6 +62,7 @@ export const FavSubjectsTitle = styled.div`
 `;
 export const FavSubjectsContent = styled.div`
   ${centerContent}
+  align-items: start;
   margin: 1rem 3rem;
   > div {
     flex-basis: 0;

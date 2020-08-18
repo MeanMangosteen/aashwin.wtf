@@ -1,5 +1,7 @@
 import * as React from "react";
 import styled, { css, keyframes } from "styled-components";
+import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import { centerContent } from "./styles";
 
 const Carousel = styled(
   ({ running = true, children, className = "carousel" }) => {
@@ -69,7 +71,10 @@ const Carousel = styled(
       return index.current < index.previous;
     };
     return (
-      <div className={className}>
+      <CarouselContainer className={className}>
+        <ControlLeft className="control" onClick={handlePrev}>
+          <StyledLeftArrow />
+        </ControlLeft>
         <CarouselOuter>
           <CarouselInner
             index={index.current}
@@ -79,14 +84,58 @@ const Carousel = styled(
             {carouselItems}
           </CarouselInner>
         </CarouselOuter>
-        <Controls>
-          <button onClick={handlePrev}>Previous</button>
-          <button onClick={handleNext}>Next</button>
-        </Controls>
-      </div>
+        <ControlRight className="control" onClick={handleNext}>
+          <StyledRightArrow />
+        </ControlRight>
+      </CarouselContainer>
     );
   }
 )``;
+// {/* <Controls>
+//   <button onClick={handlePrev}>Previous</button>
+//   <button onClick={handleNext}>Next</button>
+// </Controls> */}
+
+const StyledLeftArrow = styled(BsChevronCompactLeft)`
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+`;
+
+const StyledRightArrow = styled(BsChevronCompactRight)`
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+`;
+const Control = styled.div`
+  ${centerContent}
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 5%;
+  z-index: 2;
+  opacity: 0.5;
+  transition: opacity, transform 200ms ease-out;
+  opacity: 0.5;
+  &:hover {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+`;
+const ControlLeft = styled(Control)`
+  left: 0;
+`;
+
+const ControlRight = styled(Control)`
+  right: 0;
+`;
+
+const CarouselContainer = styled.div`
+  position: relative;
+  /* display: grid;
+  grid-template-columns: 5% 90% 5%;
+  grid-template-rows: auto; */
+`;
 
 interface CarouselItemsProps {
   className?: string;

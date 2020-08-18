@@ -18,7 +18,7 @@ export const ImHumanContent = () => {
     <StyledCarousel running={false}>
       <CarouselItem>
         <TitleSlide>
-          There's a real human behind document. I promise.
+          There is a real human behind this document. I promise.
         </TitleSlide>
       </CarouselItem>
       <CarouselItem>
@@ -31,7 +31,7 @@ export const ImHumanContent = () => {
                 <ul>
                   <li>
                     I love watching and playing pretty much any sport. The
-                    higher powers clearly have a problem with this as I'm seem
+                    higher powers clearly have a problem with this as I seem
                     to be perpetually injured.
                   </li>
                   <li>
@@ -47,8 +47,8 @@ export const ImHumanContent = () => {
                 <ul>
                   <li>
                     I love fixing them, I love riding them, I don't love
-                    crashing them. But hey, now you have a self sustaining
-                    cycle.
+                    crashing them. But hey, now I have a self sustaining
+                    cycle, along with all my other ones.
                   </li>
                   <li>
                     These freedom machines are an absolute essential in the
@@ -80,7 +80,13 @@ export const ImHumanContent = () => {
         </FavoriteSubjectsContainer>
       </CarouselItem>
       <CarouselItem>
-        <PhotoTime />
+        <RoleModelsContainer>
+          <FavSubjectsTitle>Role Models</FavSubjectsTitle>
+          <ol>
+            <li>Micheal Scott</li>
+            <li>Pop-eye the Sailor Man</li>
+          </ol>
+        </RoleModelsContainer>
       </CarouselItem>
     </StyledCarousel>
   );
@@ -93,7 +99,23 @@ const StyledCarousel = styled(Carousel)`
   color: #6f6b64;
 `;
 
-const TitleSlide = styled.div``;
+const TitleSlide = styled.div`
+  font-size: 2rem;
+`;
+
+const RoleModelsContainer = styled.div`
+  font-family: "Ubuntu";
+  ${centerContent}
+  flex-direction: column;
+
+  ol {
+    font-size: 2rem;
+  }
+
+  li {
+    margin: 1rem;
+  }
+`;
 
 const PhotoTime = () => {
   return (
@@ -122,6 +144,7 @@ const PhotoSlideContainer = styled.div`
   grid-template-rows: auto;
   flex-grow: 1;
   margin: 4rem;
+  filter: drop-shadow(2px 4px 6px black);
 `;
 const PhotoTimeTitle = styled(FavSubjectsTitle)`
   text-align: center;
@@ -135,95 +158,3 @@ const PhotoTimeContainer = styled.div`
   width: 100%;
 `;
 
-// =======================================================
-
-// const Images = {
-//   Empty:
-//     "data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==",
-//   Bike:
-//     "https://bikereview.com.au/wp-content/uploads/2018/03/2018-MV-Agusta-Brutale-800-RR-4020.jpg",
-// } as const;
-
-// <PhotoTimeContainer>
-//   <PhotoTimeTitle>Photo Time!</PhotoTimeTitle>
-//   <EpisodeContainer>
-//     <PictureContainer>
-//       <SwitchTransition>
-//         <Transition key={currImage} timeout={1000}>
-//           {(state) => <Image src={currImage} state={state} />}
-//         </Transition>
-//       </SwitchTransition>
-//     </PictureContainer>
-//     <TextContainer>
-//       <ShowTextWithStyle key="ep1">
-//         <StylishItem
-//           onShow={() => {
-//             setCurrImage(Images.Bike);
-//           }}
-//         >
-//           <Text>Do you have sleepless nights?</Text>
-//         </StylishItem>
-//         <StylishItem>
-//           <Text>Don't have the perfect body?</Text>
-//         </StylishItem>
-//       </ShowTextWithStyle>
-//     </TextContainer>
-//   </EpisodeContainer>
-
-/* opacity: ${(props: { state: any }) =>
-    props.state === "entered" ? 1 : 0}; */
-const EpisodeContainer = styled.div`
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 100vh;
-
-  transition: 0.5s;
-  opacity: 1;
-  will-change: opacity;
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-`;
-
-const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
-
-const PictureContainer = styled.div`
-  box-sizing: border-box;
-  padding: 3rem;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-`;
-
-const Text = styled.div`
-  text-align: center;
-  font-size: 4rem;
-  margin: 2rem;
-`;
-
-const SmallText = styled.div`
-  text-align: center;
-  font-size: 1.5rem;
-  margin: 2rem;
-`;
-
-const Image = styled.img`
-  transition: 1s;
-  transition-delay: 0.5s;
-  opacity: ${(props: { state: any }) => (props.state === "entered" ? 1 : 0)};
-  will-change: opacity;
-
-  object-fit: contain;
-  height: 100%;
-  width: 100%;
-`;
