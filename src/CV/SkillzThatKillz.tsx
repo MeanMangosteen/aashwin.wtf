@@ -18,15 +18,23 @@ export const SkillzThatKillz = () => {
           come out victorious.
         </PreambleText>
       </PreambleContainer>
-      <SkillBars>
-        <FullStackSkillz>
-          <SkillBar title="React/Javascript" percentage={50} />
-          <SkillBar title="React/Javascript" percentage={50} />
-          <SkillBar title="React/Javascript" percentage={50} />
-          <SkillBar title="React/Javascript" percentage={50} />
-        </FullStackSkillz>
-        <OtherSkills></OtherSkills>
-      </SkillBars>
+      <SkillBarsContainer>
+        <SkillBars>
+          <FullStackSkillz>
+            <FullstackSkillzTitle>Fullstack</FullstackSkillzTitle>
+            <SkillBar title="React/Javascript/Typescript" percentage={95} />
+            <SkillBar title="HTML/CSS" percentage={90} />
+            <SkillBar title="Node.js/Express" percentage={70} />
+            <SkillBar title="PostgreSQL" percentage={60} />
+          </FullStackSkillz>
+          <OtherSkillz>
+            <SkillBar title="Python" percentage={60} />
+            <SkillBar title="C/C++" percentage={55} />
+            <SkillBar title="Java" percentage={40} />
+            <SkillBar title="Misc" percentage={30} />
+          </OtherSkillz>
+        </SkillBars>
+      </SkillBarsContainer>
     </SkillsThatKillzContainer>
   );
 };
@@ -54,14 +62,23 @@ const PreambleText = styled.div`
   font-size: 1.4rem;
   margin: 1rem;
 `;
-const SkillBars = styled.div`
-  /* max-width: 1400px; */
+const SkillBarsContainer = styled.div`
   /* margin: 0 auto; */
+  ${centerContent}
+  flex-grow: 1;
+`;
+
+const SkillBars = styled.div`
+  max-width: 1400px;
   display: flex;
   justify-content: start;
   align-items: center;
   flex-wrap: wrap;
   flex-grow: 1;
+  > div {
+    padding: 2rem;
+    margin: 1rem;
+  }
 `;
 
 const StyledProgressBar = styled(ProgressBar)`
@@ -106,9 +123,43 @@ const SkillBarContainer = styled.div`
   z-index: 2;
 `;
 
-const SkillBarTitle = styled.div``;
+const SkillBarTitle = styled.div`
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: absolute;
+  top: -5%;
+  left: 0;
+  color: white;
+`;
 
 const FullStackSkillz = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-grow: 1;
+  border: 9px solid white;
+
+  ${SkillBarContainer} {
+    width: 100%;
+    /* flex-basis: 0;
+    flex-grow: 20%; */
+    height: 100px;
+    margin: 1rem;
+  }
+  position: relative;
+`;
+
+const FullstackSkillzTitle = styled.div`
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  color: white;
+  font-size: 2rem;
+  transform: translateY(-100%);
+`;
+
+const OtherSkillz = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -117,8 +168,7 @@ const FullStackSkillz = styled.div`
 
   ${SkillBarContainer} {
     width: 100%;
-    /* flex-basis: 0;
-    flex-grow: 20%; */
     height: 100px;
+    margin: 1rem;
   }
 `;

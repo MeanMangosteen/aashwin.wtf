@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 
 export const ProgressBar = ({
   progress,
@@ -12,7 +12,7 @@ export const ProgressBar = ({
 }) => {
   return (
     <ProgressBarContainer className={className}>
-      <ProgressPowa />
+      <ProgressPowa progress={progress} />
       <ProgressRemaining progress={progress} total={total} />
       <ProgressBarMask />
       {/* <ProgressTextWrapper progress={progress} total={total!}>
@@ -76,7 +76,7 @@ const ProgressText = styled.div`
 
 const ProgressLife = keyframes`
   0% { 
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-40%, 0, 0);
   }
 
   100% { 
@@ -84,23 +84,38 @@ const ProgressLife = keyframes`
   }
 
 `;
-const ProgressPowa = styled.div`
+const ProgressPowa = styled.div<{ progress: number }>`
   height: 100%;
   width: 200%;
   position: absolute;
   z-index: -2;
 
-  animation: ${ProgressLife} 1s linear infinite running;
+  animation: ${(props) =>
+    css`
+      ${ProgressLife} ${((131 - props.progress) / 100) *
+      1.8}s linear infinite running
+    `};
   will-change: transform;
-  background: repeating-linear-gradient(
+  /* background: repeating-linear-gradient(
     120deg,
     hsl(0, 100%, 50%) 0%,
     hsl(43, 100%, 50%) 10%,
     hsla(64, 78%, 50%, 1) 20%,
     hsl(43, 100%, 50%) 40%,
     hsl(0, 100%, 50%) 50%
+  ); */
+  background: repeating-linear-gradient(
+    120deg,
+    rgb(255, 60, 0) 0%,
+    rgb(255, 145, 0) 10%,
+    rgb(255, 169, 0) 20%,
+    rgb(255, 169, 0) 30%,
+    rgb(255, 48, 0) 40%
   );
-  filter: blur(10px); /* Blend the colours */
+  filter: ${(props) =>
+    `hue-rotate(${
+      ((90 - props.progress) / 100) * (-500 + props.progress * 1.7)
+    }deg) blur(10px) hue-rotate(-90deg)`}; /* Blend the colours */
 `;
 
 const ProgressRemaining = styled.div`
@@ -129,13 +144,13 @@ const ProgressBarMask = styled.div`
   width: 100%;
   box-shadow: -400px 0px 3px 100vw #3e3e3e, 400px 0px 3px 100vw #3e3e3e;
   z-index: -1;
-  border-radius: 15px;
+  border-radius: 5px;
 `;
 
 const ProgressBarContainer = styled.div`
   flex-basis: 8%;
   width: 50%;
-  border-radius: 15px;
+  border-radius: 5px;
   position: relative;
 
   box-shadow: 0px 10px 13px -7px #000000,
