@@ -2,12 +2,19 @@ import React from "react";
 import styled from "styled-components";
 import { CarouselItem } from "../../utils/Carousel";
 import { centerContent, centerAbsolutely } from "../../utils/styles";
+import { ExperienceInfo } from "./ExperienceInfo";
 
 export const RedbackContent = () => {
   return (
     <React.Fragment>
       <StyledCarouselItem>
-        <TitleSlide />
+        <TitleSlide>
+          <StyledExperienceInfo
+            position="Data Acquisition Leader"
+            location="Kensington, NSW"
+            time="Jul 2016 - Jun 2018"
+          />
+        </TitleSlide>
       </StyledCarouselItem>
       <StyledCarouselItem>
         <AchievementsContainer>
@@ -103,6 +110,9 @@ export const RedbackContent = () => {
   );
 };
 
+const StyledExperienceInfo = styled(ExperienceInfo)`
+  filter: brightness(3);
+`;
 const StyledCarouselItem = styled(CarouselItem)`
   color: white;
   font-family: "Ubuntu";

@@ -10,7 +10,7 @@ import { MatrixContent } from "./MatrixContent";
 export const Experience = () => {
   return (
     <CarouselBanner>
-      <Carousel running={false}>
+      <StyledCarousel running={false}>
         <CarouselItem>
           <ExperienceBanner>
             <ExperienceTitle>Experience</ExperienceTitle>
@@ -20,10 +20,14 @@ export const Experience = () => {
         <PerxContent />
         <GeointeractiveContent />
         <MatrixContent />
-      </Carousel>
+      </StyledCarousel>
     </CarouselBanner>
   );
 };
+
+const StyledCarousel = styled(Carousel)`
+  color: white;
+`;
 
 const ExperienceBanner = styled(Banner)`
   position: relative;

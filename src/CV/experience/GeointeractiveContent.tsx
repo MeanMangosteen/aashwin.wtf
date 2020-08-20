@@ -2,12 +2,19 @@ import React from "react";
 import { CarouselItem } from "../../utils/Carousel";
 import styled from "styled-components";
 import { centerContent, centerAbsolutely } from "../../utils/styles";
+import { ExperienceInfo } from "./ExperienceInfo";
 
 export const GeointeractiveContent = () => {
   return (
     <>
       <StyledCarouselItem>
-        <TitleSlide />
+        <TitleSlide>
+          <StyledExperienceInfo
+            position="Software/Embedded System Developer"
+            location="Sydney CBD"
+            time="Jun 2017 - Jul 2018"
+          />
+        </TitleSlide>
       </StyledCarouselItem>
       <StyledCarouselItem>
         <AchievementsContainer>
@@ -57,6 +64,10 @@ export const GeointeractiveContent = () => {
     </>
   );
 };
+
+const StyledExperienceInfo = styled(ExperienceInfo)`
+  filter: brightness(4);
+`;
 
 const StyledCarouselItem = styled(CarouselItem)`
   color: white;

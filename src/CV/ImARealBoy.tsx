@@ -89,7 +89,7 @@ export const ImARealBoy = () => {
             <FavSubjectsTitle>Role Models</FavSubjectsTitle>
             <ol>
               <li>Micheal Scott</li>
-              <li>Pop-eye the Sailor Man</li>
+              <li>Courage the Cowardly Dog</li>
             </ol>
           </RoleModelsContainer>
         </CarouselItem>

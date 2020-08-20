@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { CarouselItem } from "../../utils/Carousel";
 import { centerContent } from "../../utils/styles";
+import { ExperienceInfo } from "./ExperienceInfo";
 
 export const MatrixContent = () => {
   return (
@@ -12,6 +13,11 @@ export const MatrixContent = () => {
             <Logo src="https://matrix.ai/assets/images/matrix-logo.png" />
             <LogoText>MATRIX</LogoText>
           </MatrixLogo>
+          <StyledExperienceInfo
+            position="Software/Web Developer"
+            location="Sydney CBD"
+            time="Aug 2018 - March 2020"
+          />
         </TitleSlide>
       </StyledCarouselItem>
       <StyledCarouselItem>
@@ -19,7 +25,7 @@ export const MatrixContent = () => {
           <Title>What I've achieved</Title>
           <AchievementsContent>
             <ul>
-              <li>Sole developer on ecommerce app for east timor.</li>
+              {/* <li>Sole developer on ecommerce app for east timor.</li> */}
               <li>Setup codebase, standards, and configuration.</li>
               <li> Used stack: Typescript, React, Node, Postgres</li>
               <li>
@@ -95,6 +101,10 @@ export const MatrixContent = () => {
     </>
   );
 };
+
+const StyledExperienceInfo = styled(ExperienceInfo)`
+  filter: brightness(3.5);
+`;
 
 const TsandCsText = styled.div`
   position: absolute;

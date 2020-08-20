@@ -2,12 +2,19 @@ import React from "react";
 import { CarouselItem } from "../../utils/Carousel";
 import styled from "styled-components";
 import { centerContent, centerAbsolutely } from "../../utils/styles";
+import { ExperienceInfo } from "./ExperienceInfo";
 
 export const PerxContent = () => {
   return (
     <>
       <StyledCarouselItem>
-        <TitleSlide />
+        <TitleSlide>
+          <ExperienceInfo
+            position="Software Engineer Intern"
+            location="Surry Hills"
+            time="June 2017 - December 2017"
+          />
+        </TitleSlide>
       </StyledCarouselItem>
       <StyledCarouselItem>
         <AchievementsContainer>
@@ -51,7 +58,7 @@ export const PerxContent = () => {
 const StyledCarouselItem = styled(CarouselItem)`
   color: white;
   font-family: "Ubuntu";
-  background: rgba(39, 198, 219, 1);
+  background: hsla(187, 53%, 54%, 1);
 `;
 
 const ReflectionsContainer = styled.div`
