@@ -155,7 +155,7 @@ export const SubjectTitle = styled.div`
 `;
 export const SubjectContent = styled.div`
   padding: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   li {
     margin: 1rem 0;
   }

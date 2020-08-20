@@ -11,7 +11,7 @@ export const RedbackContent = () => {
         <TitleSlide>
           <StyledExperienceInfo
             position="Data Acquisition Leader"
-            location="Kensington, NSW"
+            location="UNSW Kensington"
             time="Jul 2016 - Jun 2018"
           />
         </TitleSlide>
@@ -50,57 +50,60 @@ export const RedbackContent = () => {
           <ReflectionsContent>
             <ul>
               <li>
-                It could be argued that this isn't 'real' experience, since it
-                wasn't actually a job. But if we're actually talking about
-                'experience' then nothing hits home harder. It's been character
+                It could be argued that this isn't <i>real</i> experience. I
+                think otherwise.
+                {/* It's been character
                 defining, and exposed me to wild new worlds: technically,
-                profressionally, and at times spiritually.
+                profressionally, and at times spiritually. */}
               </li>
               <li>
-                It made for the first of many things:
+                It was the first time I:
                 <ul>
                   <li>
-                    The first time I was applying my education on something
-                    **real** and **signifacant**. This isn't something that's
-                    blindly marked then forgotten. There are so many
-                    stakeholders who genuinely want the car complete and running
-                    its best. My actions and efforts had tangible consequences,
-                    they didn't simply change a number I got at the end.
+                    Applied my education on something <b>real</b> and{" "}
+                    <b>significant</b>. This isn't something that's blindly
+                    marked then forgotten. There are so many stakeholders who
+                    genuinely want the car complete and running its best.
+                    {/* My actions and efforts had tangible consequences,
+                    they didn't simply change a number I got at the end. */}
                   </li>
                   <li>
-                    The first time I was part of something that can be called
-                    organisation. Teams. Teams within teams. People from varying
-                    disciplines. All motivated, driven and working towards a
-                    common goal. Before this, I thought 'teamwork' meant working
-                    on a group project. Ha. Ha ha. Group projects don't have a
-                    treasury.
+                    Belonged to something that can be called <b>organisation</b>
+                    . Teams. Teams within teams. People from{" "}
+                    <b>varying disciplines</b>. All motivated, driven and
+                    working towards a common goal. Before this, I thought{" "}
+                    <i>teamwork</i> meant working on a group project.
+                    {/* Ha. Ha ha. */} Group projects don't have a treasury.
                   </li>
                   <li>
-                    The first time leading a large(ish) team. Wow. This was
-                    arguably the most challeging facet. I had a lot going on
-                    outside this project + no idea what I was doing, so a
-                    learning curve here. We used AGILE but in this case the
-                    method also had an extra 'FR' at the front. But I learned
-                    so, so much. Managing a team is eventually something I
-                    become **a lot** better at and really enjoyed.
+                    Lead a large(ish) team. Wow. This was arguably the most
+                    challeging facet. I had a lot going on outside this project
+                    + no idea what I was doing, so a learning curve here. We
+                    used AGILE but in this case the method also had an extra
+                    <i>FR</i> at the front. This is something I really enjoyed
+                    and got better at later down the track.
+                    {/* But I learned so, so much. Managing a
+                    team is eventually something I become **a lot** better at
+                    and really enjoyed. */}
                   </li>
                 </ul>
               </li>
               <li>
-                Shoot for the stars, but start from ground zero. Green and
-                starry-eyed I was, we set targets and used technologies that we
-                had **absolutely** no right to. It one thing to be optimistic,
-                is another to set out on a death march. Know where you stand,
-                use what you know. Set a base, then grow, and grow, and grow.
+                <b>Shoot for the stars, but start from ground zero</b> - I set
+                targets and used technologies that we had <b>absolutely</b> no
+                right to. It's one thing to be optimistic, is another to embark
+                on a death march. Know where you stand, and use what you know.{" "}
+                <b>Set a base, then grow.</b>
+                {/* Green and starry-eyed I was, we set targets and used
+                technologies that we had **absolutely** no right to. */}
               </li>
               <li>
-                I revisited the team, years after I had left, and had a long
-                sit-down with former department which turned out to be a super
-                humbling experience. I saw fresh faces and how far our projects
-                had evolved. I saw things that I worked on playing a pivotal
-                role and things I worked on I wished no person would ever see
-                also as part of that system. Really shows how you leave a legacy
-                for all the good and bad.
+                <b>You leave a legacy for all the good, and the bad.</b> - I
+                revisited my department years after that turned out to be a
+                super humbling experience - seeing fresh faces and how our
+                projects had evolved. I saw work that I was proud of, and
+                monstrocities I wish no person ever see, both still integrated
+                within the system.{" "}
               </li>
             </ul>
           </ReflectionsContent>
@@ -138,7 +141,7 @@ const Title = styled.div`
 
 const ReflectionsContent = styled.div`
   margin: 1rem 3rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 `;
 
 const TitleSlide = styled.div`
