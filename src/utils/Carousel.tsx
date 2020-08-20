@@ -2,10 +2,22 @@ import * as React from "react";
 import styled, { css, keyframes } from "styled-components";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { centerContent } from "./styles";
+import flattenChildren from "react-flatten-children";
+import { useRef, useEffect } from "react";
 
 const Carousel = styled(
   ({ running = true, children, className = "carousel" }) => {
-    const numChildren = children.length;
+    const ref = useRef<any>();
+    // const numChildren =
+    const [numChildren, setNumChildren] = React.useState<number>(0);
+    console.log("num children", numChildren);
+    console.log(ref);
+    console.log(children);
+
+    useEffect(() => {
+      setNumChildren(ref.current?.children.length);
+    }, []);
+
     const [index, setIndex]: [
       { current: number; previous: number },
       any
@@ -77,6 +89,7 @@ const Carousel = styled(
         </ControlLeft>
         <CarouselOuter>
           <CarouselInner
+            ref={ref}
             index={index.current}
             numChildren={numChildren}
             reverse={shouldReverse()}
@@ -222,5 +235,9 @@ const Controls = styled.div`
 
   margin: 0.5rem;
 `;
+
+const CarouselItemList = ({ children }: { children: any }) => {
+  return null;
+};
 
 export { Carousel, CarouselItem };

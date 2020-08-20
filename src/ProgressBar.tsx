@@ -75,12 +75,12 @@ const ProgressText = styled.div`
 `;
 
 const ProgressLife = keyframes`
-  0% { 
-    transform: translate3d(-40%, 0, 0);
+  from { 
+    transform: translateX(-40%);
   }
 
-  100% { 
-    transform: translate3d(0%);
+  to { 
+    transform: translateX(0%);
   }
 
 `;
@@ -112,10 +112,11 @@ const ProgressPowa = styled.div<{ progress: number }>`
     rgb(255, 169, 0) 30%,
     rgb(255, 48, 0) 40%
   );
+  /* Blend the colours */
   filter: ${(props) =>
     `hue-rotate(${
       ((90 - props.progress) / 100) * (-500 + props.progress * 1.7)
-    }deg) blur(10px) hue-rotate(-90deg)`}; /* Blend the colours */
+    }deg) blur(10px) hue-rotate(-90deg)`};
 `;
 
 const ProgressRemaining = styled.div`

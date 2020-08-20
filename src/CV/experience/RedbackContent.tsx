@@ -1,15 +1,15 @@
 import React from "react";
-import { Carousel, CarouselItem } from "../utils/Carousel";
 import styled from "styled-components";
-import { centerContent, centerAbsolutely } from "../utils/styles";
+import { CarouselItem, Carousel } from "../../utils/Carousel";
+import { centerContent, centerAbsolutely } from "../../utils/styles";
 
 export const RedbackContent = () => {
   return (
-    <StyledCarousel running={false}>
-      <CarouselItem>
+    <React.Fragment>
+      <StyledCarouselItem>
         <TitleSlide />
-      </CarouselItem>
-      <CarouselItem>
+      </StyledCarouselItem>
+      <StyledCarouselItem>
         <AchievementsContainer>
           <Title>What I've achieved</Title>
           <AchievementsContent>
@@ -36,8 +36,8 @@ export const RedbackContent = () => {
             </ul>
           </AchievementsContent>
         </AchievementsContainer>
-      </CarouselItem>
-      <CarouselItem>
+      </StyledCarouselItem>
+      <StyledCarouselItem>
         <ReflectionsContainer>
           <Title>Reflections</Title>
           <ReflectionsContent>
@@ -98,12 +98,12 @@ export const RedbackContent = () => {
             </ul>
           </ReflectionsContent>
         </ReflectionsContainer>
-      </CarouselItem>
-    </StyledCarousel>
+      </StyledCarouselItem>
+    </React.Fragment>
   );
 };
 
-const StyledCarousel = styled(Carousel)`
+const StyledCarouselItem = styled(CarouselItem)`
   color: white;
   font-family: "Ubuntu";
   background: black;
@@ -156,6 +156,7 @@ const AchievementsContainer = styled.div`
   max-width: 1500px;
   flex-direction: column;
   color: white;
+  text-align: center;
 `;
 
 const AchievementsContent = styled.div`

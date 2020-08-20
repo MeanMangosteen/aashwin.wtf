@@ -1,20 +1,20 @@
 import React from "react";
-import { Carousel, CarouselItem } from "../utils/Carousel";
 import styled from "styled-components";
-import { centerContent, centerAbsolutely } from "../utils/styles";
+import { CarouselItem } from "../../utils/Carousel";
+import { centerContent } from "../../utils/styles";
 
 export const MatrixContent = () => {
   return (
-    <StyledCarousel running={false}>
-      <CarouselItem>
+    <>
+      <StyledCarouselItem>
         <TitleSlide>
           <MatrixLogo>
             <Logo src="https://matrix.ai/assets/images/matrix-logo.png" />
             <LogoText>MATRIX</LogoText>
           </MatrixLogo>
         </TitleSlide>
-      </CarouselItem>
-      <CarouselItem>
+      </StyledCarouselItem>
+      <StyledCarouselItem>
         <AchievementsContainer>
           <Title>What I've achieved</Title>
           <AchievementsContent>
@@ -32,8 +32,8 @@ export const MatrixContent = () => {
             </ul>
           </AchievementsContent>
         </AchievementsContainer>
-      </CarouselItem>
-      <CarouselItem>
+      </StyledCarouselItem>
+      <StyledCarouselItem>
         <AchievementsContainer>
           <Title>What I've achieved (continued)</Title>
           <AchievementsContent>
@@ -49,8 +49,8 @@ export const MatrixContent = () => {
             </ul>
           </AchievementsContent>
         </AchievementsContainer>
-      </CarouselItem>
-      <CarouselItem>
+      </StyledCarouselItem>
+      <StyledCarouselItem>
         <ReflectionsContainer>
           <Title>Reflections</Title>
           <ReflectionsContent>
@@ -91,8 +91,8 @@ export const MatrixContent = () => {
             <sup>* Terms and Conditions apply</sup>
           </TsandCsText>
         </ReflectionsContainer>
-      </CarouselItem>
-    </StyledCarousel>
+      </StyledCarouselItem>
+    </>
   );
 };
 
@@ -104,7 +104,7 @@ const TsandCsText = styled.div`
   transform: translate(-100%, 100%);
 `;
 
-const StyledCarousel = styled(Carousel)`
+const StyledCarouselItem = styled(CarouselItem)`
   color: white;
   font-family: "Ubuntu";
   background: black;

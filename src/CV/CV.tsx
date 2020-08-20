@@ -6,24 +6,24 @@ import {
   centerAbsolutely,
 } from "../utils/styles";
 import { Carousel, CarouselItem } from "../utils/Carousel";
-import { UNSWContent } from "./UNSWContent";
-import { RedbackContent } from "./RedbackContent";
-import { PerxContent } from "./PerxContent";
-import { GeointeractiveContent } from "./GeointeractiveContent";
-import { MatrixContent } from "./MatrixContent";
+import { EducationContent } from "./EducationContent";
+import { PerxContent } from "./experience/PerxContent";
+import { GeointeractiveContent } from "./experience/GeointeractiveContent";
 import { SkillzThatKillz } from "./SkillzThatKillz";
 import { ImHumanContent } from "./ImHumanContent";
+import { Experience } from "./experience/Experience";
+import { Banner, CarouselBanner } from "./experience/styles";
 
 export const CV = () => {
   return (
     <CVContainer>
-      <EducationBanner>
-        <TitleText>Education</TitleText>
-      </EducationBanner>
       <UNSWBanner>
-        <UNSWContent />
+        <EducationContent />
       </UNSWBanner>
       <ExperienceBanner>
+        <Experience />
+      </ExperienceBanner>
+      {/* <ExperienceBanner>
         <ExperienceTitle>Experience</ExperienceTitle>
       </ExperienceBanner>
       <RedbackBanner>
@@ -37,7 +37,7 @@ export const CV = () => {
       </GeointeractiveBanner>
       <MatrixBanner>
         <MatrixContent />
-      </MatrixBanner>
+      </MatrixBanner> */}
       <SkillsBanner>
         <SkillsTitle>Skills</SkillsTitle>
       </SkillsBanner>
@@ -54,46 +54,6 @@ export const CV = () => {
   );
 };
 
-const sickFadeBackground = (
-  color: string,
-  iHaveSetRelativePosition = false
-) => {
-  if (!iHaveSetRelativePosition)
-    throw Error(
-      "sickFadeBackground: Parent must set relative position for you to have a sick fade"
-    );
-  return css`
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      height: 100%;
-      width: 50%;
-      background: ${color};
-      z-index: -1;
-    }
-
-    &::before {
-      transform: translateX(-100%);
-      /* background: linear-gradient(
-        to left,
-        ${color} 0%,
-        ${color} 80%,
-        transparent 100% 
-      ); */
-    }
-    &::after {
-      /* background: linear-gradient(
-        to right,
-        ${color} 0%,
-        ${color} 80%,
-        transparent 100% 
-      ); */
-    }
-  `;
-};
-
 const CVContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -101,46 +61,19 @@ const CVContainer = styled.div`
   align-items: center;
 `;
 
-const Banner = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
-
-  ${Carousel} {
-    flex-grow: 1;
-  }
-`;
-
-const CarouselBanner = styled(Banner)`
-  align-items: stretch;
-  position: relative;
-
-  ${CarouselItem} {
-    ${centerContent}
-  }
-`;
-
-const EducationBanner = styled(Banner)`
+export const EducationBanner = styled(Banner)`
   position: relative;
   background: #e8d6d6;
-
-  /* ${sickFadeBackground("#e8d6d6", true)} */
 `;
 
-const ExperienceBanner = styled(Banner)`
+export const ExperienceBanner = styled(CarouselBanner)`
   position: relative;
-  background: #bba3ff;
-  /* ${sickFadeBackground("#bba3ff", true)} */
+  /* background: #bba3ff; */
 `;
 
 const SkillsBanner = styled(Banner)`
   position: relative;
-  background:hsla(-482, 100%, 84%, 1);
-
-  /* ${sickFadeBackground("#adffad", true)} */
+  background: hsla(-482, 100%, 84%, 1);
 `;
 
 const ImHumanBanner = styled(Banner)`
@@ -157,7 +90,7 @@ export const TitleText = styled.div`
   filter: drop-shadow(2px 4px 6px black);
 `;
 
-const ExperienceTitle = styled(TitleText)`
+export const ExperienceTitle = styled(TitleText)`
   -webkit-text-stroke: 3px hsl(269, 100%, 42%);
   color: hsl(269, 100%, 50%);
 `;
@@ -174,7 +107,6 @@ const ImHumanTitle = styled(TitleText)`
 
 const UNSWBanner = styled(CarouselBanner)`
   background: #fde502;
-  /* ${sickFadeBackground("#fde502", true)} */
 `;
 
 const RedbackBanner = styled(CarouselBanner)``;

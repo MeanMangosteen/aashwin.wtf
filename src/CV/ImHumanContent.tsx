@@ -9,7 +9,7 @@ import {
   SubjectContainer,
   SubjectTitle,
   SubjectContent,
-} from "./UNSWContent";
+} from "./EducationContent";
 import { SwitchTransition, Transition } from "react-transition-group";
 import { ShowTextWithStyle, StylishItem } from "../utils/ShowTextWithStyle";
 

@@ -1,15 +1,15 @@
 import React from "react";
-import { Carousel, CarouselItem } from "../utils/Carousel";
+import { Carousel, CarouselItem } from "../../utils/Carousel";
 import styled from "styled-components";
-import { centerContent, centerAbsolutely } from "../utils/styles";
+import { centerContent, centerAbsolutely } from "../../utils/styles";
 
 export const GeointeractiveContent = () => {
   return (
-    <StyledCarousel running={false}>
-      <CarouselItem>
+    <>
+      <StyledCarouselItem>
         <TitleSlide />
-      </CarouselItem>
-      <CarouselItem>
+      </StyledCarouselItem>
+      <StyledCarouselItem>
         <AchievementsContainer>
           <Title>What I've achieved</Title>
           <AchievementsContent>
@@ -30,8 +30,8 @@ export const GeointeractiveContent = () => {
             </ul>
           </AchievementsContent>
         </AchievementsContainer>
-      </CarouselItem>
-      <CarouselItem>
+      </StyledCarouselItem>
+      <StyledCarouselItem>
         <ReflectionsContainer>
           <Title>Reflections</Title>
           <ReflectionsContent>
@@ -53,12 +53,12 @@ export const GeointeractiveContent = () => {
             </ul>
           </ReflectionsContent>
         </ReflectionsContainer>
-      </CarouselItem>
-    </StyledCarousel>
+      </StyledCarouselItem>
+    </>
   );
 };
 
-const StyledCarousel = styled(Carousel)`
+const StyledCarouselItem = styled(CarouselItem)`
   color: white;
   font-family: "Ubuntu";
   /* background: rgba(39, 198, 219, 1); */

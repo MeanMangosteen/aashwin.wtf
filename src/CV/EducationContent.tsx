@@ -1,12 +1,24 @@
 import React from "react";
 import { Carousel, CarouselItem } from "../utils/Carousel";
-import { TitleText } from "./CV";
+import { TitleText, EducationBanner } from "./CV";
 import styled from "styled-components";
-import { centerContent, CSSDividerBottom } from "../utils/styles";
+import {
+  centerContent,
+  CSSDividerBottom,
+  centerAbsolutely,
+} from "../utils/styles";
 
-export const UNSWContent = () => {
+export const EducationContent = () => {
   return (
-    <Carousel running={false}>
+    <StyledCarousel running={false}>
+      <CarouselItem>
+        <EducationBanner>
+          <TitleText>Education</TitleText>
+        </EducationBanner>
+      </CarouselItem>
+      <CarouselItem>
+        <TitleSlide />
+      </CarouselItem>
       <CarouselItem>
         <FavoriteSubjectsContainer>
           <FavSubjectsTitle>Favorite Subjects</FavSubjectsTitle>
@@ -41,12 +53,32 @@ export const UNSWContent = () => {
           </FavSubjectsContent>
         </FavoriteSubjectsContainer>
       </CarouselItem>
-      <CarouselItem>
-        <TitleText>UNSW</TitleText>
-      </CarouselItem>
-    </Carousel>
+    </StyledCarousel>
   );
 };
+
+const StyledCarousel = styled(Carousel)`
+  background: #ffdc00;
+`;
+
+const TitleSlide = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  &::after {
+    content: "";
+    ${centerAbsolutely}
+    height: 30%;
+    width: 100%;
+
+    background-image: url("https://warrane.unsw.edu.au/img/UNSW.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(2px 4px 6px black);
+  }
+`;
 
 export const FavoriteSubjectsContainer = styled.div`
   font-family: "Ubuntu";
