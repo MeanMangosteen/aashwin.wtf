@@ -1,59 +1,62 @@
 import React from "react";
 import { Carousel, CarouselItem } from "../utils/Carousel";
-import { TitleText, EducationBanner } from "./CV";
+import { EducationBanner } from "./CV";
 import styled from "styled-components";
 import {
   centerContent,
   CSSDividerBottom,
   centerAbsolutely,
 } from "../utils/styles";
+import { TitleText, CarouselBanner } from "./experience/styles";
 
-export const EducationContent = () => {
+export const Education = () => {
   return (
-    <StyledCarousel running={false}>
-      <CarouselItem>
-        <EducationBanner>
-          <TitleText>Education</TitleText>
-        </EducationBanner>
-      </CarouselItem>
-      <CarouselItem>
-        <TitleSlide />
-      </CarouselItem>
-      <CarouselItem>
-        <FavoriteSubjectsContainer>
-          <FavSubjectsTitle>Favorite Subjects</FavSubjectsTitle>
-          <FavSubjectsContent>
-            <SubjectContainer>
-              <SubjectTitle>Operating Systems</SubjectTitle>
-              <SubjectContent>
-                Covered concepts and mechanisms of modern operating systems. A
-                deep dive into the Linux kernel: imple-mented concurrency
-                primitives, memory management, system calls, and file system
-                modules.
-              </SubjectContent>
-            </SubjectContainer>
-            <SubjectContainer>
-              <SubjectTitle>Operating Systems</SubjectTitle>
-              <SubjectContent>
-                Covered concepts and mechanisms of modern operating systems. A
-                deep dive into the Linux kernel: imple-mented concurrency
-                primitives, memory management, system calls, and file system
-                modules.
-              </SubjectContent>
-            </SubjectContainer>
-            <SubjectContainer>
-              <SubjectTitle>Operating Systems</SubjectTitle>
-              <SubjectContent>
-                Covered concepts and mechanisms of modern operating systems. A
-                deep dive into the Linux kernel: imple-mented concurrency
-                primitives, memory management, system calls, and file system
-                modules.
-              </SubjectContent>
-            </SubjectContainer>
-          </FavSubjectsContent>
-        </FavoriteSubjectsContainer>
-      </CarouselItem>
-    </StyledCarousel>
+    <CarouselBanner>
+      <StyledCarousel running={false}>
+        <CarouselItem>
+          <EducationBanner>
+            <TitleText>Education</TitleText>
+          </EducationBanner>
+        </CarouselItem>
+        <CarouselItem>
+          <TitleSlide />
+        </CarouselItem>
+        <CarouselItem>
+          <FavoriteSubjectsContainer>
+            <FavSubjectsTitle>Favorite Subjects</FavSubjectsTitle>
+            <FavSubjectsContent>
+              <SubjectContainer>
+                <SubjectTitle>Operating Systems</SubjectTitle>
+                <SubjectContent>
+                  Covered concepts and mechanisms of modern operating systems. A
+                  deep dive into the Linux kernel: imple-mented concurrency
+                  primitives, memory management, system calls, and file system
+                  modules.
+                </SubjectContent>
+              </SubjectContainer>
+              <SubjectContainer>
+                <SubjectTitle>Operating Systems</SubjectTitle>
+                <SubjectContent>
+                  Covered concepts and mechanisms of modern operating systems. A
+                  deep dive into the Linux kernel: imple-mented concurrency
+                  primitives, memory management, system calls, and file system
+                  modules.
+                </SubjectContent>
+              </SubjectContainer>
+              <SubjectContainer>
+                <SubjectTitle>Operating Systems</SubjectTitle>
+                <SubjectContent>
+                  Covered concepts and mechanisms of modern operating systems. A
+                  deep dive into the Linux kernel: imple-mented concurrency
+                  primitives, memory management, system calls, and file system
+                  modules.
+                </SubjectContent>
+              </SubjectContainer>
+            </FavSubjectsContent>
+          </FavoriteSubjectsContainer>
+        </CarouselItem>
+      </StyledCarousel>
+    </CarouselBanner>
   );
 };
 

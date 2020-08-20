@@ -23,3 +23,12 @@ export const CarouselBanner = styled(Banner)`
     ${centerContent}
   }
 `;
+
+export const TitleText = styled.div`
+  font-family: "Ubuntu";
+  font-size: 6rem;
+  -webkit-text-stroke: 3px hsl(0, 44%, 52%);
+  color: #ff7777;
+  font-weight: bold;
+  filter: drop-shadow(2px 4px 6px black);
+`;

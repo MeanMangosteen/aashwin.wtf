@@ -12,85 +12,103 @@ import {
 } from "./EducationContent";
 import { SwitchTransition, Transition } from "react-transition-group";
 import { ShowTextWithStyle, StylishItem } from "../utils/ShowTextWithStyle";
+import { CarouselBanner, Banner, TitleText } from "./experience/styles";
 
 export const ImHumanContent = () => {
   return (
-    <StyledCarousel running={false}>
-      <CarouselItem>
-        <TitleSlide>
-          There is a real human behind this document. I promise.
-        </TitleSlide>
-      </CarouselItem>
-      <CarouselItem>
-        <FavoriteSubjectsContainer>
-          <FavSubjectsTitle>Things that get me going</FavSubjectsTitle>
-          <FavSubjectsContent>
-            <SubjectContainer>
-              <SubjectTitle>Sports</SubjectTitle>
-              <SubjectContent>
-                <ul>
-                  <li>
-                    I love watching and playing pretty much any sport. The
-                    higher powers clearly have a problem with this as I seem
-                    to be perpetually injured.
-                  </li>
-                  <li>
-                    I'm currently partaking in some pretty interesting and
-                    botique ones in that of: climbing and ultimate frisbee.
-                  </li>
-                </ul>
-              </SubjectContent>
-            </SubjectContainer>
-            <SubjectContainer>
-              <SubjectTitle>Two Wheelers</SubjectTitle>
-              <SubjectContent>
-                <ul>
-                  <li>
-                    I love fixing them, I love riding them, I don't love
-                    crashing them. But hey, now I have a self sustaining
-                    cycle, along with all my other ones.
-                  </li>
-                  <li>
-                    These freedom machines are an absolute essential in the
-                    Sydney Survial Toolkit
-                  </li>
-                </ul>
-              </SubjectContent>
-            </SubjectContainer>
-            <SubjectContainer>
-              <SubjectTitle>Breaking Reality</SubjectTitle>
-              <SubjectContent>
-                <ul>
-                  <li>
-                    It's thrilling to do things that haven't been done before or
-                    thought not possible. Learning new things that become tools
-                    for the imagination to paint it's pictures. For me this can
-                    be anything from meditation and reading books, to fighting
-                    exhaustion in important match or being alone on a windy
-                    road.
-                  </li>
-                  <li>
-                    Anything that explores what the human condition is capable
-                    of, and gives insight into the game we call 'life'.
-                  </li>
-                </ul>
-              </SubjectContent>
-            </SubjectContainer>
-          </FavSubjectsContent>
-        </FavoriteSubjectsContainer>
-      </CarouselItem>
-      <CarouselItem>
-        <RoleModelsContainer>
-          <FavSubjectsTitle>Role Models</FavSubjectsTitle>
-          <ol>
-            <li>Micheal Scott</li>
-            <li>Pop-eye the Sailor Man</li>
-          </ol>
-        </RoleModelsContainer>
-      </CarouselItem>
-    </StyledCarousel>
+    <CarouselBanner>
+      <StyledCarousel running={false}>
+        <CarouselItem>
+          <ImHumanBanner>
+            <ImHumanTitle>I'm not a pdf</ImHumanTitle>
+          </ImHumanBanner>
+        </CarouselItem>
+        <CarouselItem>
+          <TitleSlide>
+            There is a real human behind this document. I promise.
+          </TitleSlide>
+        </CarouselItem>
+        <CarouselItem>
+          <FavoriteSubjectsContainer>
+            <FavSubjectsTitle>Things that get me going</FavSubjectsTitle>
+            <FavSubjectsContent>
+              <SubjectContainer>
+                <SubjectTitle>Sports</SubjectTitle>
+                <SubjectContent>
+                  <ul>
+                    <li>
+                      I love watching and playing pretty much any sport. The
+                      higher powers clearly have a problem with this as I seem
+                      to be perpetually injured.
+                    </li>
+                    <li>
+                      I'm currently partaking in some pretty interesting and
+                      botique ones in that of: climbing and ultimate frisbee.
+                    </li>
+                  </ul>
+                </SubjectContent>
+              </SubjectContainer>
+              <SubjectContainer>
+                <SubjectTitle>Two Wheelers</SubjectTitle>
+                <SubjectContent>
+                  <ul>
+                    <li>
+                      I love fixing them, I love riding them, I don't love
+                      crashing them. But hey, now I have a self sustaining
+                      cycle, along with all my other ones.
+                    </li>
+                    <li>
+                      These freedom machines are an absolute essential in the
+                      Sydney Survial Toolkit
+                    </li>
+                  </ul>
+                </SubjectContent>
+              </SubjectContainer>
+              <SubjectContainer>
+                <SubjectTitle>Breaking Reality</SubjectTitle>
+                <SubjectContent>
+                  <ul>
+                    <li>
+                      It's thrilling to do things that haven't been done before
+                      or thought not possible. Learning new things that become
+                      tools for the imagination to paint it's pictures. For me
+                      this can be anything from meditation and reading books, to
+                      fighting exhaustion in important match or being alone on a
+                      windy road.
+                    </li>
+                    <li>
+                      Anything that explores what the human condition is capable
+                      of, and gives insight into the game we call 'life'.
+                    </li>
+                  </ul>
+                </SubjectContent>
+              </SubjectContainer>
+            </FavSubjectsContent>
+          </FavoriteSubjectsContainer>
+        </CarouselItem>
+        <CarouselItem>
+          <RoleModelsContainer>
+            <FavSubjectsTitle>Role Models</FavSubjectsTitle>
+            <ol>
+              <li>Micheal Scott</li>
+              <li>Pop-eye the Sailor Man</li>
+            </ol>
+          </RoleModelsContainer>
+        </CarouselItem>
+      </StyledCarousel>
+    </CarouselBanner>
   );
 };
+
+const ImHumanBanner = styled(Banner)`
+  position: relative;
+  background: #fff9ef;
+`;
+
+const ImHumanTitle = styled(TitleText)`
+  -webkit-text-stroke: 3px hsl(37, 64%, 55%);
+  color: hsl(37, 100%, 79%);
+`;
 
 const StyledCarousel = styled(Carousel)`
   font-family: "Ubuntu";
@@ -157,4 +175,3 @@ const PhotoTimeContainer = styled.div`
   height: 100%;
   width: 100%;
 `;
-
