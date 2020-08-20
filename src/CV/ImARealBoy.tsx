@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Carousel, CarouselItem } from "../utils/Carousel";
 import styled from "styled-components";
-import { centerContent, centerAbsolutely } from "../utils/styles";
+import { centerContent } from "../utils/styles";
 import {
   FavoriteSubjectsContainer,
   FavSubjectsTitle,
@@ -9,12 +9,10 @@ import {
   SubjectContainer,
   SubjectTitle,
   SubjectContent,
-} from "./EducationContent";
-import { SwitchTransition, Transition } from "react-transition-group";
-import { ShowTextWithStyle, StylishItem } from "../utils/ShowTextWithStyle";
-import { CarouselBanner, Banner, TitleText } from "./experience/styles";
+} from "./education/Education";
+import { CarouselBanner, Banner, TitleText } from "./styles";
 
-export const ImHumanContent = () => {
+export const ImARealBoy = () => {
   return (
     <CarouselBanner>
       <StyledCarousel running={false}>
@@ -112,7 +110,6 @@ const ImHumanTitle = styled(TitleText)`
 
 const StyledCarousel = styled(Carousel)`
   font-family: "Ubuntu";
-  /* background: rgba(39, 198, 219, 1); */
   background: blanchedalmond;
   color: #6f6b64;
 `;
@@ -135,6 +132,7 @@ const RoleModelsContainer = styled.div`
   }
 `;
 
+// OMGTODO: remove below
 const PhotoTime = () => {
   return (
     <PhotoTimeContainer>

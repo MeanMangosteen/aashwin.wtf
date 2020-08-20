@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel, CarouselItem } from "../../utils/Carousel";
+import { CarouselItem } from "../../utils/Carousel";
 import styled from "styled-components";
 import { centerContent, centerAbsolutely } from "../../utils/styles";
 
@@ -61,7 +61,6 @@ export const GeointeractiveContent = () => {
 const StyledCarouselItem = styled(CarouselItem)`
   color: white;
   font-family: "Ubuntu";
-  /* background: rgba(39, 198, 219, 1); */
 `;
 
 const ReflectionsContainer = styled.div`
@@ -99,9 +98,7 @@ const ReflectionsContainer = styled.div`
 const Title = styled.div`
   filter: drop-shadow(2px 4px 6px black);
   font-size: 4rem;
-  /* -webkit-text-stroke: 1px black; */
   margin-bottom: 3rem;
-  /* font-weight: bold; */
 `;
 
 const ReflectionsContent = styled.div`

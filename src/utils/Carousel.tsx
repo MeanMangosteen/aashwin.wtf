@@ -2,7 +2,6 @@ import * as React from "react";
 import styled, { css, keyframes } from "styled-components";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { centerContent } from "./styles";
-import flattenChildren from "react-flatten-children";
 import { useRef, useEffect } from "react";
 
 const Carousel = styled(
@@ -235,9 +234,5 @@ const Controls = styled.div`
 
   margin: 0.5rem;
 `;
-
-const CarouselItemList = ({ children }: { children: any }) => {
-  return null;
-};
 
 export { Carousel, CarouselItem };

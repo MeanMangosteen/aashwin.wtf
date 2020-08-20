@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Carousel, CarouselItem } from '../../utils/Carousel';
-import { centerContent } from '../../utils/styles';
+import { Carousel, CarouselItem } from '../utils/Carousel';
+import { centerContent } from '../utils/styles';
 
 export const Banner = styled.div`
   display: flex;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel, CarouselItem } from "../../utils/Carousel";
+import { CarouselItem } from "../../utils/Carousel";
 import styled from "styled-components";
 import { centerContent, centerAbsolutely } from "../../utils/styles";
 
@@ -68,9 +68,7 @@ const ReflectionsContainer = styled.div`
 
 const Title = styled.div`
   font-size: 4rem;
-  /* -webkit-text-stroke: 1px black; */
   margin-bottom: 3rem;
-  /* font-weight: bold; */
 `;
 
 const ReflectionsContent = styled.div`

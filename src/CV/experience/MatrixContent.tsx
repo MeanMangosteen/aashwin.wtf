@@ -125,10 +125,8 @@ const ReflectionsContainer = styled.div`
 
 const Title = styled.div`
   font-size: 4rem;
-  /* -webkit-text-stroke: 1px black; */
   margin-bottom: 3rem;
   filter: drop-shadow(2px 2px 3px grey);
-  /* font-weight: bold; */
 `;
 
 const ReflectionsContent = styled.div`

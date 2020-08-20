@@ -126,15 +126,6 @@ const OrbitPath = styled.div<{ size: any; orbitSpeed: number }>`
   border-radius: 100%;
 `;
 
-const RotateIcon = keyframes`
-  from {
-    transform:  rotate(0deg) scale(0.8, 1);
-  }
-  to {
-    transform:rotate(-360deg)  scale(0.8, 1);
-  }
-`;
-
 const animateOrbitIcon = (height: number, width: number) => {
   return keyframes`
 from {

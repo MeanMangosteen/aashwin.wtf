@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { CarouselItem, Carousel } from "../../utils/Carousel";
+import { CarouselItem } from "../../utils/Carousel";
 import { centerContent, centerAbsolutely } from "../../utils/styles";
 
 export const RedbackContent = () => {
@@ -124,7 +124,6 @@ const Title = styled.div`
   font-size: 4rem;
   -webkit-text-stroke: 1px black;
   margin-bottom: 3rem;
-  /* font-weight: bold; */
 `;
 
 const ReflectionsContent = styled.div`

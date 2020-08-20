@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { centerContent } from "../utils/styles";
-import { ProgressBar } from "../ProgressBar";
-import { Banner } from "./experience/styles";
+import { centerContent } from "../../utils/styles";
+import { ProgressBar } from "../../ProgressBar";
 
 export const SkillzThatKillz = () => {
   return (

@@ -1,13 +1,13 @@
 import React from "react";
-import { Carousel, CarouselItem } from "../utils/Carousel";
-import { EducationBanner } from "./CV";
+import { Carousel, CarouselItem } from "../../utils/Carousel";
 import styled from "styled-components";
 import {
   centerContent,
   CSSDividerBottom,
   centerAbsolutely,
-} from "../utils/styles";
-import { TitleText, CarouselBanner } from "./experience/styles";
+} from "../../utils/styles";
+import { TitleText, CarouselBanner, Banner } from "../styles";
+import { Experience } from "../experience/Experience";
 
 export const Education = () => {
   return (
@@ -19,7 +19,9 @@ export const Education = () => {
           </EducationBanner>
         </CarouselItem>
         <CarouselItem>
-          <TitleSlide />
+          <TitleSlide>
+            <ExperienceInfo />
+          </TitleSlide>
         </CarouselItem>
         <CarouselItem>
           <FavoriteSubjectsContainer>
@@ -28,28 +30,23 @@ export const Education = () => {
               <SubjectContainer>
                 <SubjectTitle>Operating Systems</SubjectTitle>
                 <SubjectContent>
-                  Covered concepts and mechanisms of modern operating systems. A
-                  deep dive into the Linux kernel: imple-mented concurrency
+                  A deep dive into the Linux kernel: imple-mented concurrency
                   primitives, memory management, system calls, and file system
                   modules.
                 </SubjectContent>
               </SubjectContainer>
               <SubjectContainer>
-                <SubjectTitle>Operating Systems</SubjectTitle>
+                <SubjectTitle>Algorithms</SubjectTitle>
                 <SubjectContent>
-                  Covered concepts and mechanisms of modern operating systems. A
-                  deep dive into the Linux kernel: imple-mented concurrency
-                  primitives, memory management, system calls, and file system
-                  modules.
+                  Study and design of algorithms considering computational
+                  complexity using a variety of techniques and data structures.
                 </SubjectContent>
               </SubjectContainer>
               <SubjectContainer>
-                <SubjectTitle>Operating Systems</SubjectTitle>
+                <SubjectTitle>Computer Networks</SubjectTitle>
                 <SubjectContent>
-                  Covered concepts and mechanisms of modern operating systems. A
-                  deep dive into the Linux kernel: imple-mented concurrency
-                  primitives, memory management, system calls, and file system
-                  modules.
+                  Study of network stacks, various protocols (TCP, UDP), routing
+                  and the architecture of the Internet
                 </SubjectContent>
               </SubjectContainer>
             </FavSubjectsContent>
@@ -83,12 +80,48 @@ const TitleSlide = styled.div`
   }
 `;
 
-export const FavoriteSubjectsContainer = styled.div`
-  font-family: "Ubuntu";
+const ExperienceInfo = () => {
+  return (
+    <ExperienceInfoContainer>
+      <DegreeText>Computer Science</DegreeText>
+      <TimePeriod>2015-2019</TimePeriod>
+    </ExperienceInfoContainer>
+  );
+};
+
+const ExperienceInfoContainer = styled.div`
   ${centerContent}
   flex-direction: column;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  font-family: "Ubuntu";
+`;
+
+const DegreeText = styled.div`
+  font-size: 4rem;
+  color: #3a3a3a;
+`;
+const TimePeriod = styled.div`
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #3a3a3a;
+`;
+
+export const FavoriteSubjectsContainer = styled.div`
+  ${centerContent}
+  color: #3c3c3c;
+  max-width: 1400px;
+  font-family: "Ubuntu";
+  flex-direction: column;
+  > * {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
 `;
 export const FavSubjectsTitle = styled.div`
+  ${centerContent}
   font-size: 4rem;
   margin-bottom: 3rem;
   color: #fff9ef;
@@ -111,6 +144,9 @@ export const SubjectContainer = styled.div`
 `;
 
 export const SubjectTitle = styled.div`
+  ${centerContent}
+  flex-direction: column;
+  text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
   padding-bottom: 0.5rem;
@@ -123,4 +159,9 @@ export const SubjectContent = styled.div`
   li {
     margin: 1rem 0;
   }
+`;
+
+const EducationBanner = styled(Banner)`
+  position: relative;
+  background: #e8d6d6;
 `;

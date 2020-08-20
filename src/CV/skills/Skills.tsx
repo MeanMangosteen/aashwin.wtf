@@ -1,8 +1,7 @@
 import React from "react";
-import { Carousel, CarouselItem } from "../utils/Carousel";
-import { RedbackContent } from "./experience/RedbackContent";
+import { Carousel, CarouselItem } from "../../utils/Carousel";
 import styled from "styled-components";
-import { CarouselBanner, Banner, TitleText } from "./experience/styles";
+import { CarouselBanner, Banner, TitleText } from "../styles";
 import { SkillzThatKillz } from "./SkillzThatKillz";
 
 export const Skills = () => {
