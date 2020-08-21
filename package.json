@@ -12,6 +12,7 @@
     "@types/react-visibility-sensor": "^5.1.0",
     "@types/styled-components": "^5.1.2",
     "cra-template-typescript": "1.0.3",
+    "emailjs-com": "^2.6.3",
     "react": "^16.13.1",
     "react-app-rewire-styled-components": "^3.0.2",
     "react-dom": "^16.13.1",

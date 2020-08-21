@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import styled from "styled-components";
 import { FiSend } from "react-icons/fi";
 import { centerContent } from "../utils/styles";
+import emailjs from "emailjs-com";
 
 type MessageBoxProps = {
   onSend: (message: string) => void;
@@ -20,21 +21,43 @@ export const MessageBox = ({ onSend, className = "" }: MessageBoxProps) => {
     onSend(input);
   }, [input, onSend]);
 
+  const handleSubmit = useCallback((e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "gmail",
+        "template_wJQMA6eo",
+        e.target,
+        "user_LL5zwFGe8SoH8rRAs7B0Z"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  }, []);
+
   return (
-    <MessageBoxContainer className={className}>
+    <MessageBoxForm className={className} onSubmit={handleSubmit}>
       <MessageBoxInput
         placeholder="Anything at all..."
         value={input}
         onChange={handleChange}
+        name="message"
       />
+
       <SendIconContainer>
         <SendIcon onClick={handleClick} />
       </SendIconContainer>
-    </MessageBoxContainer>
+    </MessageBoxForm>
   );
 };
 
-const MessageBoxContainer = styled.div`
+const MessageBoxForm = styled.form`
   ${centerContent}
   position: relative;
 `;
@@ -52,7 +75,13 @@ const MessageBoxInput = styled.textarea`
   /* margin-left: 10rem; */
 `;
 
-const SendIconContainer = styled.div`
+const SendIconContainer = styled.button`
+  border: none;
+  background: none;
+  &:focus {
+    outline: 0;
+  }
+
   position: absolute;
   top: 50%;
   left: 100%;

@@ -11,7 +11,7 @@ export const Connect = () => {
       <AashwinsImageContainer>
         <AashwinsImage src={AashwinsImageSrc} />
       </AashwinsImageContainer>
-      <StyledShowTextWithStyle>
+      <StyledShowTextWithStyle skipWaitingGame>
         <StylishItem>
           <IAmContainer>
             <IAmText>I am</IAmText>
