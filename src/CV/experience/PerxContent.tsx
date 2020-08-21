@@ -10,7 +10,7 @@ export const PerxContent = () => {
       <StyledCarouselItem>
         <TitleSlide>
           <ExperienceInfo
-            position="Software Engineer Intern"
+            position="Software Engineering Intern"
             location="Surry Hills"
             time="June 2017 - December 2017"
           />

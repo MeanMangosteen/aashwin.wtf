@@ -14,8 +14,8 @@ export const SkillzThatKillz = () => {
         </PreambleText>
         <PreambleText>
           Depending on the battlefield I'm on, I will use my current strengths,
-          sharpen others, or learn complete new ones. Whatever is required to
-          come out victorious.
+          sharpen others, or learn complete new ones. Whatever the situation
+          requires.
         </PreambleText>
       </PreambleContainer>
       <SkillBarsContainer>

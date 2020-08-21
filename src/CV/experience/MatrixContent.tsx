@@ -81,13 +81,13 @@ export const MatrixContent = () => {
                 And somehow I have to convince them to be best friends.
               </li>
               <li>
-                The diversity of the challenges the different layers of the
-                stack provide, which finally come together to make a living
+                I like the diversity of the challenges the different layers of the
+                stack provide, and it's satisfying having the pieces come together to make a living
                 website that dances and dazzles.
               </li>
               <li>
                 Being the sole developer, I definitely missed working in a team.
-                That being said, the responsibility, accountability, and the
+                That being said, the responsibility, and the
                 chance to learn web dev from scratch isn't something I would
                 have gotten at many other places.
               </li>

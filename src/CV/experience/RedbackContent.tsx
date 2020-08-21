@@ -10,7 +10,7 @@ export const RedbackContent = () => {
       <StyledCarouselItem>
         <TitleSlide>
           <StyledExperienceInfo
-            position="Data Acquisition Leader"
+            position="Department Leader - Data Acquisition"
             location="UNSW Kensington"
             time="Jul 2016 - Jun 2018"
           />
@@ -22,7 +22,7 @@ export const RedbackContent = () => {
           <AchievementsContent>
             <ul>
               <li>
-                Managed team of ~10 engineersusing Agile software development
+                Managed team of ~10 engineers using Agile software development
               </li>
               <li>
                 Extensive development on datalogger and telemetry application
@@ -99,11 +99,11 @@ export const RedbackContent = () => {
               </li>
               <li>
                 <b>You leave a legacy for all the good, and the bad.</b> - I
-                revisited my department years after that turned out to be a
+                revisited my department years after which turned out to be a
                 super humbling experience - seeing fresh faces and how our
                 projects had evolved. I saw work that I was proud of, and
-                monstrocities I wish no person ever see, both still integrated
-                within the system.{" "}
+                monstrocities I wish no person would ever see, both still
+                integrated within the system.{" "}
               </li>
             </ul>
           </ReflectionsContent>
@@ -175,9 +175,16 @@ const AchievementsContent = styled.div`
   font-size: 1.8rem;
   ul {
     ${centerContent}
+    align-items: center;
   }
   li {
+    flex-basis: 0;
+    flex-grow: 1;
+
+    ${centerContent}
     margin: 1rem;
     list-style: none;
+    border: 2px solid white;
+    padding: 1rem;
   }
 `;
