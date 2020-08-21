@@ -45,3 +45,10 @@ export const CSSDividerBottom = ({
     }
   `;
 };
+
+export const hoverGrow = css`
+  &:hover {
+    transform: scale(1.2);
+  }
+  transition: transform 200ms ease-out;
+`;

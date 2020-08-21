@@ -22,12 +22,12 @@ export const Catwalk = ({
 
   useEffect(() => {
     if (isFinished) return;
-    if (childCount > children.length) {
-      onFinish && onFinish();
-      setIsFinished(true);
-      return;
-    }
     const timer = setTimeout(() => {
+      if (childCount === children.length - 1) {
+        onFinish && onFinish();
+        setIsFinished(true);
+        return;
+      }
       visibleChildren[childCount] = true;
       setVisibleChildren([...visibleChildren]);
       childCount < children.length - 1 && setChildCount(childCount + 1);

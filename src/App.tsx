@@ -1,10 +1,13 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Home } from "./Home/Home";
 import { createGlobalStyle } from "styled-components";
 import { Test } from "./Test";
 import { CV } from "./CV/CV";
+import { BiHomeSmile } from "react-icons/bi";
+import { BaseLink } from "./utils/helpers";
+import { hoverGrow } from "./utils/styles";
 
 const Explode = keyframes`
 from {
@@ -37,19 +40,49 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-    <AppContainer>
-      <GlobalStyle />
-      <Background />
-      <BrowserRouter>
+    <BrowserRouter>
+      <HomeButton />
+      <AppContainer>
+        <GlobalStyle />
+        <Background />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/cv" component={CV} />
           <Route exact path="/test" component={Test} />
         </Switch>
-      </BrowserRouter>
-    </AppContainer>
+      </AppContainer>
+    </BrowserRouter>
   );
 }
+
+const HomeButton = () => {
+  return (
+    <BaseLink to="/">
+      <HomeButtonContainer>
+        <HomeButtonIcon />
+      </HomeButtonContainer>
+    </BaseLink>
+  );
+};
+
+const HomeButtonContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4rem;
+  width: 4rem;
+  margin: 1rem;
+  z-index: 100;
+  mix-blend-mode: difference;
+  color: #848484;
+  ${hoverGrow}
+`;
+
+const HomeButtonIcon = styled(BiHomeSmile)`
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+`;
 
 const AppContainer = styled.div`
   overflow: hidden;

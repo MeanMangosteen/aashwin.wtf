@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import styled, { keyframes } from "styled-components";
 import { Catwalk, WalkingCat } from "../utils/Catwalk";
 import { centerContent } from "../utils/styles";
@@ -8,21 +8,25 @@ import ToolboxSVG from "../images/toolbox.svg";
 import { WebsiteBadge } from "./WebsiteBadge";
 
 export const Home = () => {
+  const handleIntroTextFinish = useCallback(() => {
+    sessionStorage.setItem("intro-finished", "true");
+  }, []);
+
   return (
     <HomeContainer>
-      {/* <ActualHome /> */}
-      <Catwalk>
-        <WalkingCat>{""}</WalkingCat>
-        <WalkingCat>
-          <IntroText>hi.</IntroText>
-        </WalkingCat>
-        <WalkingCat>
-          <IntroText>welcome to</IntroText>
-        </WalkingCat>
-        <WalkingCat>
-          <ActualHome />
-        </WalkingCat>
-      </Catwalk>
+      {sessionStorage.getItem("intro-finished") === "true" ? (
+        <ActualHome />
+      ) : (
+        <Catwalk onFinish={handleIntroTextFinish}>
+          <WalkingCat>{""}</WalkingCat>
+          <WalkingCat>
+            <IntroText>welcome to</IntroText>
+          </WalkingCat>
+          <WalkingCat>
+            <ActualHome />
+          </WalkingCat>
+        </Catwalk>
+      )}
     </HomeContainer>
   );
 };
