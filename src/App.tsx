@@ -8,6 +8,7 @@ import { CV } from "./CV/CV";
 import { BiHomeSmile } from "react-icons/bi";
 import { BaseLink } from "./utils/helpers";
 import { hoverGrow } from "./utils/styles";
+import { Connect } from "./Connect/Connect";
 
 const Explode = keyframes`
 from {
@@ -33,8 +34,10 @@ const Background = styled.div`
 
 const GlobalStyle = createGlobalStyle`
   body {
-    backface-visibility: hidden;
+    /* backface-visibility: hidden; */
 
+  }
+  html {
   }
 `;
 
@@ -48,6 +51,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/cv" component={CV} />
+          <Route exact path="/about" component={Connect} />
           <Route exact path="/test" component={Test} />
         </Switch>
       </AppContainer>

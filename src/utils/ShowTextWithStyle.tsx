@@ -4,14 +4,16 @@ import styled from "styled-components";
 
 type ShowTextWithStyleProps = {
   children: React.ReactElement<StylishItemProps>[];
-  skipWaitingGame?: boolean
+  skipWaitingGame?: boolean;
   onFinish?: () => void;
+  className?: string;
 };
 
 export const ShowTextWithStyle = ({
   children,
   onFinish,
-  skipWaitingGame = false
+  skipWaitingGame = false,
+  className = "",
 }: ShowTextWithStyleProps) => {
   const [childCount, setChildCount] = useState<number>(0);
   const [visibleChildren, setVisibleChildren] = useState(
@@ -43,25 +45,39 @@ export const ShowTextWithStyle = ({
         key={idx}
         onEnter={cb(() => C.props.onShow && C.props.onShow(), [])}
       >
-        {(state) => (
-          <Fade state={state}>
-            {React.isValidElement(C) ? React.cloneElement(C) : C}
-          </Fade>
-        )}
+        {
+          (state) =>
+            // <Fade state={state}>
+            // {React.isValidElement(C) ? React.cloneElement(C) : C}
+            React.cloneElement(C, { state })
+          // </Fade>
+        }
       </Transition>
     );
   });
-  return <WithStyleContainer>{childs}</WithStyleContainer>;
+  return (
+    <WithStyleContainer className={className}>{childs}</WithStyleContainer>
+  );
 };
 
 type StylishItemProps = {
   onShow?: () => void;
   state?: any;
   children: React.ReactNode;
+  className?: string;
 };
 
-export const StylishItem = ({ onShow, children }: StylishItemProps) => {
-  return <Fragment>{children}</Fragment>;
+export const StylishItem = ({
+  onShow,
+  state,
+  children,
+  className = "",
+}: StylishItemProps) => {
+  return (
+    <Fade state={state} className={className}>
+      {children}
+    </Fade>
+  );
 };
 
 const WithStyleContainer = styled.div``;

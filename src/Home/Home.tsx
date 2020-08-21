@@ -65,8 +65,8 @@ const ActualHome = () => {
                 iconSrc="https://i.imgur.com/FXquf4T.png"
                 orbitSpeed={1.1}
                 iconScale={1.3}
-                title="Contact"
-                path="/contact"
+                title="Connect"
+                path="/about"
               />
               <Orbit
                 parentDim={size}
