@@ -5,6 +5,8 @@ import { centerContent } from "../utils/styles";
 import { SizeMe } from "react-sizeme";
 import { Orbit } from "./Orbit";
 import ToolboxSVG from "../images/toolbox.svg";
+import ArmyKnifeSVG from "../images/swiss-army-knife.svg";
+import MegaphoneSVG from "../images/megaphone.svg";
 import { WebsiteBadge } from "./WebsiteBadge";
 
 export const Home = () => {
@@ -42,26 +44,29 @@ const ActualHome = () => {
               <Orbit
                 parentDim={size}
                 orbitSize={5}
-                iconSrc={ToolboxSVG}
-                orbitSpeed={0.9}
+                iconSrc={ArmyKnifeSVG}
+                orbitSpeed={0.7}
+                iconScale={1.3}
                 title="CV"
                 path="/cv"
               />
               <Orbit
                 parentDim={size}
                 orbitSize={4}
-                iconSrc={ToolboxSVG}
+                iconSrc={MegaphoneSVG}
                 orbitSpeed={1}
+                iconScale={1.3}
                 title="Blog"
                 path="/blog"
               />
               <Orbit
                 parentDim={size}
                 orbitSize={3}
-                iconSrc={ToolboxSVG}
+                iconSrc="https://i.imgur.com/FXquf4T.png"
                 orbitSpeed={1.1}
-                title="Photography"
-                path="/photography"
+                iconScale={1.3}
+                title="Contact"
+                path="/contact"
               />
               <Orbit
                 parentDim={size}

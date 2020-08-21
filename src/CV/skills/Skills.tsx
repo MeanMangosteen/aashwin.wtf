@@ -23,10 +23,10 @@ export const Skills = () => {
 
 const SkillsBanner = styled(Banner)`
   position: relative;
-  background: hsla(-482, 100%, 84%, 1);
+  background: #bba3ff;
 `;
 
 const SkillsTitle = styled(TitleText)`
-  -webkit-text-stroke: 3px hsl(241, 50%, 36%);
-  color: hsla(241, 54%, 52%, 1);
+  -webkit-text-stroke: 3px hsl(269, 100%, 42%);
+  color: hsl(269, 100%, 50%);
 `;

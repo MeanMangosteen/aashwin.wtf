@@ -11,6 +11,7 @@ type OrbitProps = {
   iconSrc: string;
   title: string;
   path: string;
+  iconScale?: number;
 };
 
 export const Orbit = ({
@@ -19,6 +20,7 @@ export const Orbit = ({
   orbitSpeed,
   title,
   path,
+  iconScale = 1,
 }: OrbitProps) => {
   return (
     <SizeMe monitorHeight>
@@ -28,7 +30,7 @@ export const Orbit = ({
             <OrbitIconContianer>
               <OrbitIconWrapper size={size} orbitSpeed={orbitSpeed} to={path}>
                 <OrbitIconSuperWrapper>
-                  <StyledIcon src={iconSrc} />
+                  <StyledIcon src={iconSrc} iconScale={iconScale} />
                 </OrbitIconSuperWrapper>
                 {/* <StyledIcon src={iconSrc} size={size} orbitSpeed={orbitSpeed} /> */}
                 <IconText>{title}</IconText>
@@ -172,14 +174,16 @@ const OrbitIconSuperWrapper = styled.div`
   display: flex;
 `;
 
-const StyledIcon = styled.img`
+const StyledIcon = styled.img<{ iconScale: number }>`
   object-fit: contain;
   flex: 1;
   width: 6vw;
   height: 6vh;
+  --baseScale: ${(props) => props.iconScale};
+  transform: scale(var(--baseScale));
 
   ${OrbitIconWrapper}:hover & {
-    transform: scale(1.2);
+    transform: scale(calc(var(--baseScale) * 1.2));
   }
   transition: transform 200ms ease-in-out;
 `;

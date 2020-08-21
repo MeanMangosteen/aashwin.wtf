@@ -163,5 +163,6 @@ export const SubjectContent = styled.div`
 
 const EducationBanner = styled(Banner)`
   position: relative;
-  background: #e8d6d6;
+  /* background: #e8d6d6; */
+  background: hsla(12, 190%, 87%, 1);
 `;

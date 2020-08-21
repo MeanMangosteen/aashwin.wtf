@@ -31,4 +31,5 @@ export const TitleText = styled.div`
   color: #ff7777;
   font-weight: bold;
   filter: drop-shadow(2px 4px 6px black);
+  letter-spacing: 0.5rem;
 `;

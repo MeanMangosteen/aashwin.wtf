@@ -31,10 +31,10 @@ const StyledCarousel = styled(Carousel)`
 
 const ExperienceBanner = styled(Banner)`
   position: relative;
-  background: #bba3ff;
+  background: hsla(218, 100%, 84%, 1);
 `;
 
 const ExperienceTitle = styled(TitleText)`
-  -webkit-text-stroke: 3px hsl(269, 100%, 42%);
-  color: hsl(269, 100%, 50%);
+  -webkit-text-stroke: 3px hsl(241, 59%, 55%);
+  color: hsl(226, 82%, 65%);
 `;

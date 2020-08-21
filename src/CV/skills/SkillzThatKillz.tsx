@@ -45,7 +45,9 @@ const SkillsThatKillzContainer = styled.div`
   align-items: stretch;
   flex-wrap: no-wrap;
   /* background: #3e3e3e; */
-  background: #434d65;
+  /* background: #434d65; */
+
+  background: hsla(290, 20%, 20%, 1);
 
   height: 100%;
   width: 100%;
