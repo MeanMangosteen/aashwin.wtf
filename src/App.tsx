@@ -9,6 +9,7 @@ import { BiHomeSmile } from "react-icons/bi";
 import { BaseLink } from "./utils/helpers";
 import { hoverGrow } from "./utils/styles";
 import { Connect } from "./Connect/Connect";
+import { Blog } from "./Blog/Blog";
 
 const Explode = keyframes`
 from {
@@ -52,6 +53,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/cv" component={CV} />
           <Route exact path="/about" component={Connect} />
+          <Route exact path="/blog" component={Blog} />
           <Route exact path="/test" component={Test} />
         </Switch>
       </AppContainer>
