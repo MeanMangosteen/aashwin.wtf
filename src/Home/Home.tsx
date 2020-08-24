@@ -45,7 +45,7 @@ const ActualHome = () => {
                 parentDim={size}
                 orbitSize={5}
                 iconSrc={ArmyKnifeSVG}
-                orbitSpeed={0.7}
+                orbitSpeed={0.3}
                 iconScale={1.3}
                 title="CV"
                 path="/cv"
@@ -54,7 +54,7 @@ const ActualHome = () => {
                 parentDim={size}
                 orbitSize={4}
                 iconSrc={MegaphoneSVG}
-                orbitSpeed={1}
+                orbitSpeed={0.7}
                 iconScale={1.3}
                 title="Blog"
                 path="/blog"
@@ -63,7 +63,7 @@ const ActualHome = () => {
                 parentDim={size}
                 orbitSize={3}
                 iconSrc="https://i.imgur.com/FXquf4T.png"
-                orbitSpeed={1.1}
+                orbitSpeed={0.5}
                 iconScale={1.3}
                 title="Connect"
                 path="/about"
@@ -72,7 +72,7 @@ const ActualHome = () => {
                 parentDim={size}
                 orbitSize={2}
                 iconSrc={ToolboxSVG}
-                orbitSpeed={1.5}
+                orbitSpeed={0.9}
                 title="Projects"
                 path="/projects"
               />
