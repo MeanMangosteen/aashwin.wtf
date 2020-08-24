@@ -4,13 +4,98 @@ import { CarouselBanner, Banner } from "../../CV/styles";
 import { Carousel, CarouselItem } from "../../utils/Carousel";
 import MailcraftLogoSVG from "../../images/mailcraft-logo.svg";
 import GmailSVG from "../../images/gmail-icon.svg";
-import { centerContent } from "../../utils/styles";
+import { centerContent, hoverGrow } from "../../utils/styles";
 import { ShowTextWithStyle, StylishItem } from "../../utils/ShowTextWithStyle";
+import { AiFillGithub } from "react-icons/ai";
+
+const OutroContainer = styled.div`
+  display: grid;
+  grid-template-rows: 60% 40%;
+  grid-template-columns: auto;
+  height: 100%;
+  padding: 3rem;
+  box-sizing: border-box;
+`;
+
+const VisitMailcraftContainer = styled.div`
+  ${centerContent}
+  align-items: stretch;
+  flex-direction: column;
+  flex-basis: 0;
+  flex-grow: 1;
+
+  /* > * {
+    flex-basis: 0;
+    flex-grow: 1;
+  } */
+`;
+
+const MailcraftLogoContainer = styled.div`
+  ${centerContent}
+  filter: drop-shadow(2px 2px 6px grey);
+  margin: 1rem;
+  height: 50%;
+  ${hoverGrow}
+`;
+
+const VisitMailcraftText = styled.div`
+  ${centerContent}
+  font-size: 5.5rem;
+  /* margin: 1rem; */
+`;
+
+const VisitGithubContainer = styled.div`
+  ${centerContent}
+  align-items: stretch;
+  flex-direction: column;
+  flex-basis: 0;
+  flex-grow: 1;
+
+  > * {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+`;
+
+const VisitGithubText = styled.div`
+  ${centerContent}
+  font-size: 4.5rem;
+`;
+
+const GithubIconContainer = styled.div`
+  ${centerContent}
+  height: 15%;
+`;
+
+const GithubIcon = styled(AiFillGithub)`
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  object-fit: contain;
+  filter: drop-shadow(2px 2px 6px grey);
+  ${hoverGrow}
+`;
 
 export const Mailcraft = () => {
   return (
     <CarouselBanner>
       <StyledCarousel running={false}>
+        <StyledCarouselItem>
+          <OutroContainer>
+            <VisitMailcraftContainer>
+              <VisitMailcraftText>Go to Mailcraft</VisitMailcraftText>
+              <MailcraftLogoContainer>
+                <Logo src={MailcraftLogoSVG} />
+              </MailcraftLogoContainer>
+            </VisitMailcraftContainer>
+            <VisitGithubContainer>
+              <VisitGithubText>Find this on github</VisitGithubText>
+              <GithubIconContainer>
+                <GithubIcon />
+              </GithubIconContainer>
+            </VisitGithubContainer>
+          </OutroContainer>
+        </StyledCarouselItem>
         <StyledCarouselItem>
           <IntroContainer>
             <BeforeContainer>
@@ -76,11 +161,15 @@ const TitleText = styled.div`
 
 const MailcraftLogo = styled.div`
   ${centerContent}
-
   filter: drop-shadow(2px 2px 6px grey);
 `;
 
-const Logo = styled.img``;
+const Logo = styled.img`
+  height: 100%;
+  width: 100%;
+  flex-grow: 1;
+  object-fit: contain;
+`;
 
 const LogoText = styled.div`
   display: inline-block;
@@ -126,6 +215,7 @@ const DisplayCutout = styled.div`
   height: 300px;
   width: 50%;
   margin: 3rem;
+  border: 5px solid #e0bf00;
 `;
 
 const EmailIconContainer = styled.div`
