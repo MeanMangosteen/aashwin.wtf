@@ -1,18 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import styled from "styled-components";
 import { ShowTextWithStyle, StylishItem } from "../utils/ShowTextWithStyle";
 import { centerContent, centerAbsolutely } from "../utils/styles";
 
 export const Blog = () => {
+  const [
+    explainUnderstandableDiversion,
+    setExplainUnderstandableDiversion,
+  ] = useState<boolean>(false);
   return (
     <BlogContainer>
-      <StyledShowTextWithStyle skipWaitingGame>
-        <StylishItem>
-          <Text>*Ahem* Yes..I have written many blogs posts.</Text>
-        </StylishItem>
+      <StyledShowTextWithStyle>
         <StylishItem>
           <Text>
-            I'm definitely not hiding that I haven't actually written any.
+            *Ahem* Yes...here is my collection of consistently written blog
+            posts.
           </Text>
         </StylishItem>
         <StylishItem>
@@ -21,19 +23,36 @@ export const Blog = () => {
         <SneakyItem>
           <Text>
             Oh what a shame!
-            <SneakyButton />
+            <SneakyButton
+              onEscape={() => setExplainUnderstandableDiversion(true)}
+            />
           </Text>
         </SneakyItem>
       </StyledShowTextWithStyle>
+      {explainUnderstandableDiversion && (
+        <StyledShowTextWithStyle>
+          <StylishItem>
+            <Text>The button ran away.</Text>
+          </StylishItem>
+          <StylishItem>
+            <Text>
+              I guess we can't see all the blogs I definitely wrote ¯\_(ツ)_/¯.
+            </Text>
+          </StylishItem>
+        </StyledShowTextWithStyle>
+      )}
     </BlogContainer>
   );
 };
 
 const BlogContainer = styled.div`
   ${centerContent}
+  flex-direction: column;
+  justify-content: flex-start;
   font-family: "Ubuntu";
   padding: 2rem;
   height: 100vh;
+  color: #7b5f35;
 `;
 
 const StyledShowTextWithStyle = styled(ShowTextWithStyle)`
@@ -44,7 +63,7 @@ const StyledShowTextWithStyle = styled(ShowTextWithStyle)`
 const Text = styled.div`
   position: relative;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   margin: 1rem;
 `;
 
@@ -52,19 +71,28 @@ const SneakyItem = styled(StylishItem)`
   margin-top: 1rem;
 `;
 
-const SneakyButton = () => {
-  const [clicked, setClicked] = useState<boolean>(false);
-  console.log(clicked);
+type SneakyButtonProps = {
+  onEscape: () => void;
+};
+const SneakyButton = ({ onEscape }: SneakyButtonProps) => {
+  const [shouldEscape, setShouldEscape] = useState<boolean>(false);
+
+  const handleEscape = useCallback(() => {
+    setShouldEscape(true);
+    onEscape();
+  }, [onEscape]);
+
   return (
     <SneakyButtonContainer
-      onMouseEnter={() => setClicked(true)}
-      clicked={clicked}
+      onMouseEnter={handleEscape}
+      onClick={handleEscape}
+      runAway={shouldEscape}
     >
       Show Blogs
     </SneakyButtonContainer>
   );
 };
-const SneakyButtonContainer = styled.div<{ clicked: boolean }>`
+const SneakyButtonContainer = styled.div<{ runAway: boolean }>`
   ${centerAbsolutely}
 
   ${centerContent}
@@ -76,7 +104,8 @@ const SneakyButtonContainer = styled.div<{ clicked: boolean }>`
   padding: 1.5rem;
 
   background: #8888da;
+  color: white;
 
   transition: transform 500ms ease-in;
-  transform: ${(props) => props.clicked && `translate(-50%, 100vh)`};
+  transform: ${(props) => props.runAway && `translate(-50%, 100vh)`};
 `;
