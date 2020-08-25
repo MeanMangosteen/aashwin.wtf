@@ -8,6 +8,100 @@ import { centerContent, hoverGrow } from "../../utils/styles";
 import { ShowTextWithStyle, StylishItem } from "../../utils/ShowTextWithStyle";
 import { AiFillGithub } from "react-icons/ai";
 
+const DemoContainer = styled.div`
+  ${centerContent}
+  flex-direction: column;
+`;
+const VideoTitle = styled.div`
+  margin-bottom: 2rem;
+  font-size: 3rem;
+`;
+const StyledVideo = styled.video`
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  object-fit: contain;
+  filter: drop-shadow(2px 4px 6px black);
+`;
+export const Mailcraft = () => {
+  return (
+    <CarouselBanner>
+      <StyledCarousel running={false}>
+        <StyledCarouselItem>
+          <MailcraftBanner>
+            <TitleText>
+              <MailcraftLogo>
+                <Logo src={MailcraftLogoSVG} />
+                <LogoText>Mailcraft</LogoText>
+              </MailcraftLogo>
+            </TitleText>
+          </MailcraftBanner>
+        </StyledCarouselItem>
+        <StyledCarouselItem>
+          <IntroContainer>
+            <BeforeContainer>
+              <IntroText>Go from this:</IntroText>
+              <DisplayCutout>
+                <EmailIconContainer>
+                  <EmailIcon src={GmailSVG} />
+                  <EmailIconBadge>9,999</EmailIconBadge>
+                </EmailIconContainer>
+              </DisplayCutout>
+            </BeforeContainer>
+            <AfterContainer>
+              <IntroText>To this:</IntroText>
+              <DisplayCutout>
+                <EmailIconContainer>
+                  <EmailIcon src={GmailSVG}></EmailIcon>
+                  <EmailIconHalo />
+                </EmailIconContainer>
+              </DisplayCutout>
+            </AfterContainer>
+          </IntroContainer>
+        </StyledCarouselItem>
+        <StyledCarouselItem>
+          <DemoContainer>
+            <VideoTitle>Demo Time!</VideoTitle>
+            <StyledVideo controls>
+              <source
+                src="https://s3.ap-southeast-2.amazonaws.com/aashwin.wtf/mailcraft-demo-webm.webm"
+                type="video/webm"
+              ></source>
+            </StyledVideo>
+          </DemoContainer>
+        </StyledCarouselItem>
+        <StyledCarouselItem>
+          <OutroContainer>
+            <VisitMailcraftContainer>
+              <VisitMailcraftText>Go to Mailcraft</VisitMailcraftText>
+              <MailcraftLogoContainer
+                onClick={() =>
+                  window.open("https://mailcraft.herokuapp.com/", "_blank")
+                }
+              >
+                <Logo src={MailcraftLogoSVG} />
+              </MailcraftLogoContainer>
+            </VisitMailcraftContainer>
+            <VisitGithubContainer>
+              <VisitGithubText>Find this on github</VisitGithubText>
+              <GithubIconContainer
+                onClick={() =>
+                  window.open(
+                    "https://github.com/MeanMangosteen/mailcraft",
+                    "_blank"
+                  )
+                }
+              >
+                <GithubIcon />
+              </GithubIconContainer>
+            </VisitGithubContainer>
+          </OutroContainer>
+        </StyledCarouselItem>
+      </StyledCarousel>
+    </CarouselBanner>
+  );
+};
+
 const OutroContainer = styled.div`
   display: grid;
   grid-template-rows: 60% 40%;
@@ -77,74 +171,6 @@ const GithubIcon = styled(AiFillGithub)`
   ${hoverGrow}
   color: black;
 `;
-
-export const Mailcraft = () => {
-  return (
-    <CarouselBanner>
-      <StyledCarousel running={false}>
-        <StyledCarouselItem>
-          <OutroContainer>
-            <VisitMailcraftContainer>
-              <VisitMailcraftText>Go to Mailcraft</VisitMailcraftText>
-              <MailcraftLogoContainer
-                onClick={() =>
-                  window.open("https://mailcraft.herokuapp.com/", "_blank")
-                }
-              >
-                <Logo src={MailcraftLogoSVG} />
-              </MailcraftLogoContainer>
-            </VisitMailcraftContainer>
-            <VisitGithubContainer>
-              <VisitGithubText>Find this on github</VisitGithubText>
-              <GithubIconContainer
-                onClick={() =>
-                  window.open(
-                    "https://github.com/MeanMangosteen/mailcraft",
-                    "_blank"
-                  )
-                }
-              >
-                <GithubIcon />
-              </GithubIconContainer>
-            </VisitGithubContainer>
-          </OutroContainer>
-        </StyledCarouselItem>
-        <StyledCarouselItem>
-          <IntroContainer>
-            <BeforeContainer>
-              <IntroText>Go from this:</IntroText>
-              <DisplayCutout>
-                <EmailIconContainer>
-                  <EmailIcon src={GmailSVG} />
-                  <EmailIconBadge>9,999</EmailIconBadge>
-                </EmailIconContainer>
-              </DisplayCutout>
-            </BeforeContainer>
-            <AfterContainer>
-              <IntroText>To this:</IntroText>
-              <DisplayCutout>
-                <EmailIconContainer>
-                  <EmailIcon src={GmailSVG}></EmailIcon>
-                  <EmailIconHalo />
-                </EmailIconContainer>
-              </DisplayCutout>
-            </AfterContainer>
-          </IntroContainer>
-        </StyledCarouselItem>
-        <StyledCarouselItem>
-          <MailcraftBanner>
-            <TitleText>
-              <MailcraftLogo>
-                <Logo src={MailcraftLogoSVG} />
-                <LogoText>Mailcraft</LogoText>
-              </MailcraftLogo>
-            </TitleText>
-          </MailcraftBanner>
-        </StyledCarouselItem>
-      </StyledCarousel>
-    </CarouselBanner>
-  );
-};
 
 const StyledCarousel = styled(Carousel)`
   /* background: hsla(37, 13%, 72%, 1); */
