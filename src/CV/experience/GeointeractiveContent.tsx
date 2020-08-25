@@ -9,6 +9,11 @@ export const GeointeractiveContent = () => {
     <>
       <StyledCarouselItem>
         <TitleSlide>
+          <TitleImage
+            onClick={() =>
+              window.open("http://geointeractive.com.au/", "_blank")
+            }
+          />
           <StyledExperienceInfo
             position="Software/Embedded System Developer"
             location="Sydney CBD"
@@ -118,6 +123,21 @@ const ReflectionsContent = styled.div`
   font-size: 1.8rem;
 `;
 
+const TitleImage = styled.div`
+  ${centerAbsolutely}
+  height: 100%;
+  width: 40%;
+  background-image: url("http://geointeractive.co/wp-content/uploads/2017/10/logowhiteclean2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(2px 4px 6px black);
+
+  transition: transform 200ms ease-out;
+  &:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+`;
 const TitleSlide = styled.div`
   position: relative;
   height: 100%;
@@ -127,7 +147,7 @@ const TitleSlide = styled.div`
   background-repeat: no-repeat;
   background-position: center;
 
-  &::after {
+  /* &::after {
     content: "";
     ${centerAbsolutely}
     height: 100%;
@@ -137,7 +157,7 @@ const TitleSlide = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     filter: drop-shadow(2px 4px 6px black);
-  }
+  } */
 
   &::before {
     content: "";

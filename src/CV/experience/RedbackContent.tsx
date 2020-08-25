@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { CarouselItem } from "../../utils/Carousel";
-import { centerContent, centerAbsolutely } from "../../utils/styles";
+import { centerContent, centerAbsolutely, hoverGrow } from "../../utils/styles";
 import { ExperienceInfo } from "./ExperienceInfo";
 
 export const RedbackContent = () => {
@@ -9,6 +9,11 @@ export const RedbackContent = () => {
     <React.Fragment>
       <StyledCarouselItem>
         <TitleSlide>
+          <TitleImage
+            onClick={() =>
+              window.open("https://www.redbackracing.com/", "_blank")
+            }
+          />
           <StyledExperienceInfo
             position="Department Leader - Data Acquisition"
             location="UNSW Kensington"
@@ -144,13 +149,28 @@ const ReflectionsContent = styled.div`
   font-size: 1.4rem;
 `;
 
+const TitleImage = styled.div`
+  ${centerAbsolutely}
+  height: 50%;
+  width: 100%;
+
+  background-image: url("https://uploads-ssl.webflow.com/5ec8ac71107e46be6b1f9449/5ec8b77a107e46318c1fb3aa_Redback_Racing_White_Transparent_Numberless.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 200ms ease-out;
+  &:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+`;
 const TitleSlide = styled.div`
   position: relative;
   background: black;
   height: 100%;
   width: 100%;
 
-  &::after {
+  /* &::after {
     content: "";
     ${centerAbsolutely}
     height: 50%;
@@ -160,7 +180,9 @@ const TitleSlide = styled.div`
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-  }
+
+    ${hoverGrow}
+  } */
 `;
 
 const AchievementsContainer = styled.div`

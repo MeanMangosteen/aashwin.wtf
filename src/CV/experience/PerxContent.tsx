@@ -9,6 +9,9 @@ export const PerxContent = () => {
     <>
       <StyledCarouselItem>
         <TitleSlide>
+          <TitleImage
+            onClick={() => window.open("https://perxhealth.com/", "_blank")}
+          />
           <ExperienceInfo
             position="Software Engineering Intern"
             location="Surry Hills"
@@ -83,6 +86,22 @@ const ReflectionsContent = styled.div`
   font-size: 1.8rem;
 `;
 
+const TitleImage = styled.div`
+  ${centerAbsolutely}
+  height: 30%;
+  width: 100%;
+
+  background-image: url("https://perxhealth.com/static/7d0954425eacb2c83d40c1eb90a441f6/b9595/perx-logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(2px 4px 6px black);
+
+  transition: transform 200ms ease-out;
+  &:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+`;
 const TitleSlide = styled.div`
   position: relative;
   background: radial-gradient(
@@ -93,7 +112,7 @@ const TitleSlide = styled.div`
   height: 100%;
   width: 100%;
 
-  &::after {
+  /* &::after {
     content: "";
     ${centerAbsolutely}
     height: 30%;
@@ -104,7 +123,7 @@ const TitleSlide = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     filter: drop-shadow(2px 4px 6px black);
-  }
+  } */
 `;
 const AchievementsContainer = styled.div`
   ${centerContent}

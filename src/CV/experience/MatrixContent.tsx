@@ -9,7 +9,9 @@ export const MatrixContent = () => {
     <>
       <StyledCarouselItem>
         <TitleSlide>
-          <MatrixLogo>
+          <MatrixLogo
+            onClick={() => window.open("https://www.matrix.ai/", "_blank")}
+          >
             <Logo src="https://matrix.ai/assets/images/matrix-logo.png" />
             <LogoText>MATRIX</LogoText>
           </MatrixLogo>
@@ -81,15 +83,15 @@ export const MatrixContent = () => {
                 And somehow I have to convince them to be best friends.
               </li>
               <li>
-                I like the diversity of the challenges the different layers of the
-                stack provide, and it's satisfying having the pieces come together to make a living
-                website that dances and dazzles.
+                I like the diversity of the challenges the different layers of
+                the stack provide, and it's satisfying having the pieces come
+                together to make a living website that dances and dazzles.
               </li>
               <li>
                 Being the sole developer, I definitely missed working in a team.
-                That being said, the responsibility, and the
-                chance to learn web dev from scratch isn't something I would
-                have gotten at many other places.
+                That being said, the responsibility, and the chance to learn web
+                dev from scratch isn't something I would have gotten at many
+                other places.
               </li>
             </ul>
           </ReflectionsContent>
@@ -178,6 +180,11 @@ const MatrixLogo = styled.div`
   ${centerContent}
 
   filter: drop-shadow(2px 2px 6px grey);
+
+  transition: transform 200ms ease-out;
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 const Logo = styled.img``;
