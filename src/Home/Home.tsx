@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 import { Catwalk, WalkingCat } from "../utils/Catwalk";
 import { centerContent } from "../utils/styles";
 import { SizeMe } from "react-sizeme";
-import { Orbit } from "./Orbit";
+import { Orbit, OrbitIcon } from "./Orbit";
 import ToolboxSVG from "../images/toolbox.svg";
 import ArmyKnifeSVG from "../images/swiss-army-knife.svg";
 import MegaphoneSVG from "../images/megaphone.svg";
@@ -41,7 +41,7 @@ const ActualHome = () => {
         <SizeMe monitorHeight>
           {({ size }) => (
             <>
-              <Orbit
+              <CVOrbit
                 parentDim={size}
                 orbitSize={5}
                 iconSrc={ArmyKnifeSVG}
@@ -83,6 +83,12 @@ const ActualHome = () => {
     </ActualHomeContainer>
   );
 };
+
+const CVOrbit = styled(Orbit)`
+  ${OrbitIcon} {
+    padding-bottom: 0.8rem;
+  }
+`;
 
 const fadeIn = keyframes`
   from {

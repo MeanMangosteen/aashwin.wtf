@@ -12,20 +12,22 @@ type OrbitProps = {
   title: string;
   path: string;
   iconScale?: number;
+  className?: string;
 };
 
-export const Orbit = ({
+const Orbit = ({
   orbitSize,
   iconSrc,
   orbitSpeed,
   title,
   path,
   iconScale = 1,
+  className = "",
 }: OrbitProps) => {
   return (
     <SizeMe monitorHeight>
       {({ size }) => (
-        <OrbitContainer orbitSize={orbitSize}>
+        <OrbitContainer orbitSize={orbitSize} className={className}>
           <OrbitPath size={size} orbitSpeed={orbitSpeed}>
             <OrbitIconContianer>
               <OrbitIconWrapper size={size} orbitSpeed={orbitSpeed} to={path}>
@@ -181,6 +183,7 @@ const StyledIcon = styled.img<{ iconScale: number }>`
   height: 6vh;
   --baseScale: ${(props) => props.iconScale};
   transform: scale(var(--baseScale));
+  filter: drop-shadow(2px 2px 3px black);
 
   ${OrbitIconWrapper}:hover & {
     transform: scale(calc(var(--baseScale) * 1.2));
@@ -195,3 +198,5 @@ const IconText = styled.div`
   }
   transition: transform 200ms ease-in-out;
 `;
+
+export { Orbit, StyledIcon as OrbitIcon };

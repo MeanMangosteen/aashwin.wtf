@@ -19,15 +19,16 @@ const OutroContainer = styled.div`
 
 const VisitMailcraftContainer = styled.div`
   ${centerContent}
-  align-items: stretch;
+  flex-direction: column;
+  /* align-items: stretch;
   flex-direction: column;
   flex-basis: 0;
-  flex-grow: 1;
+  flex-grow: 1; */
 
-  /* > * {
+  > * {
     flex-basis: 0;
     flex-grow: 1;
-  } */
+  }
 `;
 
 const MailcraftLogoContainer = styled.div`
@@ -59,7 +60,7 @@ const VisitGithubContainer = styled.div`
 
 const VisitGithubText = styled.div`
   ${centerContent}
-  font-size: 4.5rem;
+  font-size: 3.5rem;
 `;
 
 const GithubIconContainer = styled.div`
@@ -74,6 +75,7 @@ const GithubIcon = styled(AiFillGithub)`
   object-fit: contain;
   filter: drop-shadow(2px 2px 6px grey);
   ${hoverGrow}
+  color: black;
 `;
 
 export const Mailcraft = () => {
@@ -84,13 +86,24 @@ export const Mailcraft = () => {
           <OutroContainer>
             <VisitMailcraftContainer>
               <VisitMailcraftText>Go to Mailcraft</VisitMailcraftText>
-              <MailcraftLogoContainer>
+              <MailcraftLogoContainer
+                onClick={() =>
+                  window.open("https://mailcraft.herokuapp.com/", "_blank")
+                }
+              >
                 <Logo src={MailcraftLogoSVG} />
               </MailcraftLogoContainer>
             </VisitMailcraftContainer>
             <VisitGithubContainer>
               <VisitGithubText>Find this on github</VisitGithubText>
-              <GithubIconContainer>
+              <GithubIconContainer
+                onClick={() =>
+                  window.open(
+                    "https://github.com/MeanMangosteen/mailcraft",
+                    "_blank"
+                  )
+                }
+              >
                 <GithubIcon />
               </GithubIconContainer>
             </VisitGithubContainer>
@@ -134,8 +147,10 @@ export const Mailcraft = () => {
 };
 
 const StyledCarousel = styled(Carousel)`
-  background: hsla(37, 13%, 72%, 1);
+  /* background: hsla(37, 13%, 72%, 1); */
+  background: #ece3d5;
   font-family: "Ubuntu";
+  color: #685f51;
 `;
 
 const StyledCarouselItem = styled(CarouselItem)`
@@ -203,14 +218,18 @@ const AfterContainer = styled(BeforeAfterContainer)`
   /* align-items: flex-start; */
 `;
 
-const IntroText = styled.div``;
+const IntroText = styled.div`
+  color: #685f51;
+  font-size: 3rem;
+`;
 
 const DisplayCutout = styled.div`
   ${centerContent}
   /* align-items: stretch; */
 
   background: grey;
-  box-shadow: inset 1px 0px 23px 10px #504436;
+  box-shadow: inset 1px 0px 23px 10px #504436, 0px 1px 34px 6px #a5922d,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
   border-radius: 8px;
   height: 300px;
   width: 50%;
