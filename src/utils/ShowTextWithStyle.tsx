@@ -1,6 +1,13 @@
-import React, { useState, useEffect, Fragment, useCallback as cb } from "react";
+import React, {
+  useState,
+  useEffect,
+  Fragment,
+  useCallback as cb,
+  useRef,
+} from "react";
 import { Transition } from "react-transition-group";
 import styled from "styled-components";
+import { useInView } from "react-intersection-observer";
 
 type ShowTextWithStyleProps = {
   children: React.ReactElement<StylishItemProps>[];
@@ -19,9 +26,16 @@ export const ShowTextWithStyle = ({
   const [visibleChildren, setVisibleChildren] = useState(
     Array(children.length).fill(false) // the indexes represent each child, the value: whether it's visible.
   );
+  // const ref = useRef<any>(null);
   const [isFinished, setIsFinished] = useState<boolean>(false);
+  const [ref, inView, entry] = useInView({
+    threshold: 0,
+  });
+
+  console.log("inView", inView);
 
   useEffect(() => {
+    if (!inView) return;
     if (isFinished) return;
     if (childCount > children.length) {
       onFinish && onFinish();
@@ -35,7 +49,7 @@ export const ShowTextWithStyle = ({
     }, 2000);
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [childCount, children]);
+  }, [childCount, children, inView]);
 
   const childs = children.map((C, idx) => {
     return (
@@ -56,7 +70,9 @@ export const ShowTextWithStyle = ({
     );
   });
   return (
-    <WithStyleContainer className={className}>{childs}</WithStyleContainer>
+    <WithStyleContainer ref={ref} className={className}>
+      {childs}
+    </WithStyleContainer>
   );
 };
 
@@ -80,7 +96,10 @@ export const StylishItem = ({
   );
 };
 
-const WithStyleContainer = styled.div``;
+const WithStyleContainer = styled.div`
+  min-height: 1px;
+  min-width: 1px;
+`;
 
 const Fade = styled.div`
   transition: 0.5s;

@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { CarouselItem } from "../../utils/Carousel";
-import { centerContent } from "../../utils/styles";
+import { centerContent, Bold } from "../../utils/styles";
 import { ExperienceInfo } from "./ExperienceInfo";
+import { BaseLink, BaseATag } from "../../utils/helpers";
 
 export const MatrixContent = () => {
   return (
@@ -27,15 +28,38 @@ export const MatrixContent = () => {
           <Title>What I've achieved</Title>
           <AchievementsContent>
             <ul>
-              {/* <li>Sole developer on ecommerce app for east timor.</li> */}
-              <li>Setup codebase, standards, and configuration.</li>
-              <li> Used stack: Typescript, React, Node, Postgres</li>
               <li>
-                Implemented hand-crafted server side rendering solution
-                supporting redux serialisation and hydration
+                <p>
+                  Setup and started devlopement on a P2P secret sharing app in{" "}
+                  <Bold>Javascript</Bold>
+                </p>
               </li>
               <li>
-                Use of React-Redux as data store + a store for cached requests
+                <BaseATag
+                  href="https://matrix.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: "inline-block" }}
+                >
+                  <p>
+                    Developed <i>company website</i> using HTML + CSS
+                  </p>
+                </BaseATag>
+              </li>
+              <li>
+                <p>Sole developer on ecommerce app for East Timor</p>
+              </li>
+              <li>
+                <p>Setup codebase, standards, and configuration</p>
+              </li>
+              <li>
+                <p>Used stack: Typescript, React, Node, Postgres</p>
+              </li>
+              <li>
+                <p>
+                  Implemented custom <Bold>SSR</Bold> solution supporting{" "}
+                  <Bold>Redux serialisation and hydration</Bold>
+                </p>
               </li>
             </ul>
           </AchievementsContent>
@@ -43,17 +67,36 @@ export const MatrixContent = () => {
       </StyledCarouselItem>
       <StyledCarouselItem>
         <AchievementsContainer>
-          <Title>What I've achieved (continued)</Title>
+          <Title>What I've achieved</Title>
           <AchievementsContent>
             <ul>
-              <li>Used React Suspense for data fetching and Error handling</li>
               <li>
-                Setup and extensive use of build and config tools: Webpack,
-                ESlint, Typscript.
+                <p>
+                  Use of <Bold>React-Redux</Bold> as data store + a store for
+                  cached requests
+                </p>
               </li>
-              <li>Setup of database tables, queries and seed data</li>
-              <li> Setup authentication + authorisation flow utilising JWTs</li>
-              <li> Efficent CSS animations</li>
+              <li>
+                <p>
+                  Used <Bold>React Suspense</Bold> for data fetching and error
+                  handling
+                </p>
+              </li>
+              <li>
+                <p>
+                  Setup and extensive use of build and config tools:{" "}
+                  <Bold>Webpack, ESlint, Typscript.</Bold>
+                </p>
+              </li>
+              <li>
+                <p>Setup of database tables, queries and seed data</p>
+              </li>
+              <li>
+                <p>
+                  Setup authentication + authorisation flow utilising{" "}
+                  <Bold>JWTs</Bold>
+                </p>
+              </li>
             </ul>
           </AchievementsContent>
         </AchievementsContainer>
@@ -72,20 +115,21 @@ export const MatrixContent = () => {
                 But I've come to realise that there's actually a rich ecosystem
                 behind any sohpisticated application.
               </li>
-              <li>Most of all, I love the creativity it allows</li>
               <li>
-                All websites start the same. A white rectangle. A blank canvas.
-                Now go kiddo, make an experience.
+                I love the creativity the web allows. All websites start the
+                same. A white rectangle. A blank canvas. Now go kiddo, make an
+                experience.
               </li>
               <li>
-                And here in lies one of my favourite<sup>*</sup> challenges. I
-                have my imagination running wild, and then I have the box model.
-                And somehow I have to convince them to be best friends.
+                One of my favourite<sup>*</sup> challenges: I have my
+                imagination running wild, and then I have the box model. And
+                somehow I have to convince them to be best friends.
               </li>
               <li>
                 I like the diversity of the challenges the different layers of
-                the stack provide, and it's satisfying having the pieces come
-                together to make a living website that dances and dazzles.
+                the stack provide. All of which require a different mode of
+                thinking, and the satisfaction of having all the pieces come
+                together to have the app dance and dazzle.
               </li>
               <li>
                 Being the sole developer, I definitely missed working in a team.
@@ -121,6 +165,10 @@ const StyledCarouselItem = styled(CarouselItem)`
   font-family: "Ubuntu";
   background: black;
   background: #02243e;
+
+  b {
+    display: contents;
+  }
 `;
 
 const ReflectionsContainer = styled.div`
@@ -128,7 +176,6 @@ const ReflectionsContainer = styled.div`
   flex-direction: column;
   color: white;
   max-width: 1000px;
-  filter: drop-shadow(2px 2px 3px grey);
 
   li {
     margin: 1rem;
@@ -160,11 +207,10 @@ const AchievementsContainer = styled.div`
   max-width: 1500px;
   flex-direction: column;
   color: white;
-  filter: drop-shadow(2px 2px 3px grey);
 `;
 
 const AchievementsContent = styled.div`
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   ul {
     ${centerContent}
     align-items: stretch;

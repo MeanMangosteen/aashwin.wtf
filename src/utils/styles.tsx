@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import styled, { css } from "styled-components";
 
 export const centerContent = css`
   display: flex;
@@ -51,4 +51,9 @@ export const hoverGrow = css`
     transform: scale(1.2);
   }
   transition: transform 200ms ease-out;
+`;
+
+export const Bold = styled.strong`
+  /* font-weight: bold;
+  display: inline; */
 `;

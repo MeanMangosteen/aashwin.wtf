@@ -67,16 +67,18 @@ export const ImARealBoy = () => {
                 <SubjectContent>
                   <ul>
                     <li>
-                      It's thrilling to do things that haven't been done before
-                      or thought not possible. Learning new things that become
-                      tools for the imagination to paint it's pictures. For me
-                      this can be anything from meditation and reading books, to
-                      fighting exhaustion in important match or being alone on a
-                      windy road.
+                      I like doing things that haven't been done before or
+                      thought not possible. A big part of which is learning by
+                      experience what is and isn't possible.
                     </li>
                     <li>
                       Anything that explores what the human condition is capable
                       of, and gives insight into the game we call 'life'.
+                    </li>
+                    <li>
+                      For me this can be anything from meditation or reading, to
+                      fighting physical exhaustion or being alone on a windy
+                      road.
                     </li>
                   </ul>
                 </SubjectContent>

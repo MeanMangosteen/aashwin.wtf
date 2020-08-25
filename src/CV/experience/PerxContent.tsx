@@ -1,7 +1,7 @@
 import React from "react";
 import { CarouselItem } from "../../utils/Carousel";
 import styled from "styled-components";
-import { centerContent, centerAbsolutely } from "../../utils/styles";
+import { centerContent, centerAbsolutely, Bold } from "../../utils/styles";
 import { ExperienceInfo } from "./ExperienceInfo";
 
 export const PerxContent = () => {
@@ -25,18 +25,28 @@ export const PerxContent = () => {
           <AchievementsContent>
             <ul>
               <li>
-                Automated processing of PDFs: used computer vision to locate and
-                crop region of interest using Python
+                <p>
+                  Automated processing of PDFs: used computer vision to locate
+                  and crop region of interest using <Bold>Python</Bold>
+                </p>
               </li>
               <li>
-                Created end-to-end testing tool using Python for non-technial
-                stakeholders. Created visualizations of results.
+                <p>
+                  Created end-to-end testing tool using <Bold>Python</Bold> for
+                  non-technial stakeholders. Created visualizations of results.
+                </p>
               </li>
               <li>
-                Used computer vision to locate and determine probability that
-                certain objects are in an image
+                <p>
+                  Used <Bold>computer vision</Bold> to locate and determine
+                  probability that certain objects are in an image
+                </p>
               </li>
-              <li>REST API unit testing using Postman</li>
+              <li>
+                <p>
+                  REST API <Bold>unit testing</Bold> using Postman
+                </p>
+              </li>
             </ul>
           </AchievementsContent>
         </AchievementsContainer>
@@ -61,7 +71,7 @@ export const PerxContent = () => {
 const StyledCarouselItem = styled(CarouselItem)`
   color: white;
   font-family: "Ubuntu";
-  background: hsla(187, 53%, 54%, 1);
+  background: hsla(187, 74%, 50%, 1);
 `;
 
 const ReflectionsContainer = styled.div`

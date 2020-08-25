@@ -7,7 +7,7 @@ import {
   centerAbsolutely,
 } from "../../utils/styles";
 import { TitleText, CarouselBanner, Banner } from "../styles";
-import { Experience } from "../experience/Experience";
+import { Bold } from "../../utils/styles";
 
 export const Education = () => {
   return (
@@ -30,23 +30,31 @@ export const Education = () => {
               <SubjectContainer>
                 <SubjectTitle>Operating Systems</SubjectTitle>
                 <SubjectContent>
-                  A deep dive into the Linux kernel: imple-mented concurrency
-                  primitives, memory management, system calls, and file system
-                  modules.
+                  <p>
+                    A deep dive into the <Bold>Linux kernel</Bold>: imple-mented
+                    concurrency primitives, memory management, system calls, and
+                    file system modules.
+                  </p>
                 </SubjectContent>
               </SubjectContainer>
               <SubjectContainer>
                 <SubjectTitle>Algorithms</SubjectTitle>
                 <SubjectContent>
-                  Study and design of algorithms considering computational
-                  complexity using a variety of techniques and data structures.
+                  <p>
+                    Study and design of algorithms considering{" "}
+                    <Bold>computational complexity</Bold> using a variety of
+                    techniques and data structures.
+                  </p>
                 </SubjectContent>
               </SubjectContainer>
               <SubjectContainer>
                 <SubjectTitle>Computer Networks</SubjectTitle>
                 <SubjectContent>
-                  Study of network stacks, various protocols (TCP, UDP), routing
-                  and the architecture of the Internet
+                  <p>
+                    Study of network stacks, various protocols{" "}
+                    <Bold>(TCP, UDP)</Bold>, routing and the architecture of the
+                    Internet
+                  </p>
                 </SubjectContent>
               </SubjectContainer>
             </FavSubjectsContent>
@@ -123,7 +131,7 @@ export const FavoriteSubjectsContainer = styled.div`
 export const FavSubjectsTitle = styled.div`
   ${centerContent}
   font-size: 4rem;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   color: #fff9ef;
   filter: drop-shadow(2px 4px 6px black);
   /* font-weight: bold; */
@@ -148,7 +156,7 @@ export const SubjectTitle = styled.div`
   flex-direction: column;
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   padding-bottom: 0.5rem;
   position: relative;
   ${CSSDividerBottom({ width: "80%", iHaveSetRelativePosition: true })}

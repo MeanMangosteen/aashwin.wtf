@@ -1,7 +1,7 @@
 import React from "react";
 import { CarouselItem } from "../../utils/Carousel";
 import styled from "styled-components";
-import { centerContent, centerAbsolutely } from "../../utils/styles";
+import { centerContent, centerAbsolutely, Bold } from "../../utils/styles";
 import { ExperienceInfo } from "./ExperienceInfo";
 
 export const GeointeractiveContent = () => {
@@ -27,18 +27,28 @@ export const GeointeractiveContent = () => {
           <AchievementsContent>
             <ul>
               <li>
-                Writing software in C++ for custom operation of machine vision
-                cameras for autonomous flotation device
+                <p>
+                  Wrote software for custom operation of machine vision cameras
+                  for autonomous flotation device in <Bold>C++</Bold>
+                </p>
               </li>
               <li>
-                Chose appropriate system architecture and choice elements: SBCs,
-                modules and components
+                <p>
+                  Chose appropriate system architecture and choice elements:
+                  SBCs, modules and components
+                </p>
               </li>
               <li>
-                Programmed microcontrollers, sensors, and IMUs to work in
-                conjunction with an embedded single board computer
+                <p>
+                  Programmed microcontrollers, sensors, and IMUs to work in
+                  conjunction with an embedded single board computer
+                </p>
               </li>
-              <li>Exercising AGILE software development methodology</li>
+              <li>
+                <p>
+                  Exercising <Bold>AGILE</Bold> software development methodology
+                </p>
+              </li>
             </ul>
           </AchievementsContent>
         </AchievementsContainer>
@@ -59,8 +69,8 @@ export const GeointeractiveContent = () => {
               </li>
               <li>
                 The 'just make it happen' startup mentality was refreshing.
-                Certainly different to the vicscous bureaucracy and hoopla I
-                come to associate with larger organisations.
+                Certainly different to the viscous decision making I've come to
+                associate with larger organisations.
               </li>
             </ul>
           </ReflectionsContent>

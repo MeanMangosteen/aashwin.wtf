@@ -1,7 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { CarouselItem } from "../../utils/Carousel";
-import { centerContent, centerAbsolutely, hoverGrow } from "../../utils/styles";
+import {
+  centerContent,
+  centerAbsolutely,
+  hoverGrow,
+  Bold,
+} from "../../utils/styles";
 import { ExperienceInfo } from "./ExperienceInfo";
 
 export const RedbackContent = () => {
@@ -27,23 +32,34 @@ export const RedbackContent = () => {
           <AchievementsContent>
             <ul>
               <li>
-                Managed team of ~10 engineers using Agile software development
+                <p>
+                  Managed team of ~10 engineers using <Bold>AGILE</Bold>{" "}
+                  software development
+                </p>
               </li>
               <li>
-                Extensive development on datalogger and telemetry application
-                using C++
+                <p>
+                  Extensive development on datalogger and telemetry application
+                  using <Bold>C++</Bold>
+                </p>
               </li>
               <li>
-                Used Zynq-7000 (FPGA) SoC and Xilinx development tools: Vivado,
-                SDK, Petalinux
+                <p>
+                  Used Zynq-7000 (FPGA) SoC and Xilinx development tools:
+                  Vivado, SDK, Petalinux
+                </p>
               </li>
               <li>
-                Interfaced with various hardware modules, sensors and
-                interaction with automotive ECU via CAN bus
+                <p>
+                  Interfaced with various hardware modules, sensors and
+                  interaction with automotive ECU via CAN bus
+                </p>
               </li>
               <li>
-                Contributed to wireless telemetry flow writing Python cloud
-                servers
+                <p>
+                  Contributed to wireless telemetry flow writing{" "}
+                  <Bold>Python</Bold> cloud servers
+                </p>
               </li>
             </ul>
           </AchievementsContent>
@@ -65,18 +81,19 @@ export const RedbackContent = () => {
                 It was the first time I:
                 <ul>
                   <li>
-                    Applied my education on something <b>real</b> and{" "}
-                    <b>significant</b>. This isn't something that's blindly
-                    marked then forgotten. There are so many stakeholders who
-                    genuinely want the car complete and running its best.
+                    Applied my education on something <Bold>real</Bold> and{" "}
+                    <Bold>significant</Bold>. This isn't something that's
+                    blindly marked then forgotten. There are so many
+                    stakeholders who genuinely want the car complete and running
+                    its best.
                     {/* My actions and efforts had tangible consequences,
                     they didn't simply change a number I got at the end. */}
                   </li>
                   <li>
-                    Belonged to something that can be called <b>organisation</b>
-                    . Teams. Teams within teams. People from{" "}
-                    <b>varying disciplines</b>. All motivated, driven and
-                    working towards a common goal. Before this, I thought{" "}
+                    Belonged to something that can be called{" "}
+                    <Bold>organisation</Bold>. Teams. Teams within teams. People
+                    from <Bold>varying disciplines</Bold>. All motivated, driven
+                    and working towards a common goal. Before this, I thought{" "}
                     <i>teamwork</i> meant working on a group project.
                     {/* Ha. Ha ha. */} Group projects don't have a treasury.
                   </li>
@@ -94,17 +111,18 @@ export const RedbackContent = () => {
                 </ul>
               </li>
               <li>
-                <b>Shoot for the stars, but start from ground zero</b> - I set
-                targets and used technologies that we had <b>absolutely</b> no
-                right to. It's one thing to be optimistic, is another to embark
-                on a death march. Know where you stand, and use what you know.{" "}
-                <b>Set a base, then grow.</b>
+                <Bold>Shoot for the stars, but start from ground zero</Bold> - I
+                set targets and used technologies that we had{" "}
+                <Bold>absolutely</Bold> no right to. It's one thing to be
+                optimistic, is another to embark on a death march. Know where
+                you stand, and use what you know.{" "}
+                <Bold>Set a base, then grow.</Bold>
                 {/* Green and starry-eyed I was, we set targets and used
                 technologies that we had **absolutely** no right to. */}
               </li>
               <li>
-                <b>You leave a legacy for all the good, and the bad.</b> - I
-                revisited my department years after which turned out to be a
+                <Bold>You leave a legacy for all the good, and the bad.</Bold> -
+                I revisited my department years after which turned out to be a
                 super humbling experience - seeing fresh faces and how our
                 projects had evolved. I saw work that I was proud of, and
                 monstrocities I wish no person would ever see, both still
