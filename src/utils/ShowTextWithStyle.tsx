@@ -32,7 +32,6 @@ export const ShowTextWithStyle = ({
     threshold: 0,
   });
 
-  console.log("inView", inView);
 
   useEffect(() => {
     if (!inView) return;

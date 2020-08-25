@@ -13,8 +13,9 @@ export const Blog = () => {
       <StyledShowTextWithStyle>
         <StylishItem>
           <Text>
-            *Ahem* Yes...here is my collection of consistently written blog
-            posts.
+            <p>
+              Yes...here is my collection of consistently written blog posts.
+            </p>
           </Text>
         </StylishItem>
         <StylishItem>
@@ -51,6 +52,7 @@ const BlogContainer = styled.div`
   justify-content: flex-start;
   font-family: "Ubuntu";
   padding: 2rem;
+  box-sizing: border-box;
   height: 100vh;
   color: #7b5f35;
 `;
