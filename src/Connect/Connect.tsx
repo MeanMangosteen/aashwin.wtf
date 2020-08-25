@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { centerContent } from "../utils/styles";
+import { centerContent, hoverGrow } from "../utils/styles";
 import { MessageBox } from "./MessageBox";
 import { ShowTextWithStyle, StylishItem } from "../utils/ShowTextWithStyle";
 import AashwinsImageSrc from "../images/aashwin-plant-cropped.jpg";
+import { AiFillGithub } from "react-icons/ai";
 
 export const Connect = () => {
   return (
@@ -23,12 +24,64 @@ export const Connect = () => {
         <StylishMessageBoxItem>
           <StyledMessageBox onSend={(input) => {}} />
         </StylishMessageBoxItem>
+        <StylishItem>
+          <GithubContainer
+            onClick={() =>
+              window.open("https://github.com/MeanMangosteen/", "_blank")
+            }
+          >
+            <GithubText>Find me on Github</GithubText>
+            <GithubIconContainer>
+              <GithubIcon />
+            </GithubIconContainer>
+          </GithubContainer>
+        </StylishItem>
       </StyledShowTextWithStyle>
     </ConnectContainer>
   );
 };
 
+const GithubContainer = styled.div`
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+
+  ${centerContent}
+  flex-direction: column;
+
+  border: 3px solid;
+  border-radius: 10px;
+
+  box-shadow: 2px 2px 2px 2px #6b5432;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+  transition: transform 200ms ease-out;
+`;
+
+const GithubText = styled.div`
+  font-size: 1.2rem;
+  padding: 0.8rem;
+  color: black;
+`;
+
+const GithubIconContainer = styled.div`
+  ${centerContent}
+  height: 7vh;
+  width: 7vh;
+`;
+const GithubIcon = styled(AiFillGithub)`
+  height: 100%;
+  width: 100%;
+  flex-grow: 1;
+  object-fit: contain;
+  color: black;
+`;
+
 const ConnectContainer = styled.div`
+  position: relative;
+
   display: grid;
   grid-template-rows: 40% 60%;
   grid-template-columns: auto;
