@@ -131,21 +131,44 @@ const AchievementsContainer = styled.div`
   flex-direction: column;
   color: white;
   filter: drop-shadow(2px 4px 6px black);
+  text-align: center;
 `;
 
 const AchievementsContent = styled.div`
   font-size: 1.8rem;
-  text-align: center;
   ul {
     ${centerContent}
-    align-items: start;
-    > li {
-      flex-basis: 0;
-      flex-grow: 1;
-    }
+    align-items: stretch;
   }
   li {
-    margin: 1rem;
+    flex-basis: 0;
+    flex-grow: 1;
+
+    ${centerContent}
     list-style: none;
+    padding: 1rem;
+    margin: 1rem;
+
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: -1rem;
+      height: 1px;
+      width: 50%;
+    }
+
+    &::before {
+      left: 50%;
+      background: linear-gradient(to right, white 0%, transparent 100%);
+    }
+
+    &::after {
+      left: 50%;
+      background: linear-gradient(to left, white 0%, transparent 100%);
+      transform: translateX(-100%);
+    }
   }
 `;

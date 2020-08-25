@@ -167,12 +167,38 @@ const AchievementsContent = styled.div`
   font-size: 1.8rem;
   ul {
     ${centerContent}
+    align-items: stretch;
   }
   li {
-    margin: 1rem;
-    list-style: none;
     flex-basis: 0;
     flex-grow: 1;
+
+    ${centerContent}
+    margin: 1rem;
+    list-style: none;
+    padding: 1rem;
+
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: -1rem;
+      height: 1px;
+      width: 50%;
+    }
+
+    &::before {
+      left: 50%;
+      background: linear-gradient(to right, white 0%, transparent 100%);
+    }
+
+    &::after {
+      left: 50%;
+      background: linear-gradient(to left, white 0%, transparent 100%);
+      transform: translateX(-100%);
+    }
   }
 `;
 
