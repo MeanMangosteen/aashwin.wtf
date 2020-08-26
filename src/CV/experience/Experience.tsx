@@ -1,31 +1,31 @@
 import React from "react";
-import { Carousel, CarouselItem } from "../../utils/Carousel";
-import { RedbackContent } from "./RedbackContent";
 import styled from "styled-components";
 import { CarouselBanner, Banner, TitleText } from "../styles";
-import { PerxContent } from "./PerxContent";
-import { GeointeractiveContent } from "./GeointeractiveContent";
-import { MatrixContent } from "./MatrixContent";
+import { perxContent } from "./PerxContent";
+import { geointeractiveContent } from "./GeointeractiveContent";
+import { matrixContent } from "./MatrixContent";
+import { CarouselWowItem, CarouselWow } from "../../utils/CarouselWow";
+import { redbackContent } from "./RedbackContent";
 
 export const Experience = () => {
   return (
     <CarouselBanner>
-      <StyledCarousel running={false}>
-        <CarouselItem>
+      <StyledCarousel>
+        <CarouselWowItem>
           <ExperienceBanner>
             <ExperienceTitle>Experience</ExperienceTitle>
           </ExperienceBanner>
-        </CarouselItem>
-        <RedbackContent />
-        <PerxContent />
-        <GeointeractiveContent />
-        <MatrixContent />
+        </CarouselWowItem>
+        {redbackContent}
+        {perxContent}
+        {geointeractiveContent}
+        {matrixContent}
       </StyledCarousel>
     </CarouselBanner>
   );
 };
 
-const StyledCarousel = styled(Carousel)`
+const StyledCarousel = styled(CarouselWow)`
   color: white;
 `;
 

@@ -61,6 +61,7 @@ const PreambleContainer = styled.div`
 `;
 const PreambleText = styled.div`
   ${centerContent}
+  margin: 0 auto;
   max-width: 1200px;
   color: white;
   font-size: 1.4rem;
@@ -73,6 +74,7 @@ const SkillBarsContainer = styled.div`
 `;
 
 const SkillBars = styled.div`
+  margin: 0 auto;
   max-width: 1400px;
   display: flex;
   justify-content: start;

@@ -8,6 +8,7 @@ import React, {
 import styled, { keyframes, css } from "styled-components";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { centerContent } from "./styles";
+import flattenChildren from "react-keyed-flatten-children";
 
 type CarouselWowProps = {
   className?: string;
@@ -28,15 +29,19 @@ export const CarouselWow = ({ className = "", children }: CarouselWowProps) => {
 
   useEffect(() => {
     setNumChildren(ref.current?.children.length);
+    console.log("nummm children", ref.current?.children.length);
   }, []);
 
   const wrappedChildren = useMemo(() => {
-    return children.map((C: any, idx: number) => (
+    console.log("children", children);
+    console.log("flat children", flattenChildren(children));
+    return flattenChildren(children).map((C: any, idx: number) => (
       <ItemWrapper index={idx} currentIndex={index.current}>
         {React.isValidElement(C) ? React.cloneElement(C) : C}
       </ItemWrapper>
     ));
   }, [children, index]);
+  console.log("wrapped children", flattenChildren(children));
   const handleNext = useCallback(() => {
     setIndex({
       current: mod(index.current + 1, numChildren),
@@ -52,11 +57,13 @@ export const CarouselWow = ({ className = "", children }: CarouselWowProps) => {
   }, [index, numChildren]);
 
   return (
-    <CarouselWowContainer ref={ref} className={className}>
+    <CarouselWowContainer className={className}>
       <ControlLeft className="control" onClick={handlePrev}>
         <StyledLeftArrow />
       </ControlLeft>
-      <ItemContainer index={index.current}>{wrappedChildren}</ItemContainer>
+      <ItemContainer ref={ref} index={index.current}>
+        {wrappedChildren}
+      </ItemContainer>
       <ControlRight className="control" onClick={handleNext}>
         <StyledRightArrow />
       </ControlRight>

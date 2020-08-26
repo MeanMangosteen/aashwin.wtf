@@ -1,5 +1,4 @@
 import React from "react";
-import { Carousel, CarouselItem } from "../utils/Carousel";
 import styled from "styled-components";
 import { centerContent } from "../utils/styles";
 import {
@@ -11,22 +10,23 @@ import {
   SubjectContent,
 } from "./education/Education";
 import { CarouselBanner, Banner, TitleText } from "./styles";
+import { CarouselWowItem, CarouselWow } from "../utils/CarouselWow";
 
 export const ImARealBoy = () => {
   return (
     <CarouselBanner>
-      <StyledCarousel running={false}>
-        <CarouselItem>
+      <StyledCarousel>
+        <CarouselWowItem>
           <ImHumanBanner>
             <ImHumanTitle>I'm not a pdf</ImHumanTitle>
           </ImHumanBanner>
-        </CarouselItem>
-        <CarouselItem>
+        </CarouselWowItem>
+        <CarouselWowItem>
           <TitleSlide>
             There is a real human behind this document. I promise.
           </TitleSlide>
-        </CarouselItem>
-        <CarouselItem>
+        </CarouselWowItem>
+        <CarouselWowItem>
           <FavoriteSubjectsContainer>
             <FavSubjectsTitle>Things that get me going</FavSubjectsTitle>
             <FavSubjectsContent>
@@ -85,8 +85,8 @@ export const ImARealBoy = () => {
               </SubjectContainer>
             </FavSubjectsContent>
           </FavoriteSubjectsContainer>
-        </CarouselItem>
-        <CarouselItem>
+        </CarouselWowItem>
+        <CarouselWowItem>
           <RoleModelsContainer>
             <FavSubjectsTitle>Role Models</FavSubjectsTitle>
             <ol>
@@ -94,7 +94,7 @@ export const ImARealBoy = () => {
               <li>Courage the Cowardly Dog</li>
             </ol>
           </RoleModelsContainer>
-        </CarouselItem>
+        </CarouselWowItem>
       </StyledCarousel>
     </CarouselBanner>
   );
@@ -110,13 +110,14 @@ const ImHumanTitle = styled(TitleText)`
   color: hsl(37, 100%, 79%);
 `;
 
-const StyledCarousel = styled(Carousel)`
+const StyledCarousel = styled(CarouselWow)`
   font-family: "Ubuntu";
   background: blanchedalmond;
   color: #6f6b64;
 `;
 
 const TitleSlide = styled.div`
+  ${centerContent}
   font-size: 2rem;
 `;
 

@@ -1,22 +1,22 @@
 import React from "react";
-import { Carousel, CarouselItem } from "../../utils/Carousel";
 import styled from "styled-components";
 import { CarouselBanner, Banner, TitleText } from "../styles";
 import { SkillzThatKillz } from "./SkillzThatKillz";
+import { CarouselWow, CarouselWowItem } from "../../utils/CarouselWow";
 
 export const Skills = () => {
   return (
     <CarouselBanner>
-      <Carousel running={false}>
-        <CarouselItem>
+      <CarouselWow>
+        <CarouselWowItem>
           <SkillsBanner>
             <SkillsTitle>Skills</SkillsTitle>
           </SkillsBanner>
-        </CarouselItem>
-        <CarouselItem>
+        </CarouselWowItem>
+        <CarouselWowItem>
           <SkillzThatKillz />
-        </CarouselItem>
-      </Carousel>
+        </CarouselWowItem>
+      </CarouselWow>
     </CarouselBanner>
   );
 };

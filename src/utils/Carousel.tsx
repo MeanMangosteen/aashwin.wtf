@@ -9,9 +9,6 @@ const Carousel = styled(
     const ref = useRef<any>();
     // const numChildren =
     const [numChildren, setNumChildren] = React.useState<number>(0);
-    console.log("num children", numChildren);
-    console.log(ref);
-    console.log(children);
 
     useEffect(() => {
       setNumChildren(ref.current?.children.length);
