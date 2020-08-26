@@ -15,7 +15,7 @@ export const GeointeractiveContent = () => {
             }
           />
           <StyledExperienceInfo
-            position="Software/Embedded System Developer"
+            position="Software/Embedded Systems Developer"
             location="Sydney CBD"
             time="Jun 2017 - Jul 2018"
           />
@@ -46,7 +46,7 @@ export const GeointeractiveContent = () => {
               </li>
               <li>
                 <p>
-                  Exercising <Bold>AGILE</Bold> software development methodology
+                  Exercised <Bold>AGILE</Bold> software development methodology
                 </p>
               </li>
             </ul>
@@ -64,8 +64,8 @@ export const GeointeractiveContent = () => {
               </li>
               <li>
                 Being in a startup incubator was interesting. Getting to see the
-                different personalities and the whacky things the startups were
-                working on was pretty insightful.
+                different personalities that make a start up tick and the whacky
+                things everyone was working on was pretty insightful.
               </li>
               <li>
                 The 'just make it happen' startup mentality was refreshing.

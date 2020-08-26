@@ -10,6 +10,10 @@ code {
     monospace;
 }
 
+html {
+  background: #fff;
+}
+
 @import url("https://fonts.googleapis.com/css?family=Chelsea+Market");
 @import url("https://fonts.googleapis.com/css?family=Luckiest+Guy");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");

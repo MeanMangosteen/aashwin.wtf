@@ -14,10 +14,12 @@ import { Projects } from "./Projects/Projects";
 
 const Explode = keyframes`
 from {
-  transform: scale(0);
+  transform: translate(50%, 25%) scale(0.5);
 }
 
-to {transform: scale(5)}
+to {
+  transform:  translate(25%, 25%) scale(5)
+}
 `;
 const Background = styled.div`
   position: fixed;

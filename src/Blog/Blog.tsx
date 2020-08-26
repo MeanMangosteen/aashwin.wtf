@@ -8,9 +8,17 @@ export const Blog = () => {
     explainUnderstandableDiversion,
     setExplainUnderstandableDiversion,
   ] = useState<boolean>(false);
+  const [baitReady, setBaitReady] = useState<boolean>(false);
   return (
     <BlogContainer>
       <StyledShowTextWithStyle>
+        <StylishItem>
+          <Text>
+            <p>
+              <i>*ahem*</i>
+            </p>
+          </Text>
+        </StylishItem>
         <StylishItem>
           <Text>
             <p>
@@ -21,10 +29,11 @@ export const Blog = () => {
         <StylishItem>
           <Text>Just click the button below to see them.</Text>
         </StylishItem>
-        <SneakyItem>
+        <SneakyItem onShow={() => setBaitReady(true)}>
           <Text>
             Oh what a shame!
             <SneakyButton
+              canEscape={baitReady}
               onEscape={() => setExplainUnderstandableDiversion(true)}
             />
           </Text>
@@ -49,12 +58,15 @@ export const Blog = () => {
 const BlogContainer = styled.div`
   ${centerContent}
   flex-direction: column;
+  height: 100vh;
+  width: 100vw;
   justify-content: flex-start;
   font-family: "Ubuntu";
   padding: 2rem;
   box-sizing: border-box;
   height: 100vh;
   color: #7b5f35;
+  /* background: #ffe3b9; */
 `;
 
 const StyledShowTextWithStyle = styled(ShowTextWithStyle)`
@@ -74,9 +86,10 @@ const SneakyItem = styled(StylishItem)`
 `;
 
 type SneakyButtonProps = {
+  canEscape: boolean;
   onEscape: () => void;
 };
-const SneakyButton = ({ onEscape }: SneakyButtonProps) => {
+const SneakyButton = ({ onEscape, canEscape }: SneakyButtonProps) => {
   const [shouldEscape, setShouldEscape] = useState<boolean>(false);
 
   const handleEscape = useCallback(() => {
@@ -86,8 +99,8 @@ const SneakyButton = ({ onEscape }: SneakyButtonProps) => {
 
   return (
     <SneakyButtonContainer
-      onMouseEnter={handleEscape}
-      onClick={handleEscape}
+      onMouseEnter={canEscape ? handleEscape : undefined}
+      onClick={canEscape ? handleEscape : undefined}
       runAway={shouldEscape}
     >
       Show Blogs

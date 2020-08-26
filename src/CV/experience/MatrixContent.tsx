@@ -73,7 +73,7 @@ export const MatrixContent = () => {
               <li>
                 <p>
                   Use of <Bold>React-Redux</Bold> as data store + a store for
-                  cached requests
+                  cached APIthe startups were requests
                 </p>
               </li>
               <li>
@@ -172,6 +172,7 @@ const StyledCarouselItem = styled(CarouselItem)`
 `;
 
 const ReflectionsContainer = styled.div`
+  position: relative;
   ${centerContent}
   flex-direction: column;
   color: white;

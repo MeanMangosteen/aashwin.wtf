@@ -17,10 +17,20 @@ export const CV = () => {
 };
 
 const CVContainer = styled.div`
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  > * {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+    height: 100vh;
+  }
 `;
-
-

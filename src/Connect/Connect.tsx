@@ -12,7 +12,7 @@ export const Connect = () => {
       <AashwinsImageContainer>
         <AashwinsImage src={AashwinsImageSrc} />
       </AashwinsImageContainer>
-      <StyledShowTextWithStyle skipWaitingGame>
+      <StyledShowTextWithStyle>
         <StylishItem>
           <IAmContainer>
             <IAmText>I am</IAmText>
@@ -97,7 +97,7 @@ const ConnectContainer = styled.div`
 
   padding: 2rem;
   box-sizing: border-box;
-  background: #ffe3b9;
+  /* background: #ffe3b9; */
 
   color: hsla(33, 44%, 32%, 1);
 `;

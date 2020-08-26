@@ -90,7 +90,7 @@ export const ImARealBoy = () => {
           <RoleModelsContainer>
             <FavSubjectsTitle>Role Models</FavSubjectsTitle>
             <ol>
-              <li>Micheal Scott</li>
+              <li>Michael Scott</li>
               <li>Courage the Cowardly Dog</li>
             </ol>
           </RoleModelsContainer>

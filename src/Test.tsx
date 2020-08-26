@@ -5,13 +5,27 @@ import { centerContent } from "./utils/styles";
 export const Test = () => {
   return (
     <TestContainer>
-      <ToolboxOrbit />
+      <Cont>Hi</Cont>
+      <Cont>Byy</Cont>
+      <Cont>Hi</Cont>
+      <Cont>Byy</Cont>
     </TestContainer>
   );
 };
 
-const TestContainer = styled.div`
+const Cont = styled.div`
   ${centerContent}
+  height: 40vh;
+  width: 100%;
+  scroll-snap-align: start;
+`;
+
+const TestContainer = styled.div`
+  /* ${centerContent}
+  flex-direction: column; */
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
 `;
 
 const rotateRight = keyframes`
