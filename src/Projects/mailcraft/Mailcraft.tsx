@@ -6,7 +6,7 @@ import GmailSVG from "../../images/gmail-icon.svg";
 import { centerContent, hoverGrow } from "../../utils/styles";
 import { ShowTextWithStyle, StylishItem } from "../../utils/ShowTextWithStyle";
 import { AiFillGithub } from "react-icons/ai";
-import { CarouselWow, CarouselWowItem } from "../../utils/CarouselWow";
+import { HandCrankedCarousel, CarouselItem } from "../../utils/HandCrankedCarousel";
 
 const DemoContainer = styled.div`
   ${centerContent}
@@ -180,14 +180,14 @@ const GithubIcon = styled(AiFillGithub)`
   color: black;
 `;
 
-const StyledCarousel = styled(CarouselWow)`
+const StyledCarousel = styled(HandCrankedCarousel)`
   /* background: hsla(37, 13%, 72%, 1); */
   background: #ece3d5;
   font-family: "Ubuntu";
   color: #685f51;
 `;
 
-const StyledCarouselItem = styled(CarouselWowItem)`
+const StyledCarouselItem = styled(CarouselItem)`
   /* > * { flex-grow: 1;
   } */
 `;

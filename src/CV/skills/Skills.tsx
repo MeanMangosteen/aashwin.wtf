@@ -2,21 +2,21 @@ import React from "react";
 import styled from "styled-components";
 import { CarouselBanner, Banner, TitleText } from "../styles";
 import { SkillzThatKillz } from "./SkillzThatKillz";
-import { CarouselWow, CarouselWowItem } from "../../utils/CarouselWow";
+import { HandCrankedCarousel, CarouselItem } from "../../utils/HandCrankedCarousel";
 
 export const Skills = () => {
   return (
     <CarouselBanner>
-      <CarouselWow>
-        <CarouselWowItem>
+      <HandCrankedCarousel>
+        <CarouselItem>
           <SkillsBanner>
             <SkillsTitle>Skills</SkillsTitle>
           </SkillsBanner>
-        </CarouselWowItem>
-        <CarouselWowItem>
+        </CarouselItem>
+        <CarouselItem>
           <SkillzThatKillz />
-        </CarouselWowItem>
-      </CarouselWow>
+        </CarouselItem>
+      </HandCrankedCarousel>
     </CarouselBanner>
   );
 };

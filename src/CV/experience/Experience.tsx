@@ -4,18 +4,18 @@ import { CarouselBanner, Banner, TitleText } from "../styles";
 import { perxContent } from "./PerxContent";
 import { geointeractiveContent } from "./GeointeractiveContent";
 import { matrixContent } from "./MatrixContent";
-import { CarouselWowItem, CarouselWow } from "../../utils/CarouselWow";
+import { CarouselItem, HandCrankedCarousel } from "../../utils/HandCrankedCarousel";
 import { redbackContent } from "./RedbackContent";
 
 export const Experience = () => {
   return (
     <CarouselBanner>
       <StyledCarousel>
-        <CarouselWowItem>
+        <CarouselItem>
           <ExperienceBanner>
             <ExperienceTitle>Experience</ExperienceTitle>
           </ExperienceBanner>
-        </CarouselWowItem>
+        </CarouselItem>
         {redbackContent}
         {perxContent}
         {geointeractiveContent}
@@ -25,7 +25,7 @@ export const Experience = () => {
   );
 };
 
-const StyledCarousel = styled(CarouselWow)`
+const StyledCarousel = styled(HandCrankedCarousel)`
   color: white;
 `;
 

@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { centerContent, centerAbsolutely, Bold } from "../../utils/styles";
 import { ExperienceInfo } from "./ExperienceInfo";
-import { CarouselWowItem } from "../../utils/CarouselWow";
+import { CarouselItem } from "../../utils/HandCrankedCarousel";
 
 const StyledExperienceInfo = styled(ExperienceInfo)`
   filter: brightness(4);
 `;
 
-const StyledCarouselItem = styled(CarouselWowItem)`
+const StyledCarouselItem = styled(CarouselItem)`
   color: white;
   font-family: "Ubuntu";
 `;

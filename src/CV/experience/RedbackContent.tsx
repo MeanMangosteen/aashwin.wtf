@@ -7,12 +7,12 @@ import {
   Bold,
 } from "../../utils/styles";
 import { ExperienceInfo } from "./ExperienceInfo";
-import { CarouselWowItem } from "../../utils/CarouselWow";
+import { CarouselItem } from "../../utils/HandCrankedCarousel";
 
 const StyledExperienceInfo = styled(ExperienceInfo)`
   filter: brightness(3);
 `;
-const StyledCarouselItem = styled(CarouselWowItem)`
+const StyledCarouselItem = styled(CarouselItem)`
   color: white;
   font-family: "Ubuntu";
   background: black;

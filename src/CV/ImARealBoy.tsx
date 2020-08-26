@@ -10,23 +10,23 @@ import {
   SubjectContent,
 } from "./education/Education";
 import { CarouselBanner, Banner, TitleText } from "./styles";
-import { CarouselWowItem, CarouselWow } from "../utils/CarouselWow";
+import { CarouselItem, HandCrankedCarousel } from "../utils/HandCrankedCarousel";
 
 export const ImARealBoy = () => {
   return (
     <CarouselBanner>
       <StyledCarousel>
-        <CarouselWowItem>
+        <CarouselItem>
           <ImHumanBanner>
             <ImHumanTitle>I'm not a pdf</ImHumanTitle>
           </ImHumanBanner>
-        </CarouselWowItem>
-        <CarouselWowItem>
+        </CarouselItem>
+        <CarouselItem>
           <TitleSlide>
             There is a real human behind this document. I promise.
           </TitleSlide>
-        </CarouselWowItem>
-        <CarouselWowItem>
+        </CarouselItem>
+        <CarouselItem>
           <FavoriteSubjectsContainer>
             <FavSubjectsTitle>Things that get me going</FavSubjectsTitle>
             <FavSubjectsContent>
@@ -85,8 +85,8 @@ export const ImARealBoy = () => {
               </SubjectContainer>
             </FavSubjectsContent>
           </FavoriteSubjectsContainer>
-        </CarouselWowItem>
-        <CarouselWowItem>
+        </CarouselItem>
+        <CarouselItem>
           <RoleModelsContainer>
             <FavSubjectsTitle>Role Models</FavSubjectsTitle>
             <ol>
@@ -94,7 +94,7 @@ export const ImARealBoy = () => {
               <li>Courage the Cowardly Dog</li>
             </ol>
           </RoleModelsContainer>
-        </CarouselWowItem>
+        </CarouselItem>
       </StyledCarousel>
     </CarouselBanner>
   );
@@ -110,7 +110,7 @@ const ImHumanTitle = styled(TitleText)`
   color: hsl(37, 100%, 79%);
 `;
 
-const StyledCarousel = styled(CarouselWow)`
+const StyledCarousel = styled(HandCrankedCarousel)`
   font-family: "Ubuntu";
   background: blanchedalmond;
   color: #6f6b64;

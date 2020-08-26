@@ -7,24 +7,24 @@ import {
 } from "../../utils/styles";
 import { TitleText, CarouselBanner, Banner } from "../styles";
 import { Bold } from "../../utils/styles";
-import { CarouselWow, CarouselWowItem } from "../../utils/CarouselWow";
+import { HandCrankedCarousel, CarouselItem } from "../../utils/HandCrankedCarousel";
 import { Carousel } from "../../utils/Carousel";
 
 export const Education = () => {
   return (
     <CarouselBanner>
       <StyledCarouselWow>
-        <CarouselWowItem>
+        <CarouselItem>
           <EducationBanner>
             <TitleText>Education</TitleText>
           </EducationBanner>
-        </CarouselWowItem>
-        <CarouselWowItem>
+        </CarouselItem>
+        <CarouselItem>
           <TitleSlide>
             <ExperienceInfo />
           </TitleSlide>
-        </CarouselWowItem>
-        <CarouselWowItem>
+        </CarouselItem>
+        <CarouselItem>
           <FavoriteSubjectsContainer>
             <FavSubjectsTitle>Favorite Subjects</FavSubjectsTitle>
             <FavSubjectsContent>
@@ -60,13 +60,13 @@ export const Education = () => {
               </SubjectContainer>
             </FavSubjectsContent>
           </FavoriteSubjectsContainer>
-        </CarouselWowItem>
+        </CarouselItem>
       </StyledCarouselWow>
     </CarouselBanner>
   );
 };
 
-const StyledCarouselWow = styled(CarouselWow)`
+const StyledCarouselWow = styled(HandCrankedCarousel)`
   background: #ffdc00;
 `;
 

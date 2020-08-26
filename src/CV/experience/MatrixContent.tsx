@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { centerContent, Bold } from "../../utils/styles";
 import { ExperienceInfo } from "./ExperienceInfo";
 import { BaseLink, BaseATag } from "../../utils/helpers";
-import { CarouselWowItem } from "../../utils/CarouselWow";
+import { CarouselItem } from "../../utils/HandCrankedCarousel";
 
 const StyledExperienceInfo = styled(ExperienceInfo)`
   filter: brightness(3.5);
@@ -17,7 +17,7 @@ const TsandCsText = styled.div`
   transform: translate(-100%, 100%);
 `;
 
-const StyledCarouselItem = styled(CarouselWowItem)`
+const StyledCarouselItem = styled(CarouselItem)`
   color: white;
   font-family: "Ubuntu";
   background: black;

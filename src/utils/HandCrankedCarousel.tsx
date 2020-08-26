@@ -19,7 +19,7 @@ const mod = (n: number, m: number) => {
   return ((n % m) + m) % m;
 };
 
-export const CarouselWow = ({ className = "", children }: CarouselWowProps) => {
+export const HandCrankedCarousel = ({ className = "", children }: CarouselWowProps) => {
   const ref = useRef<any>();
   const [numChildren, setNumChildren] = useState<number>(0);
   const [index, setIndex] = useState<{ current: number; previous: number }>({
@@ -155,7 +155,7 @@ interface CarouselWowItemsProps {
   children: JSX.Element[] | JSX.Element;
 }
 // CLEANUP: move this to the items folder
-export const CarouselWowItem = React.forwardRef(
+export const CarouselItem = React.forwardRef(
   (
     { children, className = "carousel-item" }: CarouselWowItemsProps,
     ref: any
