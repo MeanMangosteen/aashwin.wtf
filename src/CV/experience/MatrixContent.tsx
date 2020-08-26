@@ -14,7 +14,7 @@ const TsandCsText = styled.div`
   bottom: 0;
   right: 0;
 
-  transform: translate(-100%, 100%);
+  transform: translate(0, 100%);
 `;
 
 const StyledCarouselItem = styled(CarouselItem)`
@@ -29,7 +29,6 @@ const StyledCarouselItem = styled(CarouselItem)`
 `;
 
 const ReflectionsContainer = styled.div`
-  position: relative;
   ${centerContent}
   flex-direction: column;
   color: white;
@@ -50,6 +49,7 @@ const Title = styled.div`
 const ReflectionsContent = styled.div`
   margin: 1rem 3rem;
   font-size: 1.3rem;
+  position: relative;
 `;
 
 const TitleSlide = styled.div`
@@ -260,10 +260,10 @@ export const matrixContent = (
               places.
             </li>
           </ul>
+          <TsandCsText>
+            <sup>* Terms and Conditions apply</sup>
+          </TsandCsText>
         </ReflectionsContent>
-        <TsandCsText>
-          <sup>* Terms and Conditions apply</sup>
-        </TsandCsText>
       </ReflectionsContainer>
     </StyledCarouselItem>
   </>

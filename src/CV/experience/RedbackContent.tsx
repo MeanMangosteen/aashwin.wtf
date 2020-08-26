@@ -61,20 +61,6 @@ const TitleSlide = styled.div`
   background: black;
   height: 100%;
   width: 100%;
-
-  /* &::after {
-    content: "";
-    ${centerAbsolutely}
-    height: 50%;
-    width: 100%;
-
-    background-image: url("https://uploads-ssl.webflow.com/5ec8ac71107e46be6b1f9449/5ec8b77a107e46318c1fb3aa_Redback_Racing_White_Transparent_Numberless.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    ${hoverGrow}
-  } */
 `;
 
 const AchievementsContainer = styled.div`

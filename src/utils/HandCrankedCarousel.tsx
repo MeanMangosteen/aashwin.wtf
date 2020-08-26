@@ -19,7 +19,10 @@ const mod = (n: number, m: number) => {
   return ((n % m) + m) % m;
 };
 
-export const HandCrankedCarousel = ({ className = "", children }: CarouselWowProps) => {
+export const HandCrankedCarousel = ({
+  className = "",
+  children,
+}: CarouselWowProps) => {
   const ref = useRef<any>();
   const [numChildren, setNumChildren] = useState<number>(0);
   const [index, setIndex] = useState<{ current: number; previous: number }>({
@@ -90,7 +93,7 @@ const ItemContainer = styled.div<{ index: number }>`
   scroll-snap-type: x mandatory;
   > * {
     scroll-snap-align: start;
-    scroll-snap-stop: always;
+    /* scroll-snap-stop: always; */
     /* width: 100vw; */
   }
   /* transition: transform 0.5s ease-out;
@@ -142,7 +145,12 @@ type ItemWrapperProps = {
 };
 const ItemWrapper = ({ index, currentIndex, children }: ItemWrapperProps) => {
   const ref = useRef<HTMLDivElement>(null);
+  const initialLoad = useRef<boolean>(true);
   useEffect(() => {
+    if (initialLoad.current) {
+      initialLoad.current = false;
+      return;
+    }
     if (currentIndex === index) {
       ref.current?.scrollIntoView({ behavior: "smooth" });
     }

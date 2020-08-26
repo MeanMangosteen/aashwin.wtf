@@ -8,27 +8,6 @@ import { ShowTextWithStyle, StylishItem } from "../../utils/ShowTextWithStyle";
 import { AiFillGithub } from "react-icons/ai";
 import { HandCrankedCarousel, CarouselItem } from "../../utils/HandCrankedCarousel";
 
-const DemoContainer = styled.div`
-  ${centerContent}
-  flex-direction: column;
-  padding: 2rem;
-  box-sizing: border-box;
-`;
-const VideoTitle = styled.div`
-  font-size: 3rem;
-`;
-const VideoContainer = styled.div`
-  flex-grow: 1;
-  ${centerContent}
-  margin: 3rem;
-`;
-const StyledVideo = styled.video`
-  height: 100%;
-  width: 100%;
-
-  object-fit: contain;
-  filter: drop-shadow(2px 4px 6px black);
-`;
 export const Mailcraft = () => {
   return (
     <CarouselBanner>
@@ -110,6 +89,28 @@ export const Mailcraft = () => {
   );
 };
 
+const DemoContainer = styled.div`
+  ${centerContent}
+  flex-direction: column;
+  padding: 2rem;
+  box-sizing: border-box;
+`;
+const VideoTitle = styled.div`
+  font-size: 3rem;
+`;
+const VideoContainer = styled.div`
+  flex-grow: 1;
+  ${centerContent}
+  margin: 3rem;
+`;
+const StyledVideo = styled.video`
+  height: 100%;
+  width: 100%;
+
+  object-fit: contain;
+  filter: drop-shadow(2px 4px 6px black);
+`;
+
 const OutroContainer = styled.div`
   display: grid;
   grid-template-rows: 60% 40%;
@@ -122,10 +123,6 @@ const OutroContainer = styled.div`
 const VisitMailcraftContainer = styled.div`
   ${centerContent}
   flex-direction: column;
-  /* align-items: stretch;
-  flex-direction: column;
-  flex-basis: 0;
-  flex-grow: 1; */
 
   > * {
     flex-basis: 0;
@@ -144,7 +141,6 @@ const MailcraftLogoContainer = styled.div`
 const VisitMailcraftText = styled.div`
   ${centerContent}
   font-size: 5.5rem;
-  /* margin: 1rem; */
 `;
 
 const VisitGithubContainer = styled.div`
@@ -181,15 +177,12 @@ const GithubIcon = styled(AiFillGithub)`
 `;
 
 const StyledCarousel = styled(HandCrankedCarousel)`
-  /* background: hsla(37, 13%, 72%, 1); */
   background: #ece3d5;
   font-family: "Ubuntu";
   color: #685f51;
 `;
 
 const StyledCarouselItem = styled(CarouselItem)`
-  /* > * { flex-grow: 1;
-  } */
 `;
 
 const MailcraftBanner = styled(Banner)`
@@ -201,7 +194,6 @@ const MailcraftBanner = styled(Banner)`
 const TitleText = styled.div`
   font-family: "Ubuntu";
   font-size: 6rem;
-  /* -webkit-text-stroke: 3px hsl(0, 44%, 52%); */
   color: #9de7ef;
   font-weight: bold;
   filter: drop-shadow(2px 4px 6px black);
@@ -232,10 +224,6 @@ const LogoText = styled.div`
 const IntroContainer = styled(ShowTextWithStyle)`
   ${centerContent}
   justify-content: center;
-  /* > * {
-    flex-basis: 0;
-    flex-grow: 1;
-  } */
 `;
 
 const BeforeAfterContainer = styled(StylishItem)`
@@ -246,10 +234,8 @@ const BeforeAfterContainer = styled(StylishItem)`
 `;
 
 const BeforeContainer = styled(BeforeAfterContainer)`
-  /* align-items: flex-end; */
 `;
 const AfterContainer = styled(BeforeAfterContainer)`
-  /* align-items: flex-start; */
 `;
 
 const IntroText = styled.div`
@@ -259,7 +245,6 @@ const IntroText = styled.div`
 
 const DisplayCutout = styled.div`
   ${centerContent}
-  /* align-items: stretch; */
 
   background: grey;
   box-shadow: inset 1px 0px 23px 10px #504436, 0px 1px 34px 6px #a5922d,
@@ -293,7 +278,6 @@ const EmailIconBadge = styled.div`
 `;
 
 const EmailIcon = styled.img`
-  /* height: 100%; */
   width: 100%;
   flex-grow: 1;
 
