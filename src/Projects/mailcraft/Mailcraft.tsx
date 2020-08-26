@@ -1,32 +1,38 @@
 import React from "react";
 import styled from "styled-components";
 import { CarouselBanner, Banner } from "../../CV/styles";
-import { Carousel, CarouselItem } from "../../utils/Carousel";
 import MailcraftLogoSVG from "../../images/mailcraft-logo.svg";
 import GmailSVG from "../../images/gmail-icon.svg";
 import { centerContent, hoverGrow } from "../../utils/styles";
 import { ShowTextWithStyle, StylishItem } from "../../utils/ShowTextWithStyle";
 import { AiFillGithub } from "react-icons/ai";
+import { CarouselWow, CarouselWowItem } from "../../utils/CarouselWow";
 
 const DemoContainer = styled.div`
   ${centerContent}
   flex-direction: column;
+  padding: 2rem;
+  box-sizing: border-box;
 `;
 const VideoTitle = styled.div`
-  margin-bottom: 2rem;
   font-size: 3rem;
 `;
-const StyledVideo = styled.video`
-  width: 100%;
-  height: 100%;
+const VideoContainer = styled.div`
   flex-grow: 1;
+  ${centerContent}
+  margin: 3rem;
+`;
+const StyledVideo = styled.video`
+  height: 100%;
+  width: 100%;
+
   object-fit: contain;
   filter: drop-shadow(2px 4px 6px black);
 `;
 export const Mailcraft = () => {
   return (
     <CarouselBanner>
-      <StyledCarousel running={false}>
+      <StyledCarousel>
         <StyledCarouselItem>
           <MailcraftBanner>
             <TitleText>
@@ -62,12 +68,14 @@ export const Mailcraft = () => {
         <StyledCarouselItem>
           <DemoContainer>
             <VideoTitle>Demo Time!</VideoTitle>
-            <StyledVideo controls>
-              <source
-                src="https://s3.ap-southeast-2.amazonaws.com/aashwin.wtf/mailcraft-demo-webm.webm"
-                type="video/webm"
-              ></source>
-            </StyledVideo>
+            <VideoContainer>
+              <StyledVideo controls>
+                <source
+                  src="https://s3.ap-southeast-2.amazonaws.com/aashwin.wtf/mailcraft-demo-webm.webm"
+                  type="video/webm"
+                ></source>
+              </StyledVideo>
+            </VideoContainer>
           </DemoContainer>
         </StyledCarouselItem>
         <StyledCarouselItem>
@@ -172,14 +180,14 @@ const GithubIcon = styled(AiFillGithub)`
   color: black;
 `;
 
-const StyledCarousel = styled(Carousel)`
+const StyledCarousel = styled(CarouselWow)`
   /* background: hsla(37, 13%, 72%, 1); */
   background: #ece3d5;
   font-family: "Ubuntu";
   color: #685f51;
 `;
 
-const StyledCarouselItem = styled(CarouselItem)`
+const StyledCarouselItem = styled(CarouselWowItem)`
   /* > * { flex-grow: 1;
   } */
 `;

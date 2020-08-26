@@ -171,6 +171,7 @@ export const CarouselWowItem = React.forwardRef(
 
 const CarouselWowItemContainer = styled.div`
   flex: 0 0 100%;
+  max-height: 100vh;
   > * {
     height: 100%;
     width: 100%;
