@@ -1,5 +1,4 @@
 import React from "react";
-import { Carousel, CarouselItem } from "../../utils/Carousel";
 import styled from "styled-components";
 import {
   centerContent,
@@ -8,22 +7,24 @@ import {
 } from "../../utils/styles";
 import { TitleText, CarouselBanner, Banner } from "../styles";
 import { Bold } from "../../utils/styles";
+import { CarouselWow, CarouselWowItem } from "../../utils/CarouselWow";
+import { Carousel } from "../../utils/Carousel";
 
 export const Education = () => {
   return (
     <CarouselBanner>
-      <StyledCarousel running={false}>
-        <CarouselItem>
+      <StyledCarouselWow>
+        <CarouselWowItem>
           <EducationBanner>
             <TitleText>Education</TitleText>
           </EducationBanner>
-        </CarouselItem>
-        <CarouselItem>
+        </CarouselWowItem>
+        <CarouselWowItem>
           <TitleSlide>
             <ExperienceInfo />
           </TitleSlide>
-        </CarouselItem>
-        <CarouselItem>
+        </CarouselWowItem>
+        <CarouselWowItem>
           <FavoriteSubjectsContainer>
             <FavSubjectsTitle>Favorite Subjects</FavSubjectsTitle>
             <FavSubjectsContent>
@@ -59,13 +60,13 @@ export const Education = () => {
               </SubjectContainer>
             </FavSubjectsContent>
           </FavoriteSubjectsContainer>
-        </CarouselItem>
-      </StyledCarousel>
+        </CarouselWowItem>
+      </StyledCarouselWow>
     </CarouselBanner>
   );
 };
 
-const StyledCarousel = styled(Carousel)`
+const StyledCarouselWow = styled(CarouselWow)`
   background: #ffdc00;
 `;
 
@@ -119,6 +120,7 @@ const TimePeriod = styled.div`
 
 export const FavoriteSubjectsContainer = styled.div`
   ${centerContent}
+  margin: 0 auto;
   color: #3c3c3c;
   max-width: 1400px;
   font-family: "Ubuntu";
