@@ -99,7 +99,7 @@ const OrbitContainer = styled.div<{ orbitShell: number }>`
 
   max-height: 95vh;
   max-width: 100vw;
-
+  pointer-events: none;
 `;
 
 const OrbitPath = styled.div<{ size: any; orbitSpeed: number }>`
@@ -168,6 +168,7 @@ const OrbitIconWrapper = styled(BaseLink)<{ size: any; orbitSpeed: number }>`
     `};
 
   color: black;
+  pointer-events: all;
 `;
 const OrbitIconSuperWrapper = styled.div`
   display: flex;
