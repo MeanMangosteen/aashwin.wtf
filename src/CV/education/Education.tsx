@@ -140,18 +140,22 @@ export const FavoriteSubjectsContainer = styled.div`
 export const FavSubjectsTitle = styled.div`
   ${centerContent}
   font-size: 4em;
-  margin-bottom: 5em;
+  padding: 1rem;
+  margin-bottom: 3em;
   color: #fff9ef;
   filter: drop-shadow(2px 4px 6px black);
   @media screen and (max-width: 1100px) {
-    margin-bottom: 3em;
-    /* font-size: 3em; */
+    margin-bottom: 2em;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 2.5rem;
+    padding: 1rem;
   }
 
   @media screen and (max-height: 870px) {
-    margin-bottom: 0em;
+    margin-bottom: 1em;
   }
-  /* font-weight: bold; */
 `;
 export const FavSubjectsContent = styled.div`
   ${centerContent}
