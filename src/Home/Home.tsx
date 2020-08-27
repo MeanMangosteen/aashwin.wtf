@@ -38,47 +38,39 @@ const ActualHome = () => {
     <ActualHomeContainer>
       <WebsiteBadge />
       <OrbitsContainer>
-        <SizeMe monitorHeight>
-          {({ size }) => (
-            <>
-              <CVOrbit
-                parentDim={size}
-                orbitSize={5}
-                iconSrc={ArmyKnifeSVG}
-                orbitSpeed={0.3}
-                iconScale={1.3}
-                title="CV"
-                path="/cv"
-              />
-              <Orbit
-                parentDim={size}
-                orbitSize={4}
-                iconSrc={MegaphoneSVG}
-                orbitSpeed={0.7}
-                iconScale={1.3}
-                title="Blog"
-                path="/blog"
-              />
-              <Orbit
-                parentDim={size}
-                orbitSize={3}
-                iconSrc="https://i.imgur.com/FXquf4T.png"
-                orbitSpeed={0.5}
-                iconScale={1.3}
-                title="Connect"
-                path="/about"
-              />
-              <Orbit
-                parentDim={size}
-                orbitSize={2}
-                iconSrc={ToolboxSVG}
-                orbitSpeed={0.9}
-                title="Projects"
-                path="/projects"
-              />
-            </>
-          )}
-        </SizeMe>
+        <>
+          <CVOrbit
+            orbitShell={4}
+            iconSrc={ArmyKnifeSVG}
+            orbitSpeed={0.3}
+            iconScale={1.3}
+            title="CV"
+            path="/cv"
+          />
+          <Orbit
+            orbitShell={3}
+            iconSrc={MegaphoneSVG}
+            orbitSpeed={0.7}
+            iconScale={1.3}
+            title="Blog"
+            path="/blog"
+          />
+          <Orbit
+            orbitShell={2}
+            iconSrc="https://i.imgur.com/FXquf4T.png"
+            orbitSpeed={0.5}
+            iconScale={1.3}
+            title="Connect"
+            path="/about"
+          />
+          <Orbit
+            orbitShell={1}
+            iconSrc={ToolboxSVG}
+            orbitSpeed={0.9}
+            title="Projects"
+            path="/projects"
+          />
+        </>
       </OrbitsContainer>
     </ActualHomeContainer>
   );

@@ -5,8 +5,8 @@ import { centerContent } from "../utils/styles";
 import { BaseLink } from "../utils/helpers";
 
 type OrbitProps = {
-  parentDim?: { height: number | null; width: number | null };
-  orbitSize: number; // scale of orbit wrt parent
+  // parentDim?: { height: number | null; width: number | null };
+  orbitShell: number; // scale of orbit wrt parent
   orbitSpeed: number; // Nominal, and unitless
   iconSrc: string;
   title: string;
@@ -16,7 +16,7 @@ type OrbitProps = {
 };
 
 const Orbit = ({
-  orbitSize,
+  orbitShell,
   iconSrc,
   orbitSpeed,
   title,
@@ -27,7 +27,7 @@ const Orbit = ({
   return (
     <SizeMe monitorHeight>
       {({ size }) => (
-        <OrbitContainer orbitSize={orbitSize} className={className}>
+        <OrbitContainer orbitShell={orbitShell} className={className}>
           <OrbitPath size={size} orbitSpeed={orbitSpeed}>
             <OrbitIconContianer>
               <OrbitIconWrapper size={size} orbitSpeed={orbitSpeed} to={path}>
@@ -71,14 +71,14 @@ const animateOrbitPath = (height: number, width: number) => {
   return keyframes`
 from {
 
-    transform: scale(${width / height}, ${Math.max(
+    transform: scale(${Math.min(width / height, 1.3)}, ${Math.max(
     1,
     height / width
   )}) rotate(0deg);
 }
   
   to {
-    transform: scale(${width / height}, ${Math.max(
+    transform: scale(${Math.min(width / height, 1.3)}, ${Math.max(
     1,
     height / width
   )}) rotate(360deg) ;
@@ -86,45 +86,41 @@ from {
 `;
 };
 
-const OrbitContainer = styled.div<{ orbitSize: number }>`
+const OrbitContainer = styled.div<{ orbitShell: number }>`
   ${centerContent}
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: ${({ orbitSize }) => orbitSize * 100}%;
-  height: ${({ orbitSize }) => orbitSize * 100}%;
 
-  max-height: 100vh;
+  /* [min-size] + (([max-size] - [min-size])  / [num orbits] * (orbitShell - 1)) */
+  width: ${({ orbitShell }) => 40 + ((95 - 40) / 3) * (orbitShell - 1)}vw;
+  height: ${({ orbitShell }) => 40 + ((95 - 40) / 3) * (orbitShell - 1)}vh;
+
+  max-height: 95vh;
   max-width: 100vw;
+
 `;
 
 const OrbitPath = styled.div<{ size: any; orbitSpeed: number }>`
-  /* Make the orbit a circle */
-  width: var(--size);
-  height: var(--size);
-
-  /* Make the orbit an ellipse */
+  /* z-index: 2; */
   --height: ${({ size }) => size.height};
   --width: ${({ size }) => size.width};
   --orbit-type: ${({ size }) => (size.width > size.height ? "fat" : "tall")};
 
   --size: ${({ size }) =>
     size.width > size.height ? size.height : size.width}px;
-  transform: scale(1.2, 1) rotate(360deg);
-  /* animation: ${({ size, orbitSpeed }) =>
-    size.width > size.height
-      ? css`
-          ${FatOrbitPathFrames} infinite ${12 * (1 / orbitSpeed)}s linear
 
-        `
-      : css`
-          ${TallOrbitPathFrames} infinite ${12 * (1 / orbitSpeed)}s linear
-        `}; */
+  /* Make the orbit a cirlce */
+  width: var(--size);
+  height: var(--size);
+
+  /* This animation will ellipsify it according to the screen dimensions */
   animation: ${({ size, orbitSpeed }) =>
-    css`${animateOrbitPath(size.height, size.width)} infinite ${
-      12 * (1 / orbitSpeed)
-    }s linear`};
+    css`
+      ${animateOrbitPath(size.height, size.width)} infinite ${12 *
+      (1 / orbitSpeed)}s linear
+    `};
 
   border: 2px #4a437f dashed;
   border-radius: 100%;
@@ -134,17 +130,17 @@ const animateOrbitIcon = (height: number, width: number) => {
   return keyframes`
 from {
 
-    transform: rotate(0deg) scale(${height / width},${Math.min(
+    transform: rotate(0deg) scale(${Math.max(0.7, height / width)} ,${Math.min(
     1,
     width / height
   )} ) ;
 }
   
   to {
-    transform: rotate(-360deg) scale(${height / width}, ${Math.min(
-    1,
-    width / height
-  )}) ;
+    transform: rotate(-360deg) scale(${Math.max(
+      0.7,
+      height / width
+    )}, ${Math.min(1, width / height)}) ;
   }
   `;
 };
@@ -166,9 +162,10 @@ const OrbitIconWrapper = styled(BaseLink)<{ size: any; orbitSpeed: number }>`
   --time: ${({ orbitSpeed }) => `${12 * (1 / orbitSpeed)}`};
   transform: scale(0.8, 1);
   animation: ${({ size, orbitSpeed }) =>
-    css`${animateOrbitIcon(size.height, size.width)} infinite ${
-      12 * (1 / orbitSpeed)
-    }s linear`};
+    css`
+      ${animateOrbitIcon(size.height, size.width)} infinite ${12 *
+      (1 / orbitSpeed)}s linear
+    `};
 
   color: black;
 `;
