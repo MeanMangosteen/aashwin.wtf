@@ -93,7 +93,7 @@ const ItemContainer = styled.div<{ index: number }>`
   scroll-snap-type: x mandatory;
   > * {
     scroll-snap-align: start;
-    /* scroll-snap-stop: always; */
+    scroll-snap-stop: always;
     /* width: 100vw; */
   }
   /* transition: transform 0.5s ease-out;

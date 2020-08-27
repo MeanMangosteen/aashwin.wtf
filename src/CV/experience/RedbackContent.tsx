@@ -181,31 +181,33 @@ export const redbackContent = (
                 profressionally, and at times spiritually. */}
             </li>
             <li>
-              It was the first time I:
+              It was the first of many things. The first time I:
               <ul>
                 <li>
                   Applied my education on something <Bold>real</Bold> and{" "}
-                  <Bold>significant</Bold>. This isn't something that's blindly
+                  <Bold>significant</Bold>.
+                  {/* This isn't something that's blindly
                   marked then forgotten. There are so many stakeholders who
-                  genuinely want the car complete and running its best.
+                  genuinely want the car complete and running its best. */}
                   {/* My actions and efforts had tangible consequences,
                     they didn't simply change a number I got at the end. */}
                 </li>
                 <li>
                   Belonged to something that can be called{" "}
-                  <Bold>organisation</Bold>. Teams. Teams within teams. People
+                  <Bold>organisation</Bold>.
+                  {/* Teams. Teams within teams. People
                   from <Bold>varying disciplines</Bold>. All motivated, driven
                   and working towards a common goal. Before this, I thought{" "}
-                  <i>teamwork</i> meant working on a group project.
-                  {/* Ha. Ha ha. */} Group projects don't have a treasury.
+                  <i>teamwork</i> meant working on a group project. Group projects don't have a treasury. */}
                 </li>
                 <li>
-                  Lead a large(ish) team. Wow. This was arguably the most
-                  challeging facet. I had a lot going on outside this project +
-                  no idea what I was doing, so a learning curve here. We used
-                  AGILE but in this case the method also had an extra
-                  <i>FR</i> at the front. This is something I really enjoyed and
-                  got better at later down the track.
+                  Lead a large(ish) team.
+                  {/* This was arguably the most challeging
+                  facet. This was a happening time for me + no idea what I was
+                  doing, so a learning curve here. We used AGILE but in this
+                  case the method also had an extra
+                  <i>FR</i> at the front. I got better and really enjoyed this
+                  later down the track. */}
                   {/* But I learned so, so much. Managing a
                     team is eventually something I become **a lot** better at
                     and really enjoyed. */}
@@ -213,20 +215,22 @@ export const redbackContent = (
               </ul>
             </li>
             <li>
-              <Bold>Shoot for the stars, but start from ground zero</Bold> - I
+              <Bold>Shoot for the stars, but start from ground zero</Bold>
+              {/* - I
               set targets and used technologies that we had{" "}
               <Bold>absolutely</Bold> no right to. It's one thing to be
               optimistic, is another to embark on a death march. Know where you
-              stand, and use what you know. <Bold>Set a base, then grow.</Bold>
+              stand, and use what you know. <Bold>Set a base, then grow.</Bold> */}
               {/* Green and starry-eyed I was, we set targets and used
                 technologies that we had **absolutely** no right to. */}
             </li>
             <li>
-              <Bold>You leave a legacy for all the good, and the bad.</Bold> - I
+              <Bold>You leave a legacy for all the good, and the bad.</Bold>
+              {/* - I
               revisited my department years after which turned out to be a super
               humbling experience - seeing fresh faces and how our projects had
               evolved. I saw work that I was proud of, and monstrocities I wish
-              no person would ever see, both still integrated within the system.{" "}
+              no person would ever see, both still integrated within the system.{" "} */}
             </li>
           </ul>
         </ReflectionsContent>

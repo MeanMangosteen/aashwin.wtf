@@ -49,7 +49,7 @@ const ProjectsContainer = styled.div`
   scroll-snap-type: y mandatory;
   > * {
     scroll-snap-align: start;
-    scroll-snap-stop: normal;
+    scroll-snap-stop: always;
     height: 100vh;
   }
 `;

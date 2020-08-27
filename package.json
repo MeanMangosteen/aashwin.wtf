@@ -33,7 +33,7 @@
     "start-dev": "react-app-rewired start",
     "build": "react-scripts build",
     "test": "react-app-rewired test",
-    "deploy": "npm run build; aws s3 sync build/ s3://aashwin.wtf --acl public-read",
+    "deploy": "npm run build; aws s3 sync build/ s3://aashwin.wtf --acl public-read; aws cloudfront create-invalidation --distribution-id E106CP5JVT5VIH --paths \"/*\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

@@ -10,7 +10,10 @@ import {
   SubjectContent,
 } from "./education/Education";
 import { CarouselBanner, Banner, TitleText } from "./styles";
-import { CarouselItem, HandCrankedCarousel } from "../utils/HandCrankedCarousel";
+import {
+  CarouselItem,
+  HandCrankedCarousel,
+} from "../utils/HandCrankedCarousel";
 
 export const ImARealBoy = () => {
   return (
@@ -68,13 +71,13 @@ export const ImARealBoy = () => {
                   <ul>
                     <li>
                       I like doing things that haven't been done before or
-                      thought not possible. A big part of which is learning by
-                      experience what is and isn't possible.
+                      thought not possible. Things that explore the human
+                      condition and give insight into the game we call 'life'
                     </li>
-                    <li>
+                    {/* <li>
                       Anything that explores what the human condition is capable
                       of, and gives insight into the game we call 'life'.
-                    </li>
+                    </li> */}
                     <li>
                       For me this can be anything from meditation or reading, to
                       fighting physical exhaustion or being alone on a windy

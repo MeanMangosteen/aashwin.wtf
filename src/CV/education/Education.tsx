@@ -5,9 +5,12 @@ import {
   CSSDividerBottom,
   centerAbsolutely,
 } from "../../utils/styles";
-import { TitleText, CarouselBanner, Banner } from "../styles";
+import { TitleText, CarouselBanner, Banner, OpeningSlide } from "../styles";
 import { Bold } from "../../utils/styles";
-import { HandCrankedCarousel, CarouselItem } from "../../utils/HandCrankedCarousel";
+import {
+  HandCrankedCarousel,
+  CarouselItem,
+} from "../../utils/HandCrankedCarousel";
 import { Carousel } from "../../utils/Carousel";
 
 export const Education = () => {
@@ -70,22 +73,9 @@ const StyledCarouselWow = styled(HandCrankedCarousel)`
   background: #ffdc00;
 `;
 
-const TitleSlide = styled.div`
-  position: relative;
-  height: 100%;
-  width: 100%;
-
+const TitleSlide = styled(OpeningSlide)`
   &::after {
-    content: "";
-    ${centerAbsolutely}
-    height: 30%;
-    width: 100%;
-
     background-image: url("https://warrane.unsw.edu.au/img/UNSW.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: drop-shadow(2px 4px 6px black);
   }
 `;
 
@@ -104,27 +94,44 @@ const ExperienceInfoContainer = styled.div`
   position: absolute;
   bottom: 10%;
   left: 50%;
-  transform: translate(-50%, -100%);
+  transform: translate(-50%, 0%);
   font-family: "Ubuntu";
+
+  font-size: 1rem;
+
+  @media screen and (max-width: 500px) {
+    transform: translate(-50%, 0%);
+  }
 `;
 
 const DegreeText = styled.div`
-  font-size: 4rem;
+  font-size: 4em;
   color: #3a3a3a;
+  text-align: center;
+  margin-bottom: 1em;
+
+  @media screen and (max-width: 1050px), screen and (max-height: 1200px) {
+    font-size: 3rem;
+  }
 `;
 const TimePeriod = styled.div`
-  font-size: 1.5rem;
+  font-size: 1.5em;
   font-style: italic;
   color: #3a3a3a;
 `;
 
 export const FavoriteSubjectsContainer = styled.div`
   ${centerContent}
+  /* max-width: 100vw;
+  max-height: 100vh; */
   margin: 0 auto;
   color: #3c3c3c;
   max-width: 1400px;
   font-family: "Ubuntu";
   flex-direction: column;
+  @media screen and (max-width: 1100px) {
+    font-size: 0.8rem;
+  }
   /* > * {
     flex-basis: 0;
     flex-grow: 1;
@@ -132,42 +139,54 @@ export const FavoriteSubjectsContainer = styled.div`
 `;
 export const FavSubjectsTitle = styled.div`
   ${centerContent}
-  font-size: 4rem;
-  margin-bottom: 7rem;
+  font-size: 4em;
+  margin-bottom: 5em;
   color: #fff9ef;
   filter: drop-shadow(2px 4px 6px black);
+  @media screen and (max-width: 1100px) {
+    margin-bottom: 3em;
+    /* font-size: 3em; */
+  }
+
+  @media screen and (max-height: 870px) {
+    margin-bottom: 0em;
+  }
   /* font-weight: bold; */
 `;
 export const FavSubjectsContent = styled.div`
   ${centerContent}
   align-items: start;
-  margin: 1rem 3rem;
+  margin: 1em 3em;
   > div {
     flex-basis: 0;
     flex-grow: 1;
+  }
+
+  @media screen and (max-width: 950px) {
+    flex-direction: column;
   }
 `;
 export const SubjectContainer = styled.div`
   ${centerContent}
   flex-direction: column;
-  margin: 1rem;
+  margin: 1em;
 `;
 
 export const SubjectTitle = styled.div`
   ${centerContent}
   flex-direction: column;
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
+  font-size: 2em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
   position: relative;
   ${CSSDividerBottom({ width: "80%", iHaveSetRelativePosition: true })}
 `;
 export const SubjectContent = styled.div`
-  padding: 1rem;
-  font-size: 1.5rem;
+  padding: 1em;
+  font-size: 1.5em;
   li {
-    margin: 1rem 0;
+    margin: 1em 0;
   }
 `;
 
