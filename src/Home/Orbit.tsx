@@ -122,6 +122,9 @@ const OrbitPath = styled.div<{ size: any; orbitSpeed: number }>`
       (1 / orbitSpeed)}s linear
     `};
 
+  &:hover {
+    animation-play-state: paused;
+  }
   border: 2px #4a437f dashed;
   border-radius: 100%;
 `;
@@ -169,6 +172,9 @@ const OrbitIconWrapper = styled(BaseLink)<{ size: any; orbitSpeed: number }>`
 
   color: black;
   pointer-events: all;
+  ${OrbitPath}:hover & {
+    animation-play-state: paused;
+  }
 `;
 const OrbitIconSuperWrapper = styled.div`
   display: flex;

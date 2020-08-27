@@ -125,15 +125,15 @@ export const FavoriteSubjectsContainer = styled.div`
   max-width: 1400px;
   font-family: "Ubuntu";
   flex-direction: column;
-  > * {
+  /* > * {
     flex-basis: 0;
     flex-grow: 1;
-  }
+  } */
 `;
 export const FavSubjectsTitle = styled.div`
   ${centerContent}
   font-size: 4rem;
-  margin-bottom: 5rem;
+  margin-bottom: 7rem;
   color: #fff9ef;
   filter: drop-shadow(2px 4px 6px black);
   /* font-weight: bold; */
