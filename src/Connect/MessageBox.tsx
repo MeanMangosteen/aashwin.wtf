@@ -18,12 +18,16 @@ export const MessageBox = ({ onSend, className = "" }: MessageBoxProps) => {
 
   const handleClick = useCallback(() => {
     if (input === "") return;
+    console.log("clicked!");
+    return;
     onSend(input);
   }, [input, onSend]);
 
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
 
+    console.log("clicked!");
+    return;
     emailjs
       .sendForm(
         "gmail",
@@ -60,6 +64,11 @@ export const MessageBox = ({ onSend, className = "" }: MessageBoxProps) => {
 const MessageBoxForm = styled.form`
   ${centerContent}
   position: relative;
+
+  @media screen and (max-width: 850px) {
+    ${centerContent}
+    flex-direction: column;
+  }
 `;
 
 const MessageBoxInput = styled.textarea`
@@ -72,6 +81,10 @@ const MessageBoxInput = styled.textarea`
   box-sizing: border-box;
   resize: none;
   filter: drop-shadow(2px 4px 3px black);
+
+  @media screen and (max-width: 1250px) {
+    height: 200px;
+  }
   /* margin-left: 10rem; */
 `;
 
@@ -85,6 +98,23 @@ const SendIconContainer = styled.button`
   position: absolute;
   top: 50%;
   left: 100%;
+
+  @media screen and (max-width: 850px) {
+    /* top: unset;
+    left: unset;
+    bottom: 0;
+    transform: translate(0, 120%); */
+    position: static;
+
+    border: solid;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 1px #5d5143;
+    transition: none;
+    width: 100%;
+    height: 50px;
+    transform: none;
+    margin-top: 1rem;
+  }
 
   width: 30%;
   height: 30%;

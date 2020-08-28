@@ -12,7 +12,7 @@ export const Connect = () => {
       <AashwinsImageContainer>
         <AashwinsImage src={AashwinsImageSrc} />
       </AashwinsImageContainer>
-      <StyledShowTextWithStyle>
+      <StyledShowTextWithStyle skipWaitingGame>
         <StylishItem>
           <IAmContainer>
             <IAmText>I am</IAmText>
@@ -41,55 +41,19 @@ export const Connect = () => {
   );
 };
 
-const GithubContainer = styled.div`
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-
-  ${centerContent}
-  flex-direction: column;
-
-  border: 3px solid;
-  border-radius: 10px;
-
-  box-shadow: 2px 2px 2px 2px #6b5432;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-  transition: transform 200ms ease-out;
-`;
-
-const GithubText = styled.div`
-  font-size: 1.2rem;
-  padding: 0.8rem;
-  color: black;
-`;
-
-const GithubIconContainer = styled.div`
-  ${centerContent}
-  height: 7vh;
-  width: 7vh;
-`;
-const GithubIcon = styled(AiFillGithub)`
-  height: 100%;
-  width: 100%;
-  flex-grow: 1;
-  object-fit: contain;
-  color: black;
-`;
-
 const ConnectContainer = styled.div`
   position: relative;
 
   display: grid;
-  grid-template-rows: 40% 60%;
+  grid-template-rows: 40vh auto;
   grid-template-columns: auto;
   justify-items: center;
 
-  height: 100vh;
+  @media screen and (min-width: 1250px) {
+    height: 100vh;
+    max-height: 100vh;
+  }
   max-width: 100vw;
-  max-height: 100vh;
 
   font-family: "Ubuntu";
   text-align: center;
@@ -123,6 +87,18 @@ const StyledShowTextWithStyle = styled(ShowTextWithStyle)`
   grid-template-columns: auto;
   place-items: center;
 
+  width: 100%;
+  max-width: 600px;
+
+  @media screen and (max-width: 1250px) {
+    ${centerContent}
+    flex-direction: column;
+
+    > * {
+      padding: 1rem;
+    }
+  }
+
   height: 100%;
 
   box-sizing: border-box;
@@ -132,6 +108,11 @@ const IAmContainer = styled.div`
   ${centerContent}
   flex-direction: column;
   margin-bottom: 1rem;
+
+  @media screen and (max-width: 1250px) {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const IAmText = styled.div`
@@ -166,6 +147,56 @@ const StylishMessageBoxItem = styled(StylishItem)`
 `;
 const StyledMessageBox = styled(MessageBox)`
   height: 100%;
-  min-width: 550px;
+  /* min-width: 550px; */
   font-family: "Ubuntu";
+`;
+
+// =======================================
+const GithubContainer = styled.div`
+  position: absolute;
+  @media screen and (max-width: 1250px) {
+    position: static;
+    margin-top: 6rem;
+  }
+
+  top: 1.5rem;
+  right: 1.5rem;
+
+  @media screen and (max-width: 1250px) {
+    bottom: 0;
+    left: 50%;
+  }
+
+  ${centerContent}
+  flex-direction: column;
+
+  border: 3px solid;
+  border-radius: 10px;
+
+  /* box-shadow: 2px 2px 2px 2px #6b5432; */
+  box-shadow: 2px 2px 4px 1px #5d5143;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+  transition: transform 200ms ease-out;
+`;
+
+const GithubText = styled.div`
+  font-size: 1.2rem;
+  padding: 0.8rem;
+  color: black;
+`;
+
+const GithubIconContainer = styled.div`
+  ${centerContent}
+  height: 7vh;
+  width: 7vh;
+`;
+const GithubIcon = styled(AiFillGithub)`
+  height: 100%;
+  width: 100%;
+  flex-grow: 1;
+  object-fit: contain;
+  color: black;
 `;

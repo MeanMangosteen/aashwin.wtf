@@ -82,7 +82,7 @@ const BlogContainer = styled.div`
   }
 
   @media screen and (max-height: 700px) {
-    font-size: 60%;
+    font-size: 50%;
   }
   /* background: #ffe3b9; */
 `;
