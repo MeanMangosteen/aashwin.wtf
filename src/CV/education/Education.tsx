@@ -97,7 +97,7 @@ const ExperienceInfoContainer = styled.div`
   ${centerContent}
   flex-direction: column;
   position: absolute;
-  bottom: 20%;
+  bottom: 10%;
   left: 50%;
   transform: translate(-50%, 0%);
   font-family: "Ubuntu";
@@ -130,6 +130,8 @@ export const FavoriteSubjectsContainer = styled.div`
   @media screen and (min-width: 1000px) {
     max-width: 100vw;
     max-height: 100vh;
+    height: 100%;
+    width: 100%;
   }
   /* height: 100%;
   width: 100%; */
@@ -158,7 +160,9 @@ export const FavSubjectsTitle = styled.div`
   }
 
   @media screen and (max-width: 500px) {
-    font-size: 2.5rem;
+    font-size: 2.5rem;  @media screen and (max-width: 950px) {
+    flex-direction: column;
+  }
     padding: 1rem;
   }
 

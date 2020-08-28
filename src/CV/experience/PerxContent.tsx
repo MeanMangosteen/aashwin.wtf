@@ -3,6 +3,15 @@ import styled from "styled-components";
 import { centerContent, centerAbsolutely, Bold } from "../../utils/styles";
 import { ExperienceInfo } from "./ExperienceInfo";
 import { CarouselItem } from "../../utils/HandCrankedCarousel";
+import {
+  OpeningImage,
+  OpeningSlide,
+  AchievementsContainer,
+  Title,
+  AchievementsContent,
+  ReflectionsContainer,
+  ReflectionsContent,
+} from "../styles";
 
 const StyledCarouselItem = styled(CarouselItem)`
   color: white;
@@ -10,54 +19,33 @@ const StyledCarouselItem = styled(CarouselItem)`
   background: hsla(187, 74%, 50%, 1);
 `;
 
-const ReflectionsContainer = styled.div`
-  ${centerContent}
-  flex-direction: column;
-  color: white;
-  margin: 0 auto;
-  max-width: 1000px;
+const StyledReflectionsContainer = styled(ReflectionsContainer)`
   filter: drop-shadow(2px 4px 6px black);
-
-  li {
-    margin: 1rem;
-  }
 `;
 
-const Title = styled.div`
+const StyledTitle = styled(Title)`
   font-size: 4rem;
   margin-bottom: 3rem;
+  -webkit-text-stroke: 0;
 `;
 
-const ReflectionsContent = styled.div`
-  margin: 1rem 3rem;
-  font-size: 1.8rem;
-`;
+// const ReflectionsContent = styled.div`
+//   margin: 1rem 3rem;
+//   font-size: 1.8rem;
+// `;
 
-const TitleImage = styled.div`
-  ${centerAbsolutely}
-  height: 30%;
-  width: 100%;
-
+const TitleImage = styled(OpeningImage)`
   background-image: url("https://perxhealth.com/static/7d0954425eacb2c83d40c1eb90a441f6/b9595/perx-logo.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  filter: drop-shadow(2px 4px 6px black);
-
-  transition: transform 200ms ease-out;
-  &:hover {
-    transform: translate(-50%, -50%) scale(1.1);
-  }
 `;
-const TitleSlide = styled.div`
-  position: relative;
+
+const TitleSlide = styled(OpeningSlide)`
   background: radial-gradient(
     ellipse closest-corner,
     rgba(255, 255, 255, 1) 25%,
     rgba(39, 198, 219, 1) 100%
   );
-  height: 100%;
-  width: 100%;
+  /* height: 100%;
+  width: 100%; */
 
   /* &::after {
     content: "";
@@ -72,54 +60,49 @@ const TitleSlide = styled.div`
     filter: drop-shadow(2px 4px 6px black);
   } */
 `;
-const AchievementsContainer = styled.div`
-  ${centerContent}
-  margin: 0 auto;
-  max-width: 1500px;
-  flex-direction: column;
+const StyledAchievementsContainer = styled(AchievementsContainer)`
   color: white;
   filter: drop-shadow(2px 4px 6px black);
-  text-align: center;
 `;
 
-const AchievementsContent = styled.div`
-  font-size: 1.8rem;
-  ul {
-    ${centerContent}
-    align-items: stretch;
-  }
-  li {
-    flex-basis: 0;
-    flex-grow: 1;
+// const AchievementsContent = styled.div`
+//   font-size: 1.8rem;
+//   ul {
+//     ${centerContent}
+//     align-items: stretch;
+//   }
+//   li {
+//     flex-basis: 0;
+//     flex-grow: 1;
 
-    ${centerContent}
-    list-style: none;
-    padding: 1rem;
-    margin: 1rem;
+//     ${centerContent}
+//     list-style: none;
+//     padding: 1rem;
+//     margin: 1rem;
 
-    position: relative;
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      display: block;
-      bottom: -1rem;
-      height: 1px;
-      width: 50%;
-    }
+//     position: relative;
+//     &::before,
+//     &::after {
+//       content: "";
+//       position: absolute;
+//       display: block;
+//       bottom: -1rem;
+//       height: 1px;
+//       width: 50%;
+//     }
 
-    &::before {
-      left: 50%;
-      background: linear-gradient(to right, white 0%, transparent 100%);
-    }
+//     &::before {
+//       left: 50%;
+//       background: linear-gradient(to right, white 0%, transparent 100%);
+//     }
 
-    &::after {
-      left: 50%;
-      background: linear-gradient(to left, white 0%, transparent 100%);
-      transform: translateX(-100%);
-    }
-  }
-`;
+//     &::after {
+//       left: 50%;
+//       background: linear-gradient(to left, white 0%, transparent 100%);
+//       transform: translateX(-100%);
+//     }
+//   }
+// `;
 
 export const perxContent = (
   <>
@@ -136,8 +119,8 @@ export const perxContent = (
       </TitleSlide>
     </StyledCarouselItem>
     <StyledCarouselItem>
-      <AchievementsContainer>
-        <Title>What I've achieved</Title>
+      <StyledAchievementsContainer>
+        <StyledTitle>What I've achieved</StyledTitle>
         <AchievementsContent>
           <ul>
             <li>
@@ -165,11 +148,11 @@ export const perxContent = (
             </li>
           </ul>
         </AchievementsContent>
-      </AchievementsContainer>
+      </StyledAchievementsContainer>
     </StyledCarouselItem>
     <StyledCarouselItem>
-      <ReflectionsContainer>
-        <Title>Reflections</Title>
+      <StyledReflectionsContainer>
+        <StyledTitle>Reflections</StyledTitle>
         <ReflectionsContent>
           <ul>
             <li> First job in the industry. Yay!</li>
@@ -178,7 +161,7 @@ export const perxContent = (
             <li>You learn just as much on the job as you do in Uni.</li>
           </ul>
         </ReflectionsContent>
-      </ReflectionsContainer>
+      </StyledReflectionsContainer>
     </StyledCarouselItem>
   </>
 );
