@@ -49,9 +49,17 @@ const SkillsThatKillzContainer = styled.div`
 
   background: hsla(290, 20%, 20%, 1);
 
-  height: 100%;
-  width: 100%;
+  /* height: 100%;
+  width: 100%; */
   font-family: "Ubuntu";
+  min-height: 100vh;
+  max-width: 100vw;
+  @media screen and (min-width: 1000px) {
+    max-height: 100vh;
+    max-width: 1100px;
+    height: 100%;
+    width: 100%;
+  }
 `;
 
 const PreambleContainer = styled.div`
@@ -66,6 +74,13 @@ const PreambleText = styled.div`
   color: white;
   font-size: 1.4rem;
   margin: 1rem;
+
+  @media screen and (max-width: 400px) {
+    font-size: 1rem;
+  }
+  @media screen and (min-height: 1100px) {
+    font-size: 2rem;
+  }
 `;
 const SkillBarsContainer = styled.div`
   /* margin: 0 auto; */
@@ -84,6 +99,23 @@ const SkillBars = styled.div`
   > div {
     padding: 2rem;
     margin: 1rem;
+    @media screen and (max-width: 500px) {
+      padding: 0.8rem;
+      margin: 0.8rem;
+    }
+  }
+
+  font-size: 1rem;
+  font-weight: bold;
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 3rem;
+  }
+  @media screen and (max-width: 500px) {
+    padding: 1rem;
+    font-size: 0.8rem;
+    font-weight: normal;
   }
 `;
 
@@ -130,10 +162,9 @@ const SkillBarContainer = styled.div`
 `;
 
 const SkillBarTitle = styled.div`
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   position: absolute;
-  top: -5%;
+  top: 0%;
   left: 0;
   color: white;
 `;
@@ -145,6 +176,10 @@ const FullStackSkillz = styled.div`
   align-items: center;
   flex-grow: 1;
   border: 9px solid white;
+
+  @media screen and (max-width: 500px) {
+    border: 5px solid white;
+  }
 
   ${SkillBarContainer} {
     width: 100%;
@@ -161,7 +196,7 @@ const FullstackSkillzTitle = styled.div`
   top: -1rem;
   left: 0;
   color: white;
-  font-size: 2rem;
+  font-size: 2em;
   transform: translateY(-100%);
 `;
 
