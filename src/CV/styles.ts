@@ -100,10 +100,9 @@ export const AchievementsContainer = styled.div`
   ${centerContent}
   flex-direction: column;
 
-  padding: 0 2rem;
+  padding: 0 1.5rem;
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: 1600px;
 
   color: white;
   text-align: center;
@@ -111,10 +110,12 @@ export const AchievementsContainer = styled.div`
   font-size: 1rem;
 
   max-width: 100vw;
+    /* max-width: 1600px; */
   @media screen and (min-width: 1000px) {
-    max-height: 100vh;
+    padding: 0 4rem;
     height: 100%;
     width: 100%;
+    max-height: 100vh;
   }
 
   @media screen and (max-width: 1100px) {
@@ -176,14 +177,15 @@ export const ReflectionsContainer = styled.div`
   padding: 0 2rem;
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: 1100px;
 
   color: white;
   font-size: 1rem;
 
+  min-height: 100vh;
   max-width: 100vw;
   @media screen and (min-width: 1000px) {
     max-height: 100vh;
+    max-width: 1100px;
     height: 100%;
     width: 100%;
   }
@@ -204,4 +206,9 @@ export const ReflectionsContent = styled.div`
   li {
     margin: 1em;
   }
+
+  @media screen and (max-width: 1000px) {
+    margin: 1em;
+  }
+
 `;

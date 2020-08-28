@@ -22,19 +22,12 @@ export const ExperienceInfo = ({
   );
 };
 const ExperienceInfoContainer = styled.div`
-  /* ${centerContent}
+  ${centerContent}
   flex-direction: column;
   position: absolute;
   bottom: 2%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: "Ubuntu"; */
-  ${centerContent}
-  flex-direction: column;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translate(-50%, 0%);
   font-family: "Ubuntu";
   text-align: center;
 
@@ -48,7 +41,7 @@ const ExperienceInfoContainer = styled.div`
 const Position = styled.div`
   font-size: 3em;
   color: #3a3a3a;
-  margin: 0.5em 0em;
+  margin: 0.3em 0em;
   @media screen and (max-width: 1050px) {
     font-size: 2.5em;
   }
@@ -61,7 +54,7 @@ const Time = styled.div`
   font-size: 1.5em;
   font-style: italic;
   color: #3a3a3a;
-  margin: 0.5em 0em;
+  margin: 0.3em 0em;
 `;
 const Location = styled.div`
   font-size: 1.2em;

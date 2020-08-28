@@ -4,6 +4,15 @@ import { centerContent, Bold } from "../../utils/styles";
 import { ExperienceInfo } from "./ExperienceInfo";
 import { BaseLink, BaseATag } from "../../utils/helpers";
 import { CarouselItem } from "../../utils/HandCrankedCarousel";
+import {
+  AchievementsContainer,
+  Title,
+  AchievementsContent,
+  ReflectionsContainer,
+  ReflectionsContent,
+  OpeningSlide,
+  OpeningImage,
+} from "../styles";
 
 const StyledExperienceInfo = styled(ExperienceInfo)`
   filter: brightness(3.5);
@@ -28,104 +37,112 @@ const StyledCarouselItem = styled(CarouselItem)`
   }
 `;
 
-const ReflectionsContainer = styled.div`
-  ${centerContent}
-  flex-direction: column;
-  color: white;
-  margin: 0 auto;
-  max-width: 1000px;
+// const ReflectionsContainer = styled.div`
+//   ${centerContent}
+//   flex-direction: column;
+//   color: white;
+//   margin: 0 auto;
+//   max-width: 1000px;
 
-  li {
-    margin: 1rem;
-  }
-`;
+//   li {
+//     margin: 1rem;
+//   }
+// `;
 
-const Title = styled.div`
-  font-size: 4rem;
-  margin-bottom: 3rem;
-  filter: drop-shadow(2px 2px 3px grey);
-`;
+// const Title = styled.div`
+//   font-size: 4rem;
+//   margin-bottom: 3rem;
+//   filter: drop-shadow(2px 2px 3px grey);
+// `;
 
-const ReflectionsContent = styled.div`
-  margin: 1rem 3rem;
-  font-size: 1.3rem;
-  position: relative;
-`;
+// const ReflectionsContent = styled.div`
+//   margin: 1rem 3rem;
+//   font-size: 1.3rem;
+//   position: relative;
+// `;
 
-const TitleSlide = styled.div`
-  position: relative;
-  ${centerContent}
+const TitleSlide = styled(OpeningSlide)`
   background: #02243e;
-  height: 100%;
-  width: 100%;
 `;
 
-const AchievementsContainer = styled.div`
+// const AchievementsContainer = styled.div`
+//   ${centerContent}
+//   text-align: center;
+//   margin: 0 auto;
+//   max-width: 1500px;
+//   flex-direction: column;
+//   color: white;
+// `;
+
+// const AchievementsContent = styled.div`
+//   font-size: 1.5rem;
+//   ul {
+//     ${centerContent}
+//     align-items: stretch;
+//   }
+//   li {
+//     flex-basis: 0;
+//     flex-grow: 1;
+
+//     ${centerContent}
+//     margin: 1rem;
+//     list-style: none;
+//     padding: 1rem;
+
+//     position: relative;
+//     &::before,
+//     &::after {
+//       content: "";
+//       position: absolute;
+//       display: block;
+//       bottom: -1rem;
+//       height: 1px;
+//       width: 50%;
+//     }
+
+//     &::before {
+//       left: 50%;
+//       background: linear-gradient(to right, white 0%, transparent 100%);
+//     }
+
+//     &::after {
+//       left: 50%;
+//       background: linear-gradient(to left, white 0%, transparent 100%);
+//       transform: translateX(-100%);
+//     }
+//   }
+// `;
+
+const MatrixLogo = styled(OpeningImage)`
   ${centerContent}
-  text-align: center;
-  margin: 0 auto;
-  max-width: 1500px;
-  flex-direction: column;
-  color: white;
-`;
-
-const AchievementsContent = styled.div`
-  font-size: 1.5rem;
-  ul {
-    ${centerContent}
-    align-items: stretch;
-  }
-  li {
-    flex-basis: 0;
-    flex-grow: 1;
-
-    ${centerContent}
-    margin: 1rem;
-    list-style: none;
-    padding: 1rem;
-
-    position: relative;
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      display: block;
-      bottom: -1rem;
-      height: 1px;
-      width: 50%;
-    }
-
-    &::before {
-      left: 50%;
-      background: linear-gradient(to right, white 0%, transparent 100%);
-    }
-
-    &::after {
-      left: 50%;
-      background: linear-gradient(to left, white 0%, transparent 100%);
-      transform: translateX(-100%);
-    }
-  }
-`;
-
-const MatrixLogo = styled.div`
-  ${centerContent}
-
   filter: drop-shadow(2px 2px 6px grey);
 
-  transition: transform 200ms ease-out;
+  /* transition: transform 200ms ease-out;
   &:hover {
     transform: scale(1.1);
-  }
+  } */
 `;
-
-const Logo = styled.img``;
+const Logo = styled.img`
+  width: 50%;
+  height: 100%;
+  object-fit: contain;
+`;
 
 const LogoText = styled.div`
   display: inline-block;
   font-family: "Quicksand";
-  font-size: 8rem;
   color: #4ceeff;
+  font-size: 8rem;
+
+  @media screen and (max-width: 1000px) {
+    font-size: 6rem;
+  }
+  @media screen and (max-width: 750px) {
+    font-size: 4rem;
+  }
+  @media screen and (max-width: 450px) {
+    font-size: 2rem;
+  }
 `;
 
 export const matrixContent = (
