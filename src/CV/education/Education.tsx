@@ -5,7 +5,13 @@ import {
   CSSDividerBottom,
   centerAbsolutely,
 } from "../../utils/styles";
-import { TitleText, CarouselBanner, Banner, OpeningSlide } from "../styles";
+import {
+  TitleText,
+  CarouselBanner,
+  Banner,
+  OpeningSlide,
+  OpeningImage,
+} from "../styles";
 import { Bold } from "../../utils/styles";
 import {
   HandCrankedCarousel,
@@ -23,9 +29,10 @@ export const Education = () => {
           </EducationBanner>
         </CarouselItem>
         <CarouselItem>
-          <TitleSlide>
+          <OpeningSlide>
+            <TitleImage />
             <ExperienceInfo />
-          </TitleSlide>
+          </OpeningSlide>
         </CarouselItem>
         <CarouselItem>
           <FavoriteSubjectsContainer>
@@ -73,10 +80,8 @@ const StyledCarouselWow = styled(HandCrankedCarousel)`
   background: #ffdc00;
 `;
 
-const TitleSlide = styled(OpeningSlide)`
-  &::after {
-    background-image: url("https://warrane.unsw.edu.au/img/UNSW.png");
-  }
+const TitleImage = styled(OpeningImage)`
+  background-image: url("https://warrane.unsw.edu.au/img/UNSW.png");
 `;
 
 const ExperienceInfo = () => {
@@ -92,7 +97,7 @@ const ExperienceInfoContainer = styled.div`
   ${centerContent}
   flex-direction: column;
   position: absolute;
-  bottom: 10%;
+  bottom: 20%;
   left: 50%;
   transform: translate(-50%, 0%);
   font-family: "Ubuntu";
@@ -122,8 +127,12 @@ const TimePeriod = styled.div`
 
 export const FavoriteSubjectsContainer = styled.div`
   ${centerContent}
-  /* max-width: 100vw;
-  max-height: 100vh; */
+  @media screen and (min-width: 1000px) {
+    max-width: 100vw;
+    max-height: 100vh;
+  }
+  /* height: 100%;
+  width: 100%; */
   margin: 0 auto;
   color: #3c3c3c;
   max-width: 1400px;

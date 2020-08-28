@@ -49,23 +49,29 @@ export const OpeningSlide = styled.div`
   height: 100%;
   width: 100%;
 
-  &::after {
-    content: "";
+`;
+
+export const OpeningImage = styled.div`
     ${centerAbsolutely}
     height: 30%;
-    width: 100%;
+    width: 80%;
 
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     filter: drop-shadow(2px 4px 6px black);
 
+    transition: transform 200ms ease-out;
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
     @media screen and (max-width: 500px) {
       transform: translate(-50%, 0);
-      top: 20%;
+      top: 15%;
+
+      &:hover {
+        transform: translate(-50%, 0) scale(1.1);
+      }
     }
-  }
-
-
-
 `;
