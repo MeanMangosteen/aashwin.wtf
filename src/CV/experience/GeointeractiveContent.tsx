@@ -1,8 +1,17 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { centerContent, centerAbsolutely, Bold } from "../../utils/styles";
 import { ExperienceInfo } from "./ExperienceInfo";
 import { CarouselItem } from "../../utils/HandCrankedCarousel";
+import {
+  AchievementsContainer,
+  Title,
+  AchievementsContent,
+  ReflectionsContent,
+  OpeningImage,
+  OpeningSlide,
+  ReflectionsContainer,
+} from "../styles";
 
 const StyledExperienceInfo = styled(ExperienceInfo)`
   filter: brightness(4);
@@ -12,71 +21,87 @@ const StyledCarouselItem = styled(CarouselItem)`
   color: white;
   font-family: "Ubuntu";
 `;
-
-const ReflectionsContainer = styled.div`
-  ${centerContent}
-  flex-direction: column;
-  color: white;
-  margin: 0 auto;
-  max-width: 1000px;
-  filter: drop-shadow(2px 4px 6px black);
-
-  li {
-    margin: 1rem;
+const sewerBackground = css`
+  &::before,
+  &::after {
+    height: 100vh;
+    width: 100vw;
+    @media screen and (max-width: 1000px) {
+      height: 100%;
+      width: 100%;
+    }
+    z-index: -1;
   }
   &::before {
     content: "";
     ${centerAbsolutely}
-    height: 100vh;
-    width: 100vw;
     background-image: url("http://geointeractive.com.au/wp-content/uploads/2017/09/Sewer_3d-1024x482.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    z-index: -1;
   }
 
   &::after {
     content: "";
     ${centerAbsolutely}
-    height: 100vh;
-    width: 100vw;
     background-color: rgba(0, 0, 0, 0.55);
-    z-index: -1;
   }
 `;
-
-const Title = styled.div`
-  filter: drop-shadow(2px 4px 6px black);
-  font-size: 4rem;
-  margin-bottom: 3rem;
-`;
-
-const ReflectionsContent = styled.div`
-  filter: drop-shadow(2px 4px 6px black);
-  margin: 1rem 3rem;
-  font-size: 1.8rem;
-`;
-
-const TitleImage = styled.div`
-  ${centerAbsolutely}
-  height: 100%;
-  width: 40%;
-  background-image: url("http://geointeractive.co/wp-content/uploads/2017/10/logowhiteclean2.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  filter: drop-shadow(2px 4px 6px black);
-
-  transition: transform 200ms ease-out;
-  &:hover {
-    transform: translate(-50%, -50%) scale(1.1);
-  }
-`;
-const TitleSlide = styled.div`
+const StyledReflectionsContainer = styled(ReflectionsContainer)`
   position: relative;
-  height: 100%;
-  width: 100%;
+  filter: drop-shadow(2px 4px 6px black);
+  ${sewerBackground}
+`;
+
+// const ReflectionsContainer = styled.div`
+//   ${centerContent}
+//   flex-direction: column;
+//   color: white;
+//   margin: 0 auto;
+//   max-width: 1000px;
+//   filter: drop-shadow(2px 4px 6px black);
+
+//   li {
+//     margin: 1rem;
+//   }
+//   &::before {
+//     content: "";
+//     ${centerAbsolutely}
+//     height: 100vh;
+//     width: 100vw;
+//     background-image: url("http://geointeractive.com.au/wp-content/uploads/2017/09/Sewer_3d-1024x482.jpg");
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     z-index: -1;
+//   }
+
+//   &::after {
+//     content: "";
+//     ${centerAbsolutely}
+//     height: 100vh;
+//     width: 100vw;
+//     background-color: rgba(0, 0, 0, 0.55);
+//     z-index: -1;
+//   }
+// `;
+
+// const Title = styled.div`
+//   filter: drop-shadow(2px 4px 6px black);
+//   font-size: 4rem;
+//   margin-bottom: 3rem;
+// `;
+
+// const ReflectionsContent = styled.div`
+//   filter: drop-shadow(2px 4px 6px black);
+//   margin: 1rem 3rem;
+//   font-size: 1.8rem;
+// `;
+
+const TitleImage = styled(OpeningImage)`
+  background-image: url("http://geointeractive.co/wp-content/uploads/2017/10/logowhiteclean2.png");
+`;
+const TitleSlide = styled(OpeningSlide)`
   background-image: url("http://geointeractive.com.au/wp-content/uploads/2017/09/Sewer-Entry_web.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -103,79 +128,84 @@ const TitleSlide = styled.div`
   }
 `;
 
-const AchievementsContainer = styled.div`
-  ${centerContent}
-  margin: 0 auto;
-  max-width: 1500px;
-  text-align: center;
-  flex-direction: column;
-  color: white;
+const StyledAchievementsContainer = styled(AchievementsContainer)`
+  position: relative;
   filter: drop-shadow(2px 4px 6px black);
-
-  &::before {
-    content: "";
-    ${centerAbsolutely}
-    height: 100vh;
-    width: 100vw;
-    background-image: url("http://geointeractive.com.au/wp-content/uploads/2017/09/Sewer_3d-1024x482.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: -1;
-  }
-
-  &::after {
-    content: "";
-    ${centerAbsolutely}
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.55);
-    z-index: -1;
-  }
+  ${sewerBackground}
 `;
+// const AchievementsContainer = styled.div`
+//   ${centerContent}
+//   margin: 0 auto;
+//   max-width: 1500px;
+//   text-align: center;
+//   flex-direction: column;
+//   color: white;
+//   filter: drop-shadow(2px 4px 6px black);
 
-const AchievementsContent = styled.div`
-  filter: drop-shadow(2px 4px 6px black);
-  font-size: 1.8rem;
+//   &::before {
+//     content: "";
+//     ${centerAbsolutely}
+//     height: 100vh;
+//     width: 100vw;
+//     background-image: url("http://geointeractive.com.au/wp-content/uploads/2017/09/Sewer_3d-1024x482.jpg");
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     z-index: -1;
+//   }
 
-  ul {
-    ${centerContent}
-    align-items: stretch;
-  }
-  li {
-    flex-basis: 0;
-    flex-grow: 1;
+//   &::after {
+//     content: "";
+//     ${centerAbsolutely}
+//     height: 100vh;
+//     width: 100vw;
+//     background-color: rgba(0, 0, 0, 0.55);
+//     z-index: -1;
+//   }
+// `;
 
-    ${centerContent}
-    margin: 1rem;
-    list-style: none;
-    padding: 1rem;
+// const AchievementsContent = styled.div`
+//   filter: drop-shadow(2px 4px 6px black);
+//   font-size: 1.8rem;
 
-    position: relative;
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      display: block;
-      bottom: -1rem;
-      height: 1px;
-      width: 50%;
-    }
+//   ul {
+//     ${centerContent}
+//     align-items: stretch;
+//   }
+//   li {
+//     flex-basis: 0;
+//     flex-grow: 1;
 
-    &::before {
-      left: 50%;
-      background: linear-gradient(to right, white 0%, transparent 100%);
-    }
+//     ${centerContent}
+//     margin: 1rem;
+//     list-style: none;
+//     padding: 1rem;
 
-    &::after {
-      left: 50%;
-      background: linear-gradient(to left, white 0%, transparent 100%);
-      transform: translateX(-100%);
-    }
+//     position: relative;
+//     &::before,
+//     &::after {
+//       content: "";
+//       position: absolute;
+//       display: block;
+//       bottom: -1rem;
+//       height: 1px;
+//       width: 50%;
+//     }
 
-    /* border: 2px solid white; */
-  }
-`;
+//     &::before {
+//       left: 50%;
+//       background: linear-gradient(to right, white 0%, transparent 100%);
+//     }
+
+//     &::after {
+//       left: 50%;
+//       background: linear-gradient(to left, white 0%, transparent 100%);
+//       transform: translateX(-100%);
+//     }
+
+//     /* border: 2px solid white; */
+//   }
+// `;
 
 export const geointeractiveContent = (
   <>
@@ -192,7 +222,7 @@ export const geointeractiveContent = (
       </TitleSlide>
     </StyledCarouselItem>
     <StyledCarouselItem>
-      <AchievementsContainer>
+      <StyledAchievementsContainer>
         <Title>What I've achieved</Title>
         <AchievementsContent>
           <ul>
@@ -221,10 +251,10 @@ export const geointeractiveContent = (
             </li>
           </ul>
         </AchievementsContent>
-      </AchievementsContainer>
+      </StyledAchievementsContainer>
     </StyledCarouselItem>
     <StyledCarouselItem>
-      <ReflectionsContainer>
+      <StyledReflectionsContainer>
         <Title>Reflections</Title>
         <ReflectionsContent>
           <ul>
@@ -239,12 +269,12 @@ export const geointeractiveContent = (
             </li>
             <li>
               The 'just make it happen' startup mentality was refreshing.
-              Certainly different to the viscous decision making I've come to
-              associate with larger organisations.
+              Certainly different to the viscous decision making that can come
+              with larger organisations.
             </li>
           </ul>
         </ReflectionsContent>
-      </ReflectionsContainer>
+      </StyledReflectionsContainer>
     </StyledCarouselItem>
   </>
 );

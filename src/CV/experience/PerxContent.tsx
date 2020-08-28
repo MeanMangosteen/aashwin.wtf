@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { centerContent, centerAbsolutely, Bold } from "../../utils/styles";
+import { Bold } from "../../utils/styles";
 import { ExperienceInfo } from "./ExperienceInfo";
 import { CarouselItem } from "../../utils/HandCrankedCarousel";
 import {
@@ -29,11 +29,6 @@ const StyledTitle = styled(Title)`
   -webkit-text-stroke: 0;
 `;
 
-// const ReflectionsContent = styled.div`
-//   margin: 1rem 3rem;
-//   font-size: 1.8rem;
-// `;
-
 const TitleImage = styled(OpeningImage)`
   background-image: url("https://perxhealth.com/static/7d0954425eacb2c83d40c1eb90a441f6/b9595/perx-logo.png");
 `;
@@ -44,65 +39,11 @@ const TitleSlide = styled(OpeningSlide)`
     rgba(255, 255, 255, 1) 25%,
     rgba(39, 198, 219, 1) 100%
   );
-  /* height: 100%;
-  width: 100%; */
-
-  /* &::after {
-    content: "";
-    ${centerAbsolutely}
-    height: 30%;
-    width: 100%;
-
-    background-image: url("https://perxhealth.com/static/7d0954425eacb2c83d40c1eb90a441f6/b9595/perx-logo.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: drop-shadow(2px 4px 6px black);
-  } */
 `;
 const StyledAchievementsContainer = styled(AchievementsContainer)`
   color: white;
   filter: drop-shadow(2px 4px 6px black);
 `;
-
-// const AchievementsContent = styled.div`
-//   font-size: 1.8rem;
-//   ul {
-//     ${centerContent}
-//     align-items: stretch;
-//   }
-//   li {
-//     flex-basis: 0;
-//     flex-grow: 1;
-
-//     ${centerContent}
-//     list-style: none;
-//     padding: 1rem;
-//     margin: 1rem;
-
-//     position: relative;
-//     &::before,
-//     &::after {
-//       content: "";
-//       position: absolute;
-//       display: block;
-//       bottom: -1rem;
-//       height: 1px;
-//       width: 50%;
-//     }
-
-//     &::before {
-//       left: 50%;
-//       background: linear-gradient(to right, white 0%, transparent 100%);
-//     }
-
-//     &::after {
-//       left: 50%;
-//       background: linear-gradient(to left, white 0%, transparent 100%);
-//       transform: translateX(-100%);
-//     }
-//   }
-// `;
 
 export const perxContent = (
   <>

@@ -78,7 +78,7 @@ export const OpeningImage = styled.div`
 
 export const Title = styled.div`
   font-size: 4rem;
-  -webkit-text-stroke: 1px black;
+  /* -webkit-text-stroke: 1px black; */
   margin: 1rem;
   margin-bottom: 3rem;
 
@@ -98,16 +98,20 @@ export const Title = styled.div`
 
 export const AchievementsContainer = styled.div`
   ${centerContent}
-  margin: 0 auto;
-  max-width: 1500px;
   flex-direction: column;
+
+  padding: 0 2rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1600px;
+
   color: white;
   text-align: center;
 
   font-size: 1rem;
 
+  max-width: 100vw;
   @media screen and (min-width: 1000px) {
-    max-width: 100vw;
     max-height: 100vh;
     height: 100%;
     width: 100%;
@@ -124,8 +128,9 @@ export const AchievementsContent = styled.div`
     ${centerContent}
     align-items: stretch;
     padding: 0;
+    flex-wrap: wrap;
 
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: 1000px) {
       flex-direction: column;
     }
   }
@@ -167,14 +172,17 @@ export const AchievementsContent = styled.div`
 export const ReflectionsContainer = styled.div`
   ${centerContent}
   flex-direction: column;
-  color: white;
+
+  padding: 0 2rem;
+  box-sizing: border-box;
   margin: 0 auto;
   max-width: 1100px;
 
+  color: white;
   font-size: 1rem;
 
+  max-width: 100vw;
   @media screen and (min-width: 1000px) {
-    max-width: 100vw;
     max-height: 100vh;
     height: 100%;
     width: 100%;
@@ -183,6 +191,7 @@ export const ReflectionsContainer = styled.div`
   @media screen and (max-width: 1100px) {
     font-size: 0.8rem;
   }
+
 `;
 
 export const ReflectionsContent = styled.div`
