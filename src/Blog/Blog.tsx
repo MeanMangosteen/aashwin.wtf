@@ -66,6 +66,24 @@ const BlogContainer = styled.div`
   box-sizing: border-box;
   height: 100vh;
   color: #7b5f35;
+
+  font-size: 1rem;
+
+  @media screen and (max-width: 800px) {
+    font-size: 90%;
+  }
+
+  @media screen and (max-width: 750px) {
+    font-size: 80%;
+  }
+
+  @media screen and (max-width: 550px) {
+    font-size: 70%;
+  }
+
+  @media screen and (max-height: 700px) {
+    font-size: 60%;
+  }
   /* background: #ffe3b9; */
 `;
 
@@ -77,7 +95,7 @@ const StyledShowTextWithStyle = styled(ShowTextWithStyle)`
 const Text = styled.div`
   position: relative;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.5em;
   margin: 1rem;
 `;
 
