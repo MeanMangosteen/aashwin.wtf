@@ -122,15 +122,29 @@ const StyledCarousel = styled(HandCrankedCarousel)`
 const TitleSlide = styled.div`
   ${centerContent}
   font-size: 2rem;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+
+  @media screen and (max-width: 500px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const RoleModelsContainer = styled.div`
   font-family: "Ubuntu";
   ${centerContent}
   flex-direction: column;
+  height: 100%;
+  width: 100%;
 
   ol {
     font-size: 2rem;
+    @media screen and (max-width: 500px) {
+      font-size: 1.6rem;
+    }
   }
 
   li {

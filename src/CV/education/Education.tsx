@@ -154,15 +154,17 @@ export const FavSubjectsTitle = styled.div`
   padding: 1rem;
   margin-bottom: 3em;
   color: #fff9ef;
+  text-align: center;
   filter: drop-shadow(2px 4px 6px black);
   @media screen and (max-width: 1100px) {
     margin-bottom: 2em;
   }
 
   @media screen and (max-width: 500px) {
-    font-size: 2.5rem;  @media screen and (max-width: 950px) {
-    flex-direction: column;
-  }
+    font-size: 2.5rem;
+    @media screen and (max-width: 950px) {
+      flex-direction: column;
+    }
     padding: 1rem;
   }
 
@@ -181,6 +183,10 @@ export const FavSubjectsContent = styled.div`
 
   @media screen and (max-width: 950px) {
     flex-direction: column;
+  }
+
+  @media screen and (max-width: 500px) {
+    margin: 1rem;
   }
 `;
 export const SubjectContainer = styled.div`
@@ -204,6 +210,10 @@ export const SubjectContent = styled.div`
   font-size: 1.5em;
   li {
     margin: 1em 0;
+  }
+
+  ul {
+    padding: 0;
   }
 `;
 
