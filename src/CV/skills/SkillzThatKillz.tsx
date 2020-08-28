@@ -47,7 +47,6 @@ const SkillsThatKillzContainer = styled.div`
   /* background: #3e3e3e; */
   /* background: #434d65; */
 
-  background: hsla(290, 20%, 20%, 1);
 
   /* height: 100%;
   width: 100%; */
@@ -59,6 +58,7 @@ const SkillsThatKillzContainer = styled.div`
     max-width: 1100px;
     height: 100%;
     width: 100%;
+    margin: 0 auto;
   }
 `;
 
@@ -112,7 +112,7 @@ const SkillBars = styled.div`
     align-items: stretch;
     padding: 3rem;
   }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 600px) {
     padding: 1rem;
     font-size: 0.8rem;
     font-weight: normal;
