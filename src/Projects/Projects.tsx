@@ -33,6 +33,8 @@ const BigText = styled(TitleText)`
 const LittleText = styled.div`
   font-size: 2rem;
   color: #ba4f4f;
+  padding: 1rem;
+  text-align: center;
 `;
 
 const ProjectsContainer = styled.div`
