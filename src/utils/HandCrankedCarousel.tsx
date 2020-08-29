@@ -9,6 +9,7 @@ import styled, { keyframes, css } from "styled-components";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { centerContent } from "./styles";
 import flattenChildren from "react-keyed-flatten-children";
+import { isMobile } from "react-device-detect";
 
 type CarouselWowProps = {
   className?: string;
@@ -61,13 +62,17 @@ export const HandCrankedCarousel = ({
 
   return (
     <CarouselWowContainer className={className}>
-      <ControlLeft className="control" onClick={handlePrev}>
+      <ControlLeft className="control" onClick={handlePrev} isMobile={isMobile}>
         <StyledLeftArrow />
       </ControlLeft>
       <ItemContainer ref={ref} index={index.current}>
         {wrappedChildren}
       </ItemContainer>
-      <ControlRight className="control" onClick={handleNext}>
+      <ControlRight
+        className="control"
+        onClick={handleNext}
+        isMobile={isMobile}
+      >
         <StyledRightArrow />
       </ControlRight>
     </CarouselWowContainer>
@@ -101,7 +106,7 @@ const ItemContainer = styled.div<{ index: number }>`
     `translateX(${props.index * -100}%)`}; */
 `;
 
-const Control = styled.div`
+const Control = styled.div<{ isMobile: boolean }>`
   ${centerContent}
   position: absolute;
   top: 0;
@@ -115,6 +120,8 @@ const Control = styled.div`
     transform: scale(1.2);
     opacity: 1;
   }
+
+  pointer-events: ${(props) => props.isMobile && "none"};
 `;
 const ControlLeft = styled(Control)`
   left: 0;

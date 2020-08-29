@@ -17,7 +17,7 @@ export const Home = () => {
 
   return (
     <HomeContainer>
-      {sessionStorage.getItem("intro-finished") === "false" ? (
+      {sessionStorage.getItem("intro-finished") === "true" ? (
         <ActualHome />
       ) : (
         <Catwalk onFinish={handleIntroTextFinish}>

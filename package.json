@@ -15,6 +15,7 @@
     "emailjs-com": "^2.6.3",
     "react": "^16.13.1",
     "react-app-rewire-styled-components": "^3.0.2",
+    "react-device-detect": "^1.13.1",
     "react-dom": "^16.13.1",
     "react-flatten-children": "^1.1.2",
     "react-icons": "^3.11.0",
