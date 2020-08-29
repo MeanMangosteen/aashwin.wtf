@@ -7,7 +7,7 @@ export const Banner = styled.div`
   align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 95vh;
+  height: 100vh;
   z-index: 1;
 `;
 
@@ -116,7 +116,7 @@ export const AchievementsContainer = styled.div`
     padding: 0 4rem;
     height: 100%;
     width: 100%;
-    max-height: 95vh;
+    max-height: 100vh;
   }
 
   @media screen and (max-width: 1100px) {
@@ -182,10 +182,10 @@ export const ReflectionsContainer = styled.div`
   color: white;
   font-size: 1rem;
 
-  min-height: 95vh;
+  min-height: 100vh;
   max-width: 100vw;
   @media screen and (min-width: 1000px) {
-    max-height: 95vh;
+    max-height: 100vh;
     max-width: 1100px;
     height: 100%;
     width: 100%;

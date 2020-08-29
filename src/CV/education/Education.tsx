@@ -171,7 +171,7 @@ export const FavoriteSubjectsContainer = styled.div`
   ${centerContent}
   @media screen and (min-width: 1000px) {
     max-width: 100vw;
-    max-height: 95vh;
+    max-height: 100vh;
     height: 100%;
     width: 100%;
   }

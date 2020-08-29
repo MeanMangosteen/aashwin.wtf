@@ -80,7 +80,7 @@ const CarouselWowContainer = styled.div`
   height: 100%;
   width: 100%;
 
-  max-height: 95vh;
+  max-height: 100vh;
   max-width: 100vw;
 
   overflow: hidden;
@@ -181,7 +181,7 @@ export const CarouselItem = React.forwardRef(
 
 const CarouselWowItemContainer = styled.div`
   flex: 0 0 100%;
-  max-height: 95vh;
+  max-height: 100vh;
 
   @media screen and (max-width: 1000px) {
     overflow-y: scroll;

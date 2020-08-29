@@ -24,7 +24,7 @@ const StyledCarouselItem = styled(CarouselItem)`
 const sewerBackground = css`
   &::before,
   &::after {
-    height: 95vh;
+    height: 100vh;
     width: 100vw;
     @media screen and (max-width: 1000px) {
       height: 100%;

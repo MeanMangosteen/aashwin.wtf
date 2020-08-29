@@ -47,14 +47,13 @@ const SkillsThatKillzContainer = styled.div`
   /* background: #3e3e3e; */
   /* background: #434d65; */
 
-
   /* height: 100%;
   width: 100%; */
   font-family: "Ubuntu";
-  min-height: 95vh;
+  min-height: 100vh;
   max-width: 100vw;
   @media screen and (min-width: 1000px) {
-    max-height: 95vh;
+    max-height: 100vh;
     max-width: 1100px;
     height: 100%;
     width: 100%;
