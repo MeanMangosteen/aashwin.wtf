@@ -26,7 +26,8 @@ type EducationProps = {
 };
 export const Education = ({ onFinish, id, stage }: EducationProps) => {
   const [ref, inView, entry] = useInView({
-    threshold: [0.05, 0.9],
+    threshold: 0.05,
+    triggerOnce: true,
   });
 
   // useEffect(
@@ -47,14 +48,11 @@ export const Education = ({ onFinish, id, stage }: EducationProps) => {
   useEffect(() => {
     if (inView) {
       onFinish();
-      console.log("in veiw vewi!");
       setTimeout(() => {
         onFinish();
-        console.log("fired");
       }, 200);
       setTimeout(() => {
         onFinish();
-        console.log("fired");
       }, 1000);
     }
   }, [inView, onFinish]);
@@ -109,9 +107,9 @@ export const Education = ({ onFinish, id, stage }: EducationProps) => {
             </FavSubjectsContent>
           </FavoriteSubjectsContainer>
         </CarouselItem>
-        {/* <CarouselItem>
-          <EducationBanner ref={ref} />
-        </CarouselItem> */}
+        <CarouselItem>
+          <EducationBanner key="edu" ref={ref} />
+        </CarouselItem>
       </StyledCarouselWow>
     </CarouselBanner>
   );

@@ -33,19 +33,15 @@ export const HandCrankedCarousel = ({
 
   useEffect(() => {
     setNumChildren(ref.current?.children.length);
-    console.log("nummm children", ref.current?.children.length);
   }, []);
 
   const wrappedChildren = useMemo(() => {
-    console.log("children", children);
-    console.log("flat children", flattenChildren(children));
     return flattenChildren(children).map((C: any, idx: number) => (
       <ItemWrapper index={idx} currentIndex={index.current}>
         {React.isValidElement(C) ? React.cloneElement(C) : C}
       </ItemWrapper>
     ));
   }, [children, index]);
-  console.log("wrapped children", flattenChildren(children));
   const handleNext = useCallback(() => {
     setIndex({
       current: mod(index.current + 1, numChildren),

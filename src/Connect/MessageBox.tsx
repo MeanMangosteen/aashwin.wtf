@@ -23,7 +23,6 @@ export const MessageBox = ({ onSend, className = "" }: MessageBoxProps) => {
 
   const handleClick = useCallback(() => {
     if (input === "") return;
-    console.log("clicked!");
     return;
     onSend(input);
   }, [input, onSend]);
@@ -41,10 +40,8 @@ export const MessageBox = ({ onSend, className = "" }: MessageBoxProps) => {
       )
       .then(
         (result) => {
-          console.log(result.text);
         },
         (error) => {
-          console.log(error.text);
         }
       )
       .finally(() => {
