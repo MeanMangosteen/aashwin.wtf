@@ -26,7 +26,7 @@ type EducationProps = {
 };
 export const Education = ({ onFinish, id, stage }: EducationProps) => {
   const [ref, inView, entry] = useInView({
-    threshold: [0.1, 0.9],
+    threshold: [0, 0.9],
   });
 
   // useEffect(
