@@ -123,8 +123,11 @@ const MatrixLogo = styled(OpeningImage)`
   } */
 `;
 const Logo = styled.img`
-  width: 50%;
+  width: auto;
   height: 100%;
+  @media screen and (max-width: 1000px) {
+    width: 50%;
+  }
   object-fit: contain;
 `;
 

@@ -48,10 +48,13 @@ const ProjectsContainer = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
 
-  scroll-snap-type: y mandatory;
+  @media screen and (max-width: 1000px) {
+    scroll-snap-type: y mandatory;
+  }
   > * {
     scroll-snap-align: start;
     scroll-snap-stop: always;
     height: 100vh;
+    border-top: 12px solid white;
   }
 `;

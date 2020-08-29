@@ -156,7 +156,6 @@ const VisitMailcraftContainer = styled.div`
     flex-basis: 0;
     flex-grow: 1;
   }
-
 `;
 
 const MailcraftLogoContainer = styled.div`
@@ -239,7 +238,8 @@ const MailcraftLogo = styled.div`
   }
   filter: drop-shadow(2px 2px 6px grey);
   height: 100%;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
 `;
 
 const Logo = styled.img`
@@ -252,7 +252,7 @@ const LogoText = styled.div`
   display: inline-block;
   font-family: "Quicksand";
   font-size: 8rem;
-  color: #e9c5ff;
+  color: #f0afaf;
   text-align: center;
 
   @media screen and (max-width: 800px) {

@@ -143,7 +143,7 @@ const OrbitPath = styled.div<{ size: any; orbitSpeed: number }>`
   &:hover {
     animation-play-state: paused;
   }
-  border: 2px #4a437f dashed;
+  border: 2px #b1a490 dashed;
   border-radius: 100%;
 `;
 
@@ -200,7 +200,7 @@ const StyledIcon = styled.img<{ iconScale: number }>`
 `;
 
 const IconText = styled.div`
-  font-size: 2.2vw;
+  font-size: 1.8vw;
   ${OrbitIconWrapper}:hover & {
     transform: scale(1.2);
   }

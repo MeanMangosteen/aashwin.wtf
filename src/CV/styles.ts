@@ -87,14 +87,19 @@ export const Title = styled.div`
     margin-bottom: 2em;
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1000px) {
     font-size: 2.5rem;
-    padding: 1rem;
+    margin-bottom: 0em;
+    margin-top: 4rem;
   }
 
-  @media screen and (max-height: 870px) {
-    margin-bottom: 1em;
+  @media screen and (max-width: 400px) {
+    font-size: 2rem;
   }
+
+  /* @media screen and (max-height: 870px) {
+    margin-bottom: 1em;
+  } */
 `;
 
 export const AchievementsContainer = styled.div`
@@ -111,6 +116,7 @@ export const AchievementsContainer = styled.div`
   font-size: 1rem;
 
   max-width: 100vw;
+  min-height: 100vh;
     /* max-width: 1600px; */
   @media screen and (min-width: 1000px) {
     padding: 0 4rem;
@@ -125,7 +131,14 @@ export const AchievementsContainer = styled.div`
 `;
 
 export const AchievementsContent = styled.div`
-  font-size: 1.8em;
+  font-size: 1.8rem;
+  @media screen and (max-width: 1000px) {
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 1.2rem;
+  }
   ul {
     ${centerContent}
     align-items: stretch;
@@ -175,6 +188,8 @@ export const ReflectionsContainer = styled.div`
   ${centerContent}
   flex-direction: column;
 
+
+
   padding: 0 2rem;
   box-sizing: border-box;
   margin: 0 auto;
@@ -191,8 +206,9 @@ export const ReflectionsContainer = styled.div`
     width: 100%;
   }
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1000px) {
     font-size: 0.8rem;
+    justify-content: flex-start;
   }
 
 `;

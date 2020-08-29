@@ -29,7 +29,7 @@ export const ShowTextWithStyle = ({
   // const ref = useRef<any>(null);
   const [isFinished, setIsFinished] = useState<boolean>(false);
   const [ref, inView, entry] = useInView({
-    threshold: 0,
+    threshold: 0.1,
   });
 
 
