@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import { Education } from "./education/Education";
 import { ImARealBoy } from "./ImARealBoy";
@@ -6,16 +6,55 @@ import { Experience } from "./experience/Experience";
 import { Skills } from "./skills/Skills";
 
 export const CV = () => {
+  const [stage, setStage] = useState<string>("education");
+  const xpRef = useRef<HTMLDivElement>(null);
+  const skillsRef = useRef<HTMLDivElement>(null);
+  const realBoyRef = useRef<HTMLDivElement>(null);
   return (
     <CVContainer>
-      <Education />
-      <Experience />
-      <Skills />
-      <ImARealBoy />
+      <Education
+        id="education"
+        stage={stage}
+        onFinish={() =>
+          xpRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            inline: "start",
+          })
+        }
+      />
+      <ExperienceWrapper ref={xpRef}>
+        <Experience
+          onFinish={() =>
+            skillsRef.current?.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+              inline: "start",
+            })
+          }
+        />
+      </ExperienceWrapper>
+      <SkillsWrapper ref={skillsRef}>
+        <Skills
+          onFinish={() =>
+            realBoyRef.current?.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+              inline: "start",
+            })
+          }
+        />
+      </SkillsWrapper>
+      <ImARealBoyWrapper ref={realBoyRef}>
+        <ImARealBoy onFinish={() => {}} />
+      </ImARealBoyWrapper>
     </CVContainer>
   );
 };
 
+const ExperienceWrapper = styled.div``;
+const SkillsWrapper = styled.div``;
+const ImARealBoyWrapper = styled.div``;
 const CVContainer = styled.div`
   /* display: flex; */
   flex-direction: column;

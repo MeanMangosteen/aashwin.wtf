@@ -15,7 +15,10 @@ import {
   HandCrankedCarousel,
 } from "../utils/HandCrankedCarousel";
 
-export const ImARealBoy = () => {
+type IARBProps = {
+  onFinish: () => void;
+};
+export const ImARealBoy = ({ onFinish }: IARBProps) => {
   return (
     <CarouselBanner>
       <StyledCarousel>

@@ -175,7 +175,6 @@ export const CarouselItem = React.forwardRef(
     { children, className = "carousel-item" }: CarouselWowItemsProps,
     ref: any
   ) => {
-    console.log("ref", ref);
     return (
       <CarouselWowItemContainer ref={ref} className={className}>
         {children}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import {
   centerContent,
@@ -17,9 +17,47 @@ import {
   HandCrankedCarousel,
   CarouselItem,
 } from "../../utils/HandCrankedCarousel";
-import { Carousel } from "../../utils/Carousel";
+import { useInView } from "react-intersection-observer";
 
-export const Education = () => {
+type EducationProps = {
+  onFinish: () => void;
+  id: string;
+  stage: string;
+};
+export const Education = ({ onFinish, id, stage }: EducationProps) => {
+  const [ref, inView, entry] = useInView({
+    threshold: [0.1, 0.9],
+  });
+
+  // useEffect(
+  //   () => {
+  //     const interval = setInterval(() => {
+  //       console.log("interval", inView);
+  //       if (inView) {
+  //         console.log("in veiw vewi!");
+  //         onFinish();
+  //       }
+  //     }, 250);
+  //     return () => {
+  //       clearInterval(interval);
+  //     };
+  //   },
+  //   [] // empty dependency array
+  // );
+  useEffect(() => {
+    if (inView) {
+      onFinish();
+      console.log("in veiw vewi!");
+      setTimeout(() => {
+        onFinish();
+        console.log("fired");
+      }, 200);
+      setTimeout(() => {
+        onFinish();
+        console.log("fired");
+      }, 1000);
+    }
+  }, [inView, onFinish]);
   return (
     <CarouselBanner>
       <StyledCarouselWow>
@@ -71,10 +109,18 @@ export const Education = () => {
             </FavSubjectsContent>
           </FavoriteSubjectsContainer>
         </CarouselItem>
+        <CarouselItem>
+          <EducationBanner ref={ref} />
+        </CarouselItem>
       </StyledCarouselWow>
     </CarouselBanner>
   );
 };
+
+const ScrollWatcher = styled.div`
+  width: 10%;
+  height: 100px;
+`;
 
 const StyledCarouselWow = styled(HandCrankedCarousel)`
   background: #ffdc00;

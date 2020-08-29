@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { CarouselBanner, Banner, TitleText } from "../styles";
 import { SkillzThatKillz } from "./SkillzThatKillz";
@@ -6,8 +6,29 @@ import {
   HandCrankedCarousel,
   CarouselItem,
 } from "../../utils/HandCrankedCarousel";
+import { useInView } from "react-intersection-observer";
+type SkillsProps = {
+  onFinish: () => void;
+};
+export const Skills = ({ onFinish }: SkillsProps) => {
+  const [ref, inView, entry] = useInView({
+    threshold: [0.1, 0.9],
+  });
 
-export const Skills = () => {
+  useEffect(() => {
+    if (inView) {
+      onFinish();
+      console.log("in veiw vewi!");
+      setTimeout(() => {
+        onFinish();
+        console.log("fired");
+      }, 200);
+      setTimeout(() => {
+        onFinish();
+        console.log("fired");
+      }, 1000);
+    }
+  }, [inView, onFinish]);
   return (
     <CarouselBanner>
       <HandCrankedCarousel>
@@ -19,6 +40,9 @@ export const Skills = () => {
         <StyledCarouselItem>
           <SkillzThatKillz />
         </StyledCarouselItem>
+        <CarouselItem>
+          <SkillsBanner ref={ref} />
+        </CarouselItem>
       </HandCrankedCarousel>
     </CarouselBanner>
   );
