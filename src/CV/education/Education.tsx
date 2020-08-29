@@ -21,10 +21,8 @@ import { useInView } from "react-intersection-observer";
 
 type EducationProps = {
   onFinish: () => void;
-  id: string;
-  stage: string;
 };
-export const Education = ({ onFinish, id, stage }: EducationProps) => {
+export const Education = ({ onFinish }: EducationProps) => {
   const [ref, inView, entry] = useInView({
     threshold: 0.05,
     triggerOnce: true,
@@ -107,9 +105,9 @@ export const Education = ({ onFinish, id, stage }: EducationProps) => {
             </FavSubjectsContent>
           </FavoriteSubjectsContainer>
         </CarouselItem>
-        <CarouselItem>
+        {/* <CarouselItem>
           <EducationBanner key="edu" ref={ref} />
-        </CarouselItem>
+        </CarouselItem> */}
       </StyledCarouselWow>
     </CarouselBanner>
   );
@@ -173,7 +171,7 @@ export const FavoriteSubjectsContainer = styled.div`
   ${centerContent}
   @media screen and (min-width: 1000px) {
     max-width: 100vw;
-    max-height: 100vh;
+    max-height: 95vh;
     height: 100%;
     width: 100%;
   }

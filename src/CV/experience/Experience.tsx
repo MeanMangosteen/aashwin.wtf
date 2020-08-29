@@ -43,9 +43,9 @@ export const Experience = ({ onFinish }: ExperienceProps) => {
         {perxContent}
         {geointeractiveContent}
         {matrixContent}
-        <CarouselItem>
+        {/* <CarouselItem>
           <ExperienceBanner ref={ref} />
-        </CarouselItem>
+        </CarouselItem> */}
       </StyledCarousel>
     </CarouselBanner>
   );

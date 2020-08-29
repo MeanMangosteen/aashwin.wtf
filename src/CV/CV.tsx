@@ -13,35 +13,36 @@ export const CV = () => {
   return (
     <CVContainer>
       <Education
-        id="education"
-        stage={stage}
-        onFinish={() =>
-          xpRef.current?.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-            inline: "start",
-          })
+        onFinish={
+          () => {}
+          // xpRef.current?.scrollIntoView({
+          //   behavior: "smooth",
+          //   block: "start",
+          //   inline: "start",
+          // })
         }
       />
       <ExperienceWrapper ref={xpRef}>
         <Experience
-          onFinish={() =>
-            skillsRef.current?.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-              inline: "start",
-            })
+          onFinish={
+            () => {}
+            // xpRef.current?.scrollIntoView({
+            //   behavior: "smooth",
+            //   block: "start",
+            //   inline: "start",
+            // })
           }
         />
       </ExperienceWrapper>
       <SkillsWrapper ref={skillsRef}>
         <Skills
-          onFinish={() =>
-            realBoyRef.current?.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-              inline: "start",
-            })
+          onFinish={
+            () => {}
+            // xpRef.current?.scrollIntoView({
+            //   behavior: "smooth",
+            //   block: "start",
+            //   inline: "start",
+            // })
           }
         />
       </SkillsWrapper>
@@ -70,6 +71,6 @@ const CVContainer = styled.div`
   > * {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    height: 100vh;
+    height: 95vh;
   }
 `;

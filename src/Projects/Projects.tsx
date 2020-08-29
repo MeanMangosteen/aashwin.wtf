@@ -52,6 +52,6 @@ const ProjectsContainer = styled.div`
   > * {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    height: 100vh;
+    height: 95vh;
   }
 `;
