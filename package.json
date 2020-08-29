@@ -23,6 +23,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-sizeme": "^2.6.12",
+    "react-spinners": "^0.9.0",
     "react-transition-group": "^4.4.1",
     "react-visibility-sensor": "^5.1.1",
     "styled-components": "^5.1.1",

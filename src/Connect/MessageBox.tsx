@@ -1,8 +1,10 @@
 import React, { useState, useCallback } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { FiSend } from "react-icons/fi";
 import { centerContent } from "../utils/styles";
 import emailjs from "emailjs-com";
+import { SwitchTransition, Transition } from "react-transition-group";
+import RiseLoader from "react-spinners/RiseLoader";
 
 type MessageBoxProps = {
   onSend: (message: string) => void;
@@ -11,6 +13,9 @@ type MessageBoxProps = {
 
 export const MessageBox = ({ onSend, className = "" }: MessageBoxProps) => {
   const [input, setInput] = useState<string>("");
+  const [stage, setStage] = useState<"waiting" | "sending" | "thanking">(
+    "waiting"
+  );
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInput(e.target.value);
@@ -26,8 +31,7 @@ export const MessageBox = ({ onSend, className = "" }: MessageBoxProps) => {
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
 
-    console.log("clicked!");
-    return;
+    setStage("sending");
     emailjs
       .sendForm(
         "gmail",
@@ -42,24 +46,61 @@ export const MessageBox = ({ onSend, className = "" }: MessageBoxProps) => {
         (error) => {
           console.log(error.text);
         }
-      );
+      )
+      .finally(() => {
+        setStage("thanking");
+      });
   }, []);
 
   return (
     <MessageBoxForm className={className} onSubmit={handleSubmit}>
-      <MessageBoxInput
-        placeholder="Anything at all..."
-        value={input}
-        onChange={handleChange}
-        name="message"
-      />
+      <SwitchTransition>
+        <Transition key={stage} timeout={200}>
+          {(state) =>
+            stage === "thanking" ? (
+              <Fade state={state}>
+                <Text>Thank you.</Text>
+              </Fade>
+            ) : stage === "sending" ? (
+              <LoaderContainer>
+                <StyledLoader
+                  // size={150}
+                  color={"#a78860"}
+                  margin={10}
+                  loading={stage === "sending"}
+                />
+              </LoaderContainer>
+            ) : (
+              <Fade state={state}>
+                <MessageBoxInput
+                  placeholder="Anything at all..."
+                  value={input}
+                  onChange={handleChange}
+                  name="message"
+                />
 
-      <SendIconContainer>
-        <SendIcon onClick={handleClick} />
-      </SendIconContainer>
+                <SendIconContainer>
+                  <SendIcon onClick={handleClick} />
+                </SendIconContainer>
+              </Fade>
+            )
+          }
+        </Transition>
+      </SwitchTransition>
     </MessageBoxForm>
   );
 };
+
+const Text = styled.div`
+  font-weight: bold;
+`;
+const Fade = styled.div`
+  height: 100%;
+  width: 100%;
+  transition: 0.5s;
+  opacity: ${(props: { state?: any }) => (props.state === "entered" ? 1 : 0)};
+  will-change: opacity;
+`;
 
 const MessageBoxForm = styled.form`
   ${centerContent}
@@ -134,4 +175,12 @@ const SendIcon = styled(FiSend)`
   height: 100%;
   width: 100%;
   object-fit: contain;
+`;
+
+const StyledLoader = styled(RiseLoader)`
+  padding: 1rem;
+`;
+
+const LoaderContainer = styled.div`
+  padding: 1rem;
 `;
