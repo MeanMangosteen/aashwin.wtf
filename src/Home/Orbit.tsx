@@ -71,14 +71,14 @@ const animateOrbitPath = (height: number, width: number) => {
   return keyframes`
 from {
 
-    transform: scale(${Math.min(width / height, 1.3)}, ${Math.max(
+    transform: scale(${Math.max(Math.min(width / height, 1.3), 1)}, ${Math.max(
     1,
     height / width
   )}) rotate(0deg);
 }
   
   to {
-    transform: scale(${Math.min(width / height, 1.3)}, ${Math.max(
+    transform: scale(${Math.max(Math.min(width / height, 1.3), 1)}, ${Math.max(
     1,
     height / width
   )}) rotate(360deg) ;
@@ -86,6 +86,24 @@ from {
 `;
 };
 
+const animateOrbitIcon = (height: number, width: number) => {
+  return keyframes`
+from {
+
+    transform: rotate(0deg) scale(${Math.min(
+      Math.max(0.7, height / width),
+      1
+    )} ,${Math.min(1, width / height)} ) ;
+}
+  
+  to {
+    transform: rotate(-360deg) scale(${Math.min(
+      Math.max(0.7, height / width),
+      1
+    )}, ${Math.min(1, width / height)}) ;
+  }
+  `;
+};
 const OrbitContainer = styled.div<{ orbitShell: number }>`
   ${centerContent}
   position: absolute;
@@ -128,25 +146,6 @@ const OrbitPath = styled.div<{ size: any; orbitSpeed: number }>`
   border: 2px #4a437f dashed;
   border-radius: 100%;
 `;
-
-const animateOrbitIcon = (height: number, width: number) => {
-  return keyframes`
-from {
-
-    transform: rotate(0deg) scale(${Math.max(0.7, height / width)} ,${Math.min(
-    1,
-    width / height
-  )} ) ;
-}
-  
-  to {
-    transform: rotate(-360deg) scale(${Math.max(
-      0.7,
-      height / width
-    )}, ${Math.min(1, width / height)}) ;
-  }
-  `;
-};
 
 const OrbitIconContianer = styled.div`
   display: flex;
@@ -193,14 +192,23 @@ const StyledIcon = styled.img<{ iconScale: number }>`
     transform: scale(calc(var(--baseScale) * 1.2));
   }
   transition: transform 200ms ease-in-out;
+
+  @media screen and (max-width: 1100px) {
+    width: 7vw;
+    height: 7vh;
+  }
 `;
 
 const IconText = styled.div`
-  font-size: 1.2vw;
+  font-size: 2.2vw;
   ${OrbitIconWrapper}:hover & {
     transform: scale(1.2);
   }
   transition: transform 200ms ease-in-out;
+
+  @media screen and (max-width: 1100px) {
+    font-size: 3vw;
+  }
 `;
 
 export { Orbit, StyledIcon as OrbitIcon };

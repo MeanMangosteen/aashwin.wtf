@@ -38,6 +38,18 @@ const WebsiteBadgeContainer = styled.div`
   ${centerContent}
   flex-direction: column;
   font-size: 3vw;
+
+  @media screen and (max-width: 1500px) {
+    font-size: 5vw;
+  }
+
+  @media screen and (max-width: 800px) {
+    font-size: 6vw;
+  }
+
+  @media screen and (max-width: 750px) {
+    font-size: 9vw;
+  }
 `;
 
 const AashwinText = styled.div`

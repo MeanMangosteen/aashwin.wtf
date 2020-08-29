@@ -8,6 +8,7 @@ import ToolboxSVG from "../images/toolbox.svg";
 import ArmyKnifeSVG from "../images/swiss-army-knife.svg";
 import MegaphoneSVG from "../images/megaphone.svg";
 import { WebsiteBadge } from "./WebsiteBadge";
+import { BoringDisplay } from "./BorningDisplay";
 
 export const Home = () => {
   const handleIntroTextFinish = useCallback(() => {
@@ -72,9 +73,16 @@ const ActualHome = () => {
           />
         </>
       </OrbitsContainer>
+      <StyledBoringDisplay />
     </ActualHomeContainer>
   );
 };
+
+const StyledBoringDisplay = styled(BoringDisplay)`
+  @media screen and (min-width: 751px) {
+    display: none;
+  }
+`;
 
 const CVOrbit = styled(Orbit)`
   ${OrbitIcon} {
@@ -94,10 +102,19 @@ const OrbitsContainer = styled.div`
   opacity: 0;
   animation: ${fadeIn} 1.5s ease-out forwards;
   animation-delay: 2s;
+
+  @media screen and (max-width: 750px) {
+    display: none;
+  }
 `;
 
 const ActualHomeContainer = styled.div`
   position: relative;
+
+  @media screen and (max-width: 750px) {
+    ${centerContent}
+    flex-direction: column;
+  }
 `;
 
 const HomeContainer = styled.div`
