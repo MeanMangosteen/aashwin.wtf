@@ -109,9 +109,9 @@ export const Education = ({ onFinish, id, stage }: EducationProps) => {
             </FavSubjectsContent>
           </FavoriteSubjectsContainer>
         </CarouselItem>
-        <CarouselItem>
+        {/* <CarouselItem>
           <EducationBanner ref={ref} />
-        </CarouselItem>
+        </CarouselItem> */}
       </StyledCarouselWow>
     </CarouselBanner>
   );

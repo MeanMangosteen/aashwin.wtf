@@ -40,9 +40,9 @@ export const Skills = ({ onFinish }: SkillsProps) => {
         <StyledCarouselItem>
           <SkillzThatKillz />
         </StyledCarouselItem>
-        <CarouselItem>
+        {/* <CarouselItem>
           <SkillsBanner ref={ref} />
-        </CarouselItem>
+        </CarouselItem> */}
       </HandCrankedCarousel>
     </CarouselBanner>
   );
