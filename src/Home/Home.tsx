@@ -17,7 +17,7 @@ export const Home = () => {
 
   return (
     <HomeContainer>
-      {sessionStorage.getItem("intro-finished") === "true" ? (
+      {sessionStorage.getItem("intro-finished") === "false" ? (
         <ActualHome />
       ) : (
         <Catwalk onFinish={handleIntroTextFinish}>
@@ -78,7 +78,20 @@ const ActualHome = () => {
   );
 };
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
 const StyledBoringDisplay = styled(BoringDisplay)`
+  opacity: 0;
+  animation: ${fadeIn} 1.5s ease-out forwards;
+  animation-delay: 2s;
+
   @media screen and (min-width: 751px) {
     display: none;
   }
@@ -90,14 +103,6 @@ const CVOrbit = styled(Orbit)`
   }
 `;
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
 const OrbitsContainer = styled.div`
   opacity: 0;
   animation: ${fadeIn} 1.5s ease-out forwards;
@@ -128,4 +133,5 @@ const IntroText = styled.div`
   -webkit-text-stroke: 1px black;
   color: white;
   font-weight: bold;
+  text-align: center;
 `;

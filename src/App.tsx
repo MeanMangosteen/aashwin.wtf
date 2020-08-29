@@ -86,6 +86,11 @@ const HomeButtonContainer = styled.div`
   mix-blend-mode: difference;
   color: #848484;
   ${hoverGrow}
+
+  @media screen and (max-width: 600px) {
+    height: 3rem;
+    width: 3rem;
+  }
 `;
 
 const HomeButtonIcon = styled(BiHomeSmile)`
