@@ -16,7 +16,7 @@ type ExperienceProps = {
 };
 export const Experience = ({ onFinish }: ExperienceProps) => {
   const [ref, inView, entry] = useInView({
-    threshold: [0, 0.9],
+    threshold: [0.05, 0.9],
   });
 
   useEffect(() => {

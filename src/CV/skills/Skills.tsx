@@ -12,7 +12,7 @@ type SkillsProps = {
 };
 export const Skills = ({ onFinish }: SkillsProps) => {
   const [ref, inView, entry] = useInView({
-    threshold: [0, 0.9],
+    threshold: [0.05, 0.9],
   });
 
   useEffect(() => {

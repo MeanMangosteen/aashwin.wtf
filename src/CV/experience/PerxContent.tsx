@@ -16,7 +16,7 @@ import {
 const StyledCarouselItem = styled(CarouselItem)`
   color: white;
   font-family: "Ubuntu";
-  background: hsla(187, 74%, 50%, 1);
+  background: hsl(187, 71%, 64%);
 `;
 
 const StyledReflectionsContainer = styled(ReflectionsContainer)`
